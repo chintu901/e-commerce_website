@@ -1,8 +1,13 @@
 # e-commerce_website
-This is a modern e-commerce website for stylish and trendy shoes. The website is designed to be clean, easy to navigate, and visually appealing, with smooth scrolling effects. 
+
+## 📌 Project Description  
+This project is an e-commerce website designed specifically for selling furniture online. The platform provides a user-friendly interface that allows customers to browse, search, and purchase furniture items seamlessly. The website includes a wide range of furniture categories, such as sofas, beds, tables, chairs, and office furniture, catering to different customer needs and preferences. 
 <br>
-💡 Key Features: 
-<br>
-✔️ Simple and user-friendly design 
-<br>
-✔️ Smooth animations and hover effects 
+
+## ⚙️ Tech Stack  
+| Technology       | Usage                          |
+|-----------------|--------------------------------|
+| **HTML, CSS, Sass**  | Frontend design & styling |
+| **JavaScript**  | Dynamic & interactive UI      |
+| **Flask (Python)** | Backend framework (API & server) |
+| **SQLite**      | Database management           |
