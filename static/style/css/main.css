@@ -1,0 +1,22 @@
+@font-face {
+  font-family: thin_text;
+  src: url("../../font/RaelaGrotesque-Thin.ttf");
+}
+@font-face {
+  font-family: bolder_text;
+  src: url("../../font/RaelaGrotesque-Black.ttf");
+}
+@font-face {
+  font-family: light_text;
+  src: url("../../font/RaelaGrotesque-Light.ttf");
+}
+@font-face {
+  font-family: medium_text;
+  src: url("../../font/RaelaGrotesque-Medium.ttf");
+}
+@font-face {
+  font-family: regular_text;
+  src: url("../../font/RaelaGrotesque-Regular.ttf");
+}
+
+/*# sourceMappingURL=main.css.map */
