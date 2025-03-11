@@ -1,0 +1,236 @@
+@font-face {
+  font-family: thin_text;
+  src: url("../../font/RaelaGrotesque-Thin.ttf");
+}
+@font-face {
+  font-family: bolder_text;
+  src: url("../../font/RaelaGrotesque-Black.ttf");
+}
+@font-face {
+  font-family: light_text;
+  src: url("../../font/RaelaGrotesque-Light.ttf");
+}
+@font-face {
+  font-family: medium_text;
+  src: url("../../font/RaelaGrotesque-Medium.ttf");
+}
+@font-face {
+  font-family: regular_text;
+  src: url("../../font/RaelaGrotesque-Regular.ttf");
+}
+#background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: white;
+}
+#background #box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 500px;
+  font-family: "Inter", sans-serif;
+  background-color: rgb(250, 250, 250);
+  border-radius: 5px;
+  padding: 20px;
+  box-sizing: border-box;
+  filter: drop-shadow(2px 2px 5px #555);
+}
+#background #box #signin_signup_input_box {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  gap: 20px;
+}
+#background #box #signin_signup_input_box div {
+  position: relative;
+  width: 100%;
+}
+#background #box #signin_signup_input_box input {
+  width: 100%;
+  font-size: 1.2em;
+  padding: 15px 10px;
+  border: 2px solid #333333;
+  background: transparent;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+}
+#background #box #signin_signup_input_box label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #333333;
+  font-size: 1em;
+  font-weight: bold;
+  pointer-events: none;
+  transition: 0.3s ease all;
+}
+#background #box #signin_signup_input_box input:focus ~ label,
+#background #box #signin_signup_input_box input:not(:placeholder-shown) ~ label {
+  top: 1px;
+  font-size: 0.8em;
+  color: #333333;
+  background: rgb(250, 250, 250);
+  padding: 0 5px;
+}
+#background #box #button {
+  margin-top: 20px;
+}
+#background #box #button .button-signin-pushable {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+#background #box #button .button-signin-pushable .button-signin-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsla(0, 0%, 0%, 0.399);
+  will-change: transform;
+  transform: translateY(2px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+#background #box #button .button-signin-pushable .button-signin-edge {
+  position: absolute;
+  border: 2px solid rgb(0, 0, 0);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(to left, rgb(16, 16, 16) 0%, rgb(29, 29, 29) 8%, rgb(29, 29, 29) 92%, rgb(16, 16, 16) 100%);
+}
+#background #box #button .button-signin-pushable .button-signin-front {
+  display: block;
+  position: relative;
+  padding: 12px 37px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: rgb(57, 57, 57);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+@media (min-width: 768px) {
+  #background #box #button .button-signin-pushable .button-signin-front {
+    border: 2px solid rgb(0, 0, 0);
+    font-size: 1.25rem;
+    padding: 12px 147px;
+  }
+}
+#background #box #button .button-signin-pushable:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+#background #box #button .button-signin-pushable:hover .button-signin-front {
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+#background #box #button .button-signin-pushable:active .button-signin-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+#background #box #button .button-signin-pushable:hover .button-signin-shadow {
+  transform: translateY(4px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+#background #box #button .button-signin-pushable:active .button-signin-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+#background #box #button .button-signin-pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+#background #box #register_button {
+  margin-top: 20px;
+}
+#background #box #register_button .button-signin-pushable {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+#background #box #register_button .button-signin-pushable .button-signin-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsla(0, 0%, 0%, 0.399);
+  will-change: transform;
+  transform: translateY(2px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+#background #box #register_button .button-signin-pushable .button-signin-edge {
+  position: absolute;
+  border: 2px solid black;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(to left, rgb(126, 126, 126) 0%, rgb(170, 170, 170) 8%, rgb(170, 170, 170) 92%, rgb(126, 126, 126) 100%);
+}
+#background #box #register_button .button-signin-pushable .button-signin-front {
+  display: block;
+  border: 2px solid black;
+  position: relative;
+  padding: 12px 37px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: black;
+  background: rgb(219, 219, 219);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+@media (min-width: 768px) {
+  #background #box #register_button .button-signin-pushable .button-signin-front {
+    font-size: 1.25rem;
+    padding: 12px 75px;
+  }
+}
+#background #box #register_button .button-signin-pushable:hover .button-signin-front {
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+#background #box #register_button .button-signin-pushable:active .button-signin-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+#background #box #register_button .button-signin-pushable:hover .button-signin-shadow {
+  transform: translateY(4px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+#background #box #register_button .button-signin-pushable:active .button-signin-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+#background #box #register_button .button-signin-pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/*# sourceMappingURL=main.css.map */
