@@ -26,48 +26,55 @@
   background-color: white;
 }
 #background #box {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 400px;
   height: 500px;
   font-family: "Inter", sans-serif;
   background-color: aquamarine;
   border-radius: 5px;
-}
-#background #box #signin_signup_input_box .input {
-  position: relative;
-}
-#background #box #signin_signup_input_box .input__label {
-  position: absolute;
-  left: 0;
-  top: 0;
-  padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * 0.5);
-  margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * 0.5);
-  background: pink;
-  white-space: nowrap;
-  transform: translate(0, 0);
-  transform-origin: 0 0;
-  background: var(--color-background);
-  transition: transform 120ms ease-in;
-  font-weight: bold;
-  line-height: 1.2;
-}
-#background #box #signin_signup_input_box .input__field {
+  padding: 20px;
   box-sizing: border-box;
-  display: block;
-  width: 100%;
-  border: 3px solid currentColor;
-  padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
-  color: currentColor;
-  background: transparent;
-  border-radius: var(--size-radius);
 }
-#background #box #signin_signup_input_box .input__field:focus + .input__label, #background #box #signin_signup_input_box .input__field:not(:placeholder-shown) + .input__label {
-  transform: translate(0.25rem, -65%) scale(0.8);
-  color: var(--color-accent);
+#background #box #signin_signup_input_box {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  gap: 20px;
+}
+#background #box #signin_signup_input_box div {
+  position: relative;
+  width: 100%;
 }
 #background #box #signin_signup_input_box input {
-  height: 30px;
+  width: 100%;
+  font-size: 1.2em;
+  padding: 15px 10px;
+  border: 2px solid #333333;
+  background: transparent;
   border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+}
+#background #box #signin_signup_input_box label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #333333;
+  font-size: 1em;
+  pointer-events: none;
+  transition: 0.3s ease all;
+}
+#background #box #signin_signup_input_box input:focus ~ label,
+#background #box #signin_signup_input_box input:not(:placeholder-shown) ~ label {
+  top: 1px;
+  font-size: 0.8em;
+  color: rgb(255, 159, 4);
+  background: aquamarine;
+  padding: 0 5px;
 }
 
 /*# sourceMappingURL=main.css.map */
