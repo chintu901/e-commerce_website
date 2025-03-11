@@ -79,7 +79,7 @@
   padding: 0 5px;
 }
 #background #box #button {
-  margin: 20px;
+  margin-top: 20px;
 }
 #background #box #button .button-signin-pushable {
   position: relative;
@@ -129,7 +129,7 @@
 @media (min-width: 768px) {
   #background #box #button .button-signin-pushable .button-signin-front {
     font-size: 1.25rem;
-    padding: 12px 120px;
+    padding: 12px 147px;
   }
 }
 #background #box #button .button-signin-pushable:hover {
@@ -156,7 +156,7 @@
   outline: none;
 }
 #background #box #register_button {
-  margin: 20px;
+  margin-top: 20px;
 }
 #background #box #register_button .button-signin-pushable {
   position: relative;
@@ -206,7 +206,7 @@
 @media (min-width: 768px) {
   #background #box #register_button .button-signin-pushable .button-signin-front {
     font-size: 1.25rem;
-    padding: 12px 45px;
+    padding: 12px 80px;
   }
 }
 #background #box #register_button .button-signin-pushable:hover {
