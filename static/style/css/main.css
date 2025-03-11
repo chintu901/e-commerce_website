@@ -107,6 +107,7 @@
 }
 #background #box #button .button-signin-pushable .button-signin-edge {
   position: absolute;
+  border: 2px solid rgb(0, 0, 0);
   top: 0;
   left: 0;
   width: 100%;
@@ -128,6 +129,7 @@
 }
 @media (min-width: 768px) {
   #background #box #button .button-signin-pushable .button-signin-front {
+    border: 2px solid rgb(0, 0, 0);
     font-size: 1.25rem;
     padding: 12px 147px;
   }
@@ -184,21 +186,23 @@
 }
 #background #box #register_button .button-signin-pushable .button-signin-edge {
   position: absolute;
+  border: 2px solid black;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   border-radius: 12px;
-  background: linear-gradient(to left, rgb(16, 16, 16) 0%, rgb(29, 29, 29) 8%, rgb(29, 29, 29) 92%, rgb(16, 16, 16) 100%);
+  background: linear-gradient(to left, rgb(126, 126, 126) 0%, rgb(170, 170, 170) 8%, rgb(170, 170, 170) 92%, rgb(126, 126, 126) 100%);
 }
 #background #box #register_button .button-signin-pushable .button-signin-front {
   display: block;
+  border: 2px solid black;
   position: relative;
   padding: 12px 37px;
   border-radius: 12px;
   font-size: 1.1rem;
-  color: white;
-  background: rgb(57, 57, 57);
+  color: black;
+  background: rgb(219, 219, 219);
   will-change: transform;
   transform: translateY(-4px);
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
@@ -206,12 +210,8 @@
 @media (min-width: 768px) {
   #background #box #register_button .button-signin-pushable .button-signin-front {
     font-size: 1.25rem;
-    padding: 12px 80px;
+    padding: 12px 75px;
   }
-}
-#background #box #register_button .button-signin-pushable:hover {
-  filter: brightness(110%);
-  -webkit-filter: brightness(110%);
 }
 #background #box #register_button .button-signin-pushable:hover .button-signin-front {
   transform: translateY(-6px);
