@@ -267,6 +267,11 @@
                   padding: 12px 75px;
                 }
               }
+
+              &:hover {
+                filter: brightness(105%);
+                -webkit-filter: brightness(105%);
+              }
               
               &:hover .button-signin-front {
                 transform: translateY(-6px);
