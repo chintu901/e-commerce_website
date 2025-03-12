@@ -41,6 +41,7 @@
 }
 #background #box #signin_signup_input_box {
   display: grid;
+  font-family: "Inter", sans-serif;
   gap: 10px;
   width: 100%;
   gap: 20px;
@@ -158,6 +159,7 @@
   outline: none;
 }
 #background #box #forget_text_chnage_password {
+  font-family: "Inter", sans-serif;
   margin-top: 10px;
 }
 #background #box #register_button {
