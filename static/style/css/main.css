@@ -157,8 +157,11 @@
 #background #box #button .button-signin-pushable:focus:not(:focus-visible) {
   outline: none;
 }
+#background #box #forget_text_chnage_password {
+  margin-top: 10px;
+}
 #background #box #register_button {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 #background #box #register_button .button-signin-pushable {
   position: relative;
