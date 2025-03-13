@@ -187,15 +187,20 @@ body {
       }
     }
 
-    #forget_text_chnage_password {
+    #forget_text_change_password {
       font-family: 'Inter', sans-serif;
       margin-top: 10px;
+    }
+
+    #login_page_link {
+      font-family: 'Inter', sans-serif;
+      margin-top: 15px;
     }
 
     #register_new_account_button {
       margin-top: 10px;
 
-      .button-signin-pushable {
+      .button-register-new-pushable {
         position: relative;
         border: none;
         background: transparent;
@@ -207,7 +212,7 @@ body {
         -webkit-user-select: none;
         touch-action: manipulation;
 
-        .button-signin-shadow {
+        .button-register-new-shadow {
           position: absolute;
           top: 0;
           left: 0;
@@ -221,7 +226,7 @@ body {
             transform 600ms cubic-bezier(.3, .7, .4, 1);
         }
 
-        .button-signin-edge {
+        .button-register-new-edge {
           position: absolute;
           border: 2px solid black;
           top: 0;
@@ -236,7 +241,7 @@ body {
               rgb(126, 126, 126) 100%);
         }
 
-        .button-signin-front {
+        .button-register-new-front {
           display: block;
           border: 2px solid black;
           position: relative;
@@ -252,7 +257,7 @@ body {
         }
 
         @media (min-width: 768px) {
-          .button-signin-front {
+          .button-register-new-front {
             font-size: 1.25rem;
             padding: 12px 75px;
           }
@@ -263,24 +268,24 @@ body {
           -webkit-filter: brightness(105%);
         }
 
-        &:hover .button-signin-front {
+        &:hover .button-register-new-front {
           transform: translateY(-6px);
           transition:
             transform 250ms cubic-bezier(.3, .7, .4, 1.5);
         }
 
-        &:active .button-signin-front {
+        &:active .button-register-new-front {
           transform: translateY(-2px);
           transition: transform 34ms;
         }
 
-        &:hover .button-signin-shadow {
+        &:hover .button-register-new-shadow {
           transform: translateY(4px);
           transition:
             transform 250ms cubic-bezier(.3, .7, .4, 1.5);
         }
 
-        &:active .button-signin-shadow {
+        &:active .button-register-new-shadow {
           transform: translateY(1px);
           transition: transform 34ms;
         }

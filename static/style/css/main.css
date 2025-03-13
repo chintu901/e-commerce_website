@@ -158,14 +158,18 @@ body {
 #background #box #button .button-signin-pushable:focus:not(:focus-visible) {
   outline: none;
 }
-#background #box #forget_text_chnage_password {
+#background #box #forget_text_change_password {
   font-family: "Inter", sans-serif;
   margin-top: 10px;
+}
+#background #box #login_page_link {
+  font-family: "Inter", sans-serif;
+  margin-top: 15px;
 }
 #background #box #register_new_account_button {
   margin-top: 10px;
 }
-#background #box #register_new_account_button .button-signin-pushable {
+#background #box #register_new_account_button .button-register-new-pushable {
   position: relative;
   border: none;
   background: transparent;
@@ -177,7 +181,7 @@ body {
   -webkit-user-select: none;
   touch-action: manipulation;
 }
-#background #box #register_new_account_button .button-signin-pushable .button-signin-shadow {
+#background #box #register_new_account_button .button-register-new-pushable .button-register-new-shadow {
   position: absolute;
   top: 0;
   left: 0;
@@ -189,7 +193,7 @@ body {
   transform: translateY(2px);
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
-#background #box #register_new_account_button .button-signin-pushable .button-signin-edge {
+#background #box #register_new_account_button .button-register-new-pushable .button-register-new-edge {
   position: absolute;
   border: 2px solid black;
   top: 0;
@@ -199,7 +203,7 @@ body {
   border-radius: 12px;
   background: linear-gradient(to left, rgb(126, 126, 126) 0%, rgb(170, 170, 170) 8%, rgb(170, 170, 170) 92%, rgb(126, 126, 126) 100%);
 }
-#background #box #register_new_account_button .button-signin-pushable .button-signin-front {
+#background #box #register_new_account_button .button-register-new-pushable .button-register-new-front {
   display: block;
   border: 2px solid black;
   position: relative;
@@ -213,32 +217,32 @@ body {
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
 @media (min-width: 768px) {
-  #background #box #register_new_account_button .button-signin-pushable .button-signin-front {
+  #background #box #register_new_account_button .button-register-new-pushable .button-register-new-front {
     font-size: 1.25rem;
     padding: 12px 75px;
   }
 }
-#background #box #register_new_account_button .button-signin-pushable:hover {
+#background #box #register_new_account_button .button-register-new-pushable:hover {
   filter: brightness(105%);
   -webkit-filter: brightness(105%);
 }
-#background #box #register_new_account_button .button-signin-pushable:hover .button-signin-front {
+#background #box #register_new_account_button .button-register-new-pushable:hover .button-register-new-front {
   transform: translateY(-6px);
   transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
-#background #box #register_new_account_button .button-signin-pushable:active .button-signin-front {
+#background #box #register_new_account_button .button-register-new-pushable:active .button-register-new-front {
   transform: translateY(-2px);
   transition: transform 34ms;
 }
-#background #box #register_new_account_button .button-signin-pushable:hover .button-signin-shadow {
+#background #box #register_new_account_button .button-register-new-pushable:hover .button-register-new-shadow {
   transform: translateY(4px);
   transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
-#background #box #register_new_account_button .button-signin-pushable:active .button-signin-shadow {
+#background #box #register_new_account_button .button-register-new-pushable:active .button-register-new-shadow {
   transform: translateY(1px);
   transition: transform 34ms;
 }
-#background #box #register_new_account_button .button-signin-pushable:focus:not(:focus-visible) {
+#background #box #register_new_account_button .button-register-new-pushable:focus:not(:focus-visible) {
   outline: none;
 }
 #background #box #register_button {
