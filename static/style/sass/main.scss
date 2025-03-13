@@ -18,12 +18,15 @@
   src: url("../../font/Klick Regular.ttf");
 }
 
+body {
+  background-color: #06543C;
+}
+
 #background {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: white;
 
   #box {
     display: flex;
@@ -37,7 +40,7 @@
     border-radius: 5px;
     padding: 20px;
     box-sizing: border-box;
-    filter: drop-shadow(2px 2px 5px #555);
+    filter: drop-shadow(2px 2px 5px #131313);
 
     #signin_signup_input_box {
       display: grid;
