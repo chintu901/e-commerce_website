@@ -19,7 +19,7 @@
 }
 
 body {
-  background-color: #06543C;
+  background: linear-gradient(to bottom, #0DBA85, #06543C);
 }
 
 #background {
@@ -43,7 +43,7 @@ body {
     filter: drop-shadow(2px 2px 5px #131313);
 
     #forgot_password_logo {
-      
+
       img {
         width: 100px;
       }

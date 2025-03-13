@@ -15,7 +15,7 @@
   src: url("../../font/Klick Regular.ttf");
 }
 body {
-  background-color: #06543C;
+  background: linear-gradient(to bottom, #0DBA85, #06543C);
 }
 
 #background {
