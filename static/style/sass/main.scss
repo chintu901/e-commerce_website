@@ -192,7 +192,7 @@ body {
       margin-top: 10px;
     }
 
-    #register_button {
+    #register_new_account_button {
       margin-top: 10px;
 
       .button-signin-pushable {
@@ -281,6 +281,105 @@ body {
         }
 
         &:active .button-signin-shadow {
+          transform: translateY(1px);
+          transition: transform 34ms;
+        }
+
+        &:focus:not(:focus-visible) {
+          outline: none;
+        }
+      }
+    }
+
+    #register_button {
+      margin-top: 20px;
+
+      .button-register-pushable {
+        position: relative;
+        border: none;
+        background: transparent;
+        padding: 0;
+        cursor: pointer;
+        outline-offset: 4px;
+        transition: filter 250ms;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+
+        .button-register-shadow {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 12px;
+          background: hsla(0, 0%, 0%, 0.399);
+          will-change: transform;
+          transform: translateY(2px);
+          transition:
+            transform 600ms cubic-bezier(.3, .7, .4, 1);
+        }
+
+        .button-register-edge {
+          position: absolute;
+          border: 2px solid rgb(0, 0, 0);
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 12px;
+          background: linear-gradient(to left,
+              rgb(16, 16, 16) 0%,
+              rgb(29, 29, 29) 8%,
+              rgb(29, 29, 29) 92%,
+              rgb(16, 16, 16) 100%);
+        }
+
+        .button-register-front {
+          display: block;
+          position: relative;
+          padding: 12px 37px;
+          border-radius: 12px;
+          font-size: 1.1rem;
+          color: white;
+          background: rgb(57, 57, 57);
+          will-change: transform;
+          transform: translateY(-4px);
+          transition:
+            transform 600ms cubic-bezier(.3, .7, .4, 1);
+        }
+
+        @media (min-width: 768px) {
+          .button-register-front {
+            border: 2px solid rgb(0, 0, 0);
+            font-size: 1.25rem;
+            padding: 12px 140px;
+          }
+        }
+
+        &:hover {
+          filter: brightness(110%);
+          -webkit-filter: brightness(110%);
+        }
+
+        &:hover .button-register-front {
+          transform: translateY(-6px);
+          transition:
+            transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+        }
+
+        &:active .button-register-front {
+          transform: translateY(-2px);
+          transition: transform 34ms;
+        }
+
+        &:hover .button-register-shadow {
+          transform: translateY(4px);
+          transition:
+            transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+        }
+
+        &:active .button-register-shadow {
           transform: translateY(1px);
           transition: transform 34ms;
         }
