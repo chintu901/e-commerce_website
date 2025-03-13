@@ -38,6 +38,12 @@ body {
   box-sizing: border-box;
   filter: drop-shadow(2px 2px 5px #131313);
 }
+#background #box #forgot_password_logo img {
+  width: 100px;
+}
+#background #box #forgot_password_text {
+  margin-bottom: 20px;
+}
 #background #box #signin_signup_input_box {
   display: grid;
   font-family: "Inter", sans-serif;

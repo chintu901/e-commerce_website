@@ -42,6 +42,17 @@ body {
     box-sizing: border-box;
     filter: drop-shadow(2px 2px 5px #131313);
 
+    #forgot_password_logo {
+      
+      img {
+        width: 100px;
+      }
+    }
+
+    #forgot_password_text {
+      margin-bottom: 20px;
+    }
+
     #signin_signup_input_box {
       display: grid;
       font-family: 'Inter', sans-serif;
