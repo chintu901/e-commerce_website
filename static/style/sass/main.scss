@@ -20,13 +20,74 @@
 
 body {
   background: linear-gradient(to bottom, #0DBA85, #06543C);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+
+  /* Styling for the side images */
+.side-image {
+  position: absolute;
+  width: 250px; /* Adjust size as needed */
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.left {
+  left: 10%; /* Adjust spacing */
+}
+
+.right {
+  right: 10%; /* Adjust spacing */
+}
+
+.side-image-angle {
+  position: absolute;
+  width: 350px; /* Adjust size as needed */
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.left-2 {
+  left: 5%; /* Adjust spacing */
+}
+
+.right-2 {
+  right: 5%; /* Adjust spacing */
+}
+
+.side_ontop_image {
+  position: absolute;
+  width: 150px; /* Adjust size as needed */
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.bottom-left{
+  top: 83%;
+  left: 31%;
+}
+
+.top-right {
+  top: 16%;
+  right: 32%;
+}
+
 }
 
 #background {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  position: relative;
+  width: 100%;
 
   #box {
     display: flex;
