@@ -91,17 +91,36 @@ body {
 
   #box {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 400px;
-    height: 500px;
-    font-family: 'Inter', sans-serif;
-    background-color: rgb(250, 250, 250);
-    border-radius: 5px;
-    padding: 20px;
-    box-sizing: border-box;
-    filter: drop-shadow(2px 2px 5px #131313);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 500px;
+  font-family: 'Inter', sans-serif;
+  background-color: rgb(250, 250, 250);
+  border-radius: 5px;
+  padding: 20px;
+  box-sizing: border-box;
+  filter: drop-shadow(2px 2px 5px #131313);
+  position: relative; /* Ensure it remains structured */
+
+    /* Hide step2 initially */
+    #step2 {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+      width: 100%;  /* Match box width */
+      box-sizing: border-box; /* Ensure padding doesn’t affect size */
+    }
+
+    /* When step2 is active */
+    #step2.active {
+      display: flex; /* Keep the layout intact */
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+    }
 
     #forgot_password_logo {
 
@@ -114,7 +133,7 @@ body {
       margin-bottom: 20px;
     }
 
-    #signin_signup_input_box {
+    .signin_signup_input_box {
       display: grid;
       font-family: 'Inter', sans-serif;
       gap: 10px;
@@ -465,6 +484,109 @@ body {
           outline: none;
         }
       }
+    }
+
+    #reset_password_button {
+      margin-top: 20px;
+
+      .button-reset-pushable {
+        position: relative;
+        border: none;
+        background: transparent;
+        padding: 0;
+        cursor: pointer;
+        outline-offset: 4px;
+        transition: filter 250ms;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+
+        .button-reset-shadow {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 12px;
+          background: hsla(0, 0%, 0%, 0.399);
+          will-change: transform;
+          transform: translateY(2px);
+          transition:
+            transform 600ms cubic-bezier(.3, .7, .4, 1);
+        }
+
+        .button-reset-edge {
+          position: absolute;
+          border: 2px solid rgb(0, 0, 0);
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 12px;
+          background: linear-gradient(to left,
+              rgb(16, 16, 16) 0%,
+              rgb(29, 29, 29) 8%,
+              rgb(29, 29, 29) 92%,
+              rgb(16, 16, 16) 100%);
+        }
+
+        .button-reset-front {
+          display: block;
+          position: relative;
+          padding: 12px 37px;
+          border-radius: 12px;
+          font-size: 1.1rem;
+          color: white;
+          background: rgb(57, 57, 57);
+          will-change: transform;
+          transform: translateY(-4px);
+          transition:
+            transform 600ms cubic-bezier(.3, .7, .4, 1);
+        }
+
+        @media (min-width: 768px) {
+          .button-reset-front {
+            border: 2px solid rgb(0, 0, 0);
+            font-size: 1.25rem;
+            padding: 12px 103px;
+          }
+        }
+
+        &:hover {
+          filter: brightness(110%);
+          -webkit-filter: brightness(110%);
+        }
+
+        &:hover .button-reset-front {
+          transform: translateY(-6px);
+          transition:
+            transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+        }
+
+        &:active .button-reset-front {
+          transform: translateY(-2px);
+          transition: transform 34ms;
+        }
+
+        &:hover .button-reset-shadow {
+          transform: translateY(4px);
+          transition:
+            transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+        }
+
+        &:active .button-reset-shadow {
+          transform: translateY(1px);
+          transition: transform 34ms;
+        }
+
+        &:focus:not(:focus-visible) {
+          outline: none;
+        }
+      }
+    }
+
+    img {
+      width: 100px;
     }
   }
 }
