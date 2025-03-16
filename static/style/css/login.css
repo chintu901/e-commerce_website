@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: thin_text;
   src: url("../../font/RaelaGrotesque-Thin.ttf");
@@ -97,22 +96,16 @@ body .top-right {
   box-sizing: border-box;
   filter: drop-shadow(2px 2px 5px #131313);
   position: relative;
-  /* Ensure it remains structured */
-  /* Hide step2 initially */
-  /* When step2 is active */
 }
 #background #box #step2 {
   display: none;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
   width: 100%;
-  /* Match box width */
   box-sizing: border-box;
-  /* Ensure padding doesn’t affect size */
 }
 #background #box #step2.active {
   display: flex;
-  /* Keep the layout intact */
   flex-direction: column;
   align-items: center;
   justify-content: center;
