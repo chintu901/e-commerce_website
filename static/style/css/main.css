@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+.navbar .tagline {
+  margin-left: 20px;
+  font-size: 14px;
+}
+.navbar .menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+.navbar .menu li {
+  position: relative;
+  margin-left: 20px;
+}
+.navbar .menu li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+.navbar .menu li.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 160px;
+  z-index: 1;
+}
+.navbar .menu li.dropdown .dropdown-content li {
+  padding: 10px;
+}
+.navbar .menu li.dropdown .dropdown-content li a {
+  color: white;
+}
+.navbar .menu li.dropdown:hover .dropdown-content {
+  display: block;
+}
+.navbar .icons {
+  display: flex;
+  align-items: center;
+}
+.navbar .icons .icon {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=main.css.map */

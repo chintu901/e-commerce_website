@@ -1,0 +1,81 @@
+// Variables for colors and spacing
+$primary-color: black;
+$text-color: white;
+$font-family: Arial, sans-serif;
+$spacing: 10px;
+$menu-spacing: 20px;
+
+body {
+  margin: 0;
+  font-family: $font-family;
+}
+
+.navbar {
+  background-color: $primary-color;
+  color: $text-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing * 1 $spacing * 2;
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .tagline {
+    margin-left: $menu-spacing;
+    font-size: 14px;
+  }
+
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+
+    li {
+      position: relative;
+      margin-left: $menu-spacing;
+
+      a {
+        text-decoration: none;
+        color: $text-color;
+        font-weight: bold;
+      }
+
+      &.dropdown {
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: $primary-color;
+          min-width: 160px;
+          z-index: 1;
+
+          li {
+            padding: $spacing;
+
+            a {
+              color: $text-color;
+            }
+          }
+        }
+
+        &:hover .dropdown-content {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
+
+    .icon {
+      margin-left: $menu-spacing;
+      color: $text-color;
+      text-decoration: none;
+    }
+  }
+}
