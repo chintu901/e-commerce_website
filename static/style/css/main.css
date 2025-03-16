@@ -340,13 +340,13 @@ body .top-right {
 }
 @media (min-width: 768px) {
   #background #box #register_new_account_button .button-pushable .button-front {
-    padding: 12px 76px;
+    padding: 12px 78px;
   }
 }
 #background #box #register_button {
   margin-top: 20px;
 }
-#background #box #register_button .button-register-pushable {
+#background #box #register_button .button-pushable {
   position: relative;
   border: none;
   background: transparent;
@@ -358,7 +358,7 @@ body .top-right {
   -webkit-user-select: none;
   touch-action: manipulation;
 }
-#background #box #register_button .button-register-pushable .button-register-shadow {
+#background #box #register_button .button-pushable .button-shadow {
   position: absolute;
   top: 0;
   left: 0;
@@ -370,7 +370,7 @@ body .top-right {
   transform: translateY(2px);
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
-#background #box #register_button .button-register-pushable .button-register-edge {
+#background #box #register_button .button-pushable .button-edge {
   position: absolute;
   border: 2px solid rgb(0, 0, 0);
   top: 0;
@@ -380,7 +380,7 @@ body .top-right {
   border-radius: 12px;
   background: linear-gradient(to left, rgb(16, 16, 16) 0%, rgb(29, 29, 29) 8%, rgb(29, 29, 29) 92%, rgb(16, 16, 16) 100%);
 }
-#background #box #register_button .button-register-pushable .button-register-front {
+#background #box #register_button .button-pushable .button-front {
   display: block;
   position: relative;
   padding: 12px 37px;
@@ -393,39 +393,44 @@ body .top-right {
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
 @media (min-width: 768px) {
-  #background #box #register_button .button-register-pushable .button-register-front {
+  #background #box #register_button .button-pushable .button-front {
     border: 2px solid rgb(0, 0, 0);
     font-size: 1.25rem;
-    padding: 12px 140px;
+    padding: 12px 153px;
   }
 }
-#background #box #register_button .button-register-pushable:hover {
+#background #box #register_button .button-pushable:hover {
   filter: brightness(110%);
   -webkit-filter: brightness(110%);
 }
-#background #box #register_button .button-register-pushable:hover .button-register-front {
+#background #box #register_button .button-pushable:hover .button-front {
   transform: translateY(-6px);
   transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
-#background #box #register_button .button-register-pushable:active .button-register-front {
+#background #box #register_button .button-pushable:active .button-front {
   transform: translateY(-2px);
   transition: transform 34ms;
 }
-#background #box #register_button .button-register-pushable:hover .button-register-shadow {
+#background #box #register_button .button-pushable:hover .button-shadow {
   transform: translateY(4px);
   transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
-#background #box #register_button .button-register-pushable:active .button-register-shadow {
+#background #box #register_button .button-pushable:active .button-shadow {
   transform: translateY(1px);
   transition: transform 34ms;
 }
-#background #box #register_button .button-register-pushable:focus:not(:focus-visible) {
+#background #box #register_button .button-pushable:focus:not(:focus-visible) {
   outline: none;
+}
+@media (min-width: 768px) {
+  #background #box #register_button .button-pushable .button-front {
+    padding: 12px 139px;
+  }
 }
 #background #box #reset_password_button {
   margin-top: 20px;
 }
-#background #box #reset_password_button .button-reset-pushable {
+#background #box #reset_password_button .button-pushable {
   position: relative;
   border: none;
   background: transparent;
@@ -437,7 +442,7 @@ body .top-right {
   -webkit-user-select: none;
   touch-action: manipulation;
 }
-#background #box #reset_password_button .button-reset-pushable .button-reset-shadow {
+#background #box #reset_password_button .button-pushable .button-shadow {
   position: absolute;
   top: 0;
   left: 0;
@@ -449,7 +454,7 @@ body .top-right {
   transform: translateY(2px);
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
-#background #box #reset_password_button .button-reset-pushable .button-reset-edge {
+#background #box #reset_password_button .button-pushable .button-edge {
   position: absolute;
   border: 2px solid rgb(0, 0, 0);
   top: 0;
@@ -459,7 +464,7 @@ body .top-right {
   border-radius: 12px;
   background: linear-gradient(to left, rgb(16, 16, 16) 0%, rgb(29, 29, 29) 8%, rgb(29, 29, 29) 92%, rgb(16, 16, 16) 100%);
 }
-#background #box #reset_password_button .button-reset-pushable .button-reset-front {
+#background #box #reset_password_button .button-pushable .button-front {
   display: block;
   position: relative;
   padding: 12px 37px;
@@ -472,39 +477,44 @@ body .top-right {
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
 @media (min-width: 768px) {
-  #background #box #reset_password_button .button-reset-pushable .button-reset-front {
+  #background #box #reset_password_button .button-pushable .button-front {
     border: 2px solid rgb(0, 0, 0);
     font-size: 1.25rem;
-    padding: 12px 103px;
+    padding: 12px 153px;
   }
 }
-#background #box #reset_password_button .button-reset-pushable:hover {
+#background #box #reset_password_button .button-pushable:hover {
   filter: brightness(110%);
   -webkit-filter: brightness(110%);
 }
-#background #box #reset_password_button .button-reset-pushable:hover .button-reset-front {
+#background #box #reset_password_button .button-pushable:hover .button-front {
   transform: translateY(-6px);
   transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
-#background #box #reset_password_button .button-reset-pushable:active .button-reset-front {
+#background #box #reset_password_button .button-pushable:active .button-front {
   transform: translateY(-2px);
   transition: transform 34ms;
 }
-#background #box #reset_password_button .button-reset-pushable:hover .button-reset-shadow {
+#background #box #reset_password_button .button-pushable:hover .button-shadow {
   transform: translateY(4px);
   transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
-#background #box #reset_password_button .button-reset-pushable:active .button-reset-shadow {
+#background #box #reset_password_button .button-pushable:active .button-shadow {
   transform: translateY(1px);
   transition: transform 34ms;
 }
-#background #box #reset_password_button .button-reset-pushable:focus:not(:focus-visible) {
+#background #box #reset_password_button .button-pushable:focus:not(:focus-visible) {
   outline: none;
+}
+@media (min-width: 768px) {
+  #background #box #reset_password_button .button-pushable .button-front {
+    padding: 12px 104px;
+  }
 }
 #background #box #next_button {
   margin-top: 20px;
 }
-#background #box #next_button .button-next-pushable {
+#background #box #next_button .button-pushable {
   position: relative;
   border: none;
   background: transparent;
@@ -516,7 +526,7 @@ body .top-right {
   -webkit-user-select: none;
   touch-action: manipulation;
 }
-#background #box #next_button .button-next-pushable .button-next-shadow {
+#background #box #next_button .button-pushable .button-shadow {
   position: absolute;
   top: 0;
   left: 0;
@@ -528,7 +538,7 @@ body .top-right {
   transform: translateY(2px);
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
-#background #box #next_button .button-next-pushable .button-next-edge {
+#background #box #next_button .button-pushable .button-edge {
   position: absolute;
   border: 2px solid rgb(0, 0, 0);
   top: 0;
@@ -538,7 +548,7 @@ body .top-right {
   border-radius: 12px;
   background: linear-gradient(to left, rgb(16, 16, 16) 0%, rgb(29, 29, 29) 8%, rgb(29, 29, 29) 92%, rgb(16, 16, 16) 100%);
 }
-#background #box #next_button .button-next-pushable .button-next-front {
+#background #box #next_button .button-pushable .button-front {
   display: block;
   position: relative;
   padding: 12px 37px;
@@ -551,34 +561,39 @@ body .top-right {
   transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
 @media (min-width: 768px) {
-  #background #box #next_button .button-next-pushable .button-next-front {
+  #background #box #next_button .button-pushable .button-front {
     border: 2px solid rgb(0, 0, 0);
     font-size: 1.25rem;
-    padding: 12px 165px;
+    padding: 12px 153px;
   }
 }
-#background #box #next_button .button-next-pushable:hover {
+#background #box #next_button .button-pushable:hover {
   filter: brightness(110%);
   -webkit-filter: brightness(110%);
 }
-#background #box #next_button .button-next-pushable:hover .button-next-front {
+#background #box #next_button .button-pushable:hover .button-front {
   transform: translateY(-6px);
   transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
-#background #box #next_button .button-next-pushable:active .button-next-front {
+#background #box #next_button .button-pushable:active .button-front {
   transform: translateY(-2px);
   transition: transform 34ms;
 }
-#background #box #next_button .button-next-pushable:hover .button-next-shadow {
+#background #box #next_button .button-pushable:hover .button-shadow {
   transform: translateY(4px);
   transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
-#background #box #next_button .button-next-pushable:active .button-next-shadow {
+#background #box #next_button .button-pushable:active .button-shadow {
   transform: translateY(1px);
   transition: transform 34ms;
 }
-#background #box #next_button .button-next-pushable:focus:not(:focus-visible) {
+#background #box #next_button .button-pushable:focus:not(:focus-visible) {
   outline: none;
+}
+@media (min-width: 768px) {
+  #background #box #next_button .button-pushable .button-front {
+    padding: 12px 159px;
+  }
 }
 #background #box img {
   width: 100px;

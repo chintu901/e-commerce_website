@@ -322,7 +322,7 @@ body {
 
         @media (min-width: 768px) {
           .button-front {
-            padding: 12px 76px; // Adjusted padding
+            padding: 12px 78px; // Adjusted padding
           }
         }
       }
@@ -331,98 +331,13 @@ body {
     #register_button {
       margin-top: 20px;
 
-      .button-register-pushable {
-        position: relative;
-        border: none;
-        background: transparent;
-        padding: 0;
-        cursor: pointer;
-        outline-offset: 4px;
-        transition: filter 250ms;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-
-        .button-register-shadow {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          border-radius: 12px;
-          background: hsla(0, 0%, 0%, 0.399);
-          will-change: transform;
-          transform: translateY(2px);
-          transition:
-            transform 600ms cubic-bezier(.3, .7, .4, 1);
-        }
-
-        .button-register-edge {
-          position: absolute;
-          border: 2px solid rgb(0, 0, 0);
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          border-radius: 12px;
-          background: linear-gradient(to left,
-              rgb(16, 16, 16) 0%,
-              rgb(29, 29, 29) 8%,
-              rgb(29, 29, 29) 92%,
-              rgb(16, 16, 16) 100%);
-        }
-
-        .button-register-front {
-          display: block;
-          position: relative;
-          padding: 12px 37px;
-          border-radius: 12px;
-          font-size: 1.1rem;
-          color: white;
-          background: rgb(57, 57, 57);
-          will-change: transform;
-          transform: translateY(-4px);
-          transition:
-            transform 600ms cubic-bezier(.3, .7, .4, 1);
-        }
+      .button-pushable {
+        @include button-styles;
 
         @media (min-width: 768px) {
-          .button-register-front {
-            border: 2px solid rgb(0, 0, 0);
-            font-size: 1.25rem;
-            padding: 12px 140px;
+          .button-front {
+            padding: 12px 139px;
           }
-        }
-
-        &:hover {
-          filter: brightness(110%);
-          -webkit-filter: brightness(110%);
-        }
-
-        &:hover .button-register-front {
-          transform: translateY(-6px);
-          transition:
-            transform 250ms cubic-bezier(.3, .7, .4, 1.5);
-        }
-
-        &:active .button-register-front {
-          transform: translateY(-2px);
-          transition: transform 34ms;
-        }
-
-        &:hover .button-register-shadow {
-          transform: translateY(4px);
-          transition:
-            transform 250ms cubic-bezier(.3, .7, .4, 1.5);
-        }
-
-        &:active .button-register-shadow {
-          transform: translateY(1px);
-          transition: transform 34ms;
-        }
-
-        &:focus:not(:focus-visible) {
-          outline: none;
         }
       }
     }
@@ -430,98 +345,13 @@ body {
     #reset_password_button {
       margin-top: 20px;
 
-      .button-reset-pushable {
-        position: relative;
-        border: none;
-        background: transparent;
-        padding: 0;
-        cursor: pointer;
-        outline-offset: 4px;
-        transition: filter 250ms;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-
-        .button-reset-shadow {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          border-radius: 12px;
-          background: hsla(0, 0%, 0%, 0.399);
-          will-change: transform;
-          transform: translateY(2px);
-          transition:
-            transform 600ms cubic-bezier(.3, .7, .4, 1);
-        }
-
-        .button-reset-edge {
-          position: absolute;
-          border: 2px solid rgb(0, 0, 0);
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          border-radius: 12px;
-          background: linear-gradient(to left,
-              rgb(16, 16, 16) 0%,
-              rgb(29, 29, 29) 8%,
-              rgb(29, 29, 29) 92%,
-              rgb(16, 16, 16) 100%);
-        }
-
-        .button-reset-front {
-          display: block;
-          position: relative;
-          padding: 12px 37px;
-          border-radius: 12px;
-          font-size: 1.1rem;
-          color: white;
-          background: rgb(57, 57, 57);
-          will-change: transform;
-          transform: translateY(-4px);
-          transition:
-            transform 600ms cubic-bezier(.3, .7, .4, 1);
-        }
+      .button-pushable {
+        @include button-styles;
 
         @media (min-width: 768px) {
-          .button-reset-front {
-            border: 2px solid rgb(0, 0, 0);
-            font-size: 1.25rem;
-            padding: 12px 103px;
+          .button-front {
+            padding: 12px 104px;
           }
-        }
-
-        &:hover {
-          filter: brightness(110%);
-          -webkit-filter: brightness(110%);
-        }
-
-        &:hover .button-reset-front {
-          transform: translateY(-6px);
-          transition:
-            transform 250ms cubic-bezier(.3, .7, .4, 1.5);
-        }
-
-        &:active .button-reset-front {
-          transform: translateY(-2px);
-          transition: transform 34ms;
-        }
-
-        &:hover .button-reset-shadow {
-          transform: translateY(4px);
-          transition:
-            transform 250ms cubic-bezier(.3, .7, .4, 1.5);
-        }
-
-        &:active .button-reset-shadow {
-          transform: translateY(1px);
-          transition: transform 34ms;
-        }
-
-        &:focus:not(:focus-visible) {
-          outline: none;
         }
       }
     }
@@ -529,98 +359,13 @@ body {
     #next_button {
       margin-top: 20px;
 
-      .button-next-pushable {
-        position: relative;
-        border: none;
-        background: transparent;
-        padding: 0;
-        cursor: pointer;
-        outline-offset: 4px;
-        transition: filter 250ms;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-
-        .button-next-shadow {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          border-radius: 12px;
-          background: hsla(0, 0%, 0%, 0.399);
-          will-change: transform;
-          transform: translateY(2px);
-          transition:
-            transform 600ms cubic-bezier(.3, .7, .4, 1);
-        }
-
-        .button-next-edge {
-          position: absolute;
-          border: 2px solid rgb(0, 0, 0);
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          border-radius: 12px;
-          background: linear-gradient(to left,
-              rgb(16, 16, 16) 0%,
-              rgb(29, 29, 29) 8%,
-              rgb(29, 29, 29) 92%,
-              rgb(16, 16, 16) 100%);
-        }
-
-        .button-next-front {
-          display: block;
-          position: relative;
-          padding: 12px 37px;
-          border-radius: 12px;
-          font-size: 1.1rem;
-          color: white;
-          background: rgb(57, 57, 57);
-          will-change: transform;
-          transform: translateY(-4px);
-          transition:
-            transform 600ms cubic-bezier(.3, .7, .4, 1);
-        }
+      .button-pushable {
+        @include button-styles;
 
         @media (min-width: 768px) {
-          .button-next-front {
-            border: 2px solid rgb(0, 0, 0);
-            font-size: 1.25rem;
-            padding: 12px 165px;
+          .button-front {
+            padding: 12px 159px;
           }
-        }
-
-        &:hover {
-          filter: brightness(110%);
-          -webkit-filter: brightness(110%);
-        }
-
-        &:hover .button-next-front {
-          transform: translateY(-6px);
-          transition:
-            transform 250ms cubic-bezier(.3, .7, .4, 1.5);
-        }
-
-        &:active .button-next-front {
-          transform: translateY(-2px);
-          transition: transform 34ms;
-        }
-
-        &:hover .button-next-shadow {
-          transform: translateY(4px);
-          transition:
-            transform 250ms cubic-bezier(.3, .7, .4, 1.5);
-        }
-
-        &:active .button-next-shadow {
-          transform: translateY(1px);
-          transition: transform 34ms;
-        }
-
-        &:focus:not(:focus-visible) {
-          outline: none;
         }
       }
     }
