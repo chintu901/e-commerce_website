@@ -1,32 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Bar</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style/css/main.css') }}">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="logo">AXM</div>
-        <div class="tagline">FREE RETURNS WITHIN 30 DAYS</div>
-        <ul class="menu">
-            <li class="dropdown">
-                <a href="#">SHOP</a>
-                <ul class="dropdown-content">
-                    <li><a href="#">Category 1</a></li>
-                    <li><a href="#">Category 2</a></li>
-                </ul>
-            </li>
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">JOURNAL</a></li>
-            <li><a href="#">CONTACT</a></li>
-        </ul>
-        <div class="icons">
-            <a href="#" class="icon">🔍</a>
-            <a href="#" class="icon">👤</a>
-            <a href="#" class="icon">🛒</a>
+    <head>
+        <meta charset="UTF-8">
+        <title>e-commerce/index_page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style/css/main.css') }}">
+    </head>
+    <body>
+        <div id="main_top_navbar_div_space">
+            <nav class="nav_top_links">
+                <div id="top_left_space">
+                    <div id="top_left_logo_space">
+                        <h1>E-Com</h1>
+                    </div>
+                    <div id="top_left_offer_space">
+                        <h3>free delivery</h3>
+                    </div>
+                </div>
+                <div id="top_right_space">
+                    <div class="links_space_nav shop">
+                        <h3>Shop all</h3>
+                    </div>
+                    <div class="links_space_nav about">
+                        <h3>About</h3>
+                    </div>
+                    <div class="links_space_nav journal">
+                        <h3>Journal</h3>
+                    </div>
+                    <div class="links_space_nav contact">
+                        <h3>Contact</h3>
+                    </div>
+                    <div class="small_links_space_nav search">
+                        <p>🔍</p>
+                    </div>
+                    <div class="small_links_space_nav user">
+                        <p>👤</p>
+                    </div>
+                    <div class="small_links_space_nav cart">
+                        <p>🛒</p>
+                    </div>
+                </div>
+            </nav>
         </div>
-    </nav>
-</body>
+    </body>
 </html>

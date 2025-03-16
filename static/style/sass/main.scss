@@ -1,81 +1,103 @@
-// Variables for colors and spacing
-$primary-color: black;
-$text-color: white;
-$font-family: Arial, sans-serif;
-$spacing: 10px;
-$menu-spacing: 20px;
-
-body {
-  margin: 0;
-  font-family: $font-family;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.navbar {
-  background-color: $primary-color;
-  color: $text-color;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: $spacing * 1 $spacing * 2;
+body{
+    background-color: red;
 
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
+    #main_top_navbar_div_space {
+        display: flex;
+        width: 100vw;
+        height: 60px;
+        background-color: white;
+        
+        .nav_top_links {
+            display: flex;
+            // background-color: aqua;
+            width: 100%;
+            transform: none;
+            transform-origin: 50% 50% 0px;
+            border: 2px solid black;
 
-  .tagline {
-    margin-left: $menu-spacing;
-    font-size: 14px;
-  }
+            #top_left_space {
+                display: flex;
+                width: 60%;
+                height: 100%;
+                // background-color: gray;
 
-  .menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
+                #top_left_logo_space {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 20%;
+                    height: 100%;
+                    // background-color: greenyellow;
 
-    li {
-      position: relative;
-      margin-left: $menu-spacing;
-
-      a {
-        text-decoration: none;
-        color: $text-color;
-        font-weight: bold;
-      }
-
-      &.dropdown {
-        .dropdown-content {
-          display: none;
-          position: absolute;
-          background-color: $primary-color;
-          min-width: 160px;
-          z-index: 1;
-
-          li {
-            padding: $spacing;
-
-            a {
-              color: $text-color;
+                }
+                #top_left_offer_space {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 80%;
+                    height: 100%;
+                    // background-color: rebeccapurple;
+                }
             }
-          }
+
+            #top_right_space {
+                display: flex;
+                width: 40%;
+                height: 100%;
+                // background-color: gray;
+
+                .links_space_nav {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 132px;
+                    height: 100%;
+                    border-left: 2px solid black; // Apply only left border
+                }
+
+                .shop {
+                    // background-color: brown;
+                }
+
+                .about {
+                    // background-color: aquamarine;
+                }
+
+                .journal {
+                    // background-color: blueviolet;
+                }
+
+                .contact {
+                    // background-color: chartreuse;
+                }
+
+                .small_links_space_nav {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 42px;
+                    height: 100%;
+                    border-left: 2px solid black; // Apply only left border
+                }
+
+                .search {
+                    // background-color: brown;
+                }
+
+                .user {
+                    // background-color: aquamarine;
+                }
+
+                .cart {
+                    // background-color: blueviolet;
+                }
+            }
         }
-
-        &:hover .dropdown-content {
-          display: block;
-        }
-      }
     }
-  }
-
-  .icons {
-    display: flex;
-    align-items: center;
-
-    .icon {
-      margin-left: $menu-spacing;
-      color: $text-color;
-      text-decoration: none;
-    }
-  }
 }

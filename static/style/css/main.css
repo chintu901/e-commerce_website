@@ -1,63 +1,64 @@
-body {
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.navbar {
-  background-color: black;
-  color: white;
+body {
+  background-color: red;
+}
+body #main_top_navbar_div_space {
   display: flex;
-  justify-content: space-between;
+  width: 100vw;
+  height: 60px;
+  background-color: white;
+}
+body #main_top_navbar_div_space .nav_top_links {
+  display: flex;
+  width: 100%;
+  transform: none;
+  transform-origin: 50% 50% 0px;
+  border: 2px solid black;
+}
+body #main_top_navbar_div_space .nav_top_links #top_left_space {
+  display: flex;
+  width: 60%;
+  height: 100%;
+}
+body #main_top_navbar_div_space .nav_top_links #top_left_space #top_left_logo_space {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 10px 20px;
+  width: 20%;
+  height: 100%;
 }
-.navbar .logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-.navbar .tagline {
-  margin-left: 20px;
-  font-size: 14px;
-}
-.navbar .menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+body #main_top_navbar_div_space .nav_top_links #top_left_space #top_left_offer_space {
   display: flex;
-}
-.navbar .menu li {
-  position: relative;
-  margin-left: 20px;
-}
-.navbar .menu li a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-}
-.navbar .menu li.dropdown .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: black;
-  min-width: 160px;
-  z-index: 1;
-}
-.navbar .menu li.dropdown .dropdown-content li {
-  padding: 10px;
-}
-.navbar .menu li.dropdown .dropdown-content li a {
-  color: white;
-}
-.navbar .menu li.dropdown:hover .dropdown-content {
-  display: block;
-}
-.navbar .icons {
-  display: flex;
+  justify-content: center;
   align-items: center;
+  width: 80%;
+  height: 100%;
 }
-.navbar .icons .icon {
-  margin-left: 20px;
-  color: white;
-  text-decoration: none;
+body #main_top_navbar_div_space .nav_top_links #top_right_space {
+  display: flex;
+  width: 40%;
+  height: 100%;
+}
+body #main_top_navbar_div_space .nav_top_links #top_right_space .links_space_nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 132px;
+  height: 100%;
+  border-left: 2px solid black;
+}
+body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 100%;
+  border-left: 2px solid black;
 }
 
 /*# sourceMappingURL=main.css.map */
