@@ -18,6 +18,98 @@
   src: url("../../font/Klick Regular.ttf");
 }
 
+    // Mixin for reusable button styles
+    @mixin button-styles {
+      position: relative;
+      border: none;
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+      outline-offset: 4px;
+      transition: filter 250ms;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+
+      .button-shadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        background: hsla(0, 0%, 0%, 0.399);
+        will-change: transform;
+        transform: translateY(2px);
+        transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+      }
+
+      .button-edge {
+        position: absolute;
+        border: 2px solid rgb(0, 0, 0);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        background: linear-gradient(to left,
+            rgb(16, 16, 16) 0%,
+            rgb(29, 29, 29) 8%,
+            rgb(29, 29, 29) 92%,
+            rgb(16, 16, 16) 100%);
+      }
+
+      .button-front {
+        display: block;
+        position: relative;
+        padding: 12px 37px;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        color: white;
+        background: rgb(57, 57, 57);
+        will-change: transform;
+        transform: translateY(-4px);
+        transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
+      }
+
+      @media (min-width: 768px) {
+        .button-front {
+          border: 2px solid rgb(0, 0, 0);
+          font-size: 1.25rem;
+          padding: 12px 153px;
+        }
+      }
+
+      &:hover {
+        filter: brightness(110%);
+        -webkit-filter: brightness(110%);
+      }
+
+      &:hover .button-front {
+        transform: translateY(-6px);
+        transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+      }
+
+      &:active .button-front {
+        transform: translateY(-2px);
+        transition: transform 34ms;
+      }
+
+      &:hover .button-shadow {
+        transform: translateY(4px);
+        transition: transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+      }
+
+      &:active .button-shadow {
+        transform: translateY(1px);
+        transition: transform 34ms;
+      }
+
+      &:focus:not(:focus-visible) {
+        outline: none;
+      }
+    }
+
 body {
   background: linear-gradient(to bottom, #0DBA85, #06543C);
   display: flex;
@@ -27,58 +119,65 @@ body {
   position: relative;
 
   /* Styling for the side images */
-.side-image {
-  position: absolute;
-  width: 250px; /* Adjust size as needed */
-  height: auto;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-}
+  .side-image {
+    position: absolute;
+    width: 250px;
+    /* Adjust size as needed */
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
 
-.left {
-  left: 10%; /* Adjust spacing */
-}
+  .left {
+    left: 10%;
+    /* Adjust spacing */
+  }
 
-.right {
-  right: 10%; /* Adjust spacing */
-}
+  .right {
+    right: 10%;
+    /* Adjust spacing */
+  }
 
-.side-image-angle {
-  position: absolute;
-  width: 350px; /* Adjust size as needed */
-  height: auto;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-}
+  .side-image-angle {
+    position: absolute;
+    width: 350px;
+    /* Adjust size as needed */
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
 
-.left-2 {
-  left: 5%; /* Adjust spacing */
-}
+  .left-2 {
+    left: 5%;
+    /* Adjust spacing */
+  }
 
-.right-2 {
-  right: 5%; /* Adjust spacing */
-}
+  .right-2 {
+    right: 5%;
+    /* Adjust spacing */
+  }
 
-.side_ontop_image {
-  position: absolute;
-  width: 150px; /* Adjust size as needed */
-  height: auto;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-}
+  .side_ontop_image {
+    position: absolute;
+    width: 150px;
+    /* Adjust size as needed */
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
 
-.bottom-left{
-  top: 83%;
-  left: 31%;
-}
+  .bottom-left {
+    top: 83%;
+    left: 31%;
+  }
 
-.top-right {
-  top: 16%;
-  right: 32%;
-}
+  .top-right {
+    top: 16%;
+    right: 32%;
+  }
 
 }
 
@@ -91,31 +190,35 @@ body {
 
   #box {
     display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 400px;
-  height: 500px;
-  font-family: 'Inter', sans-serif;
-  background-color: rgb(250, 250, 250);
-  border-radius: 5px;
-  padding: 20px;
-  box-sizing: border-box;
-  filter: drop-shadow(2px 2px 5px #131313);
-  position: relative; /* Ensure it remains structured */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 500px;
+    font-family: 'Inter', sans-serif;
+    background-color: rgb(250, 250, 250);
+    border-radius: 5px;
+    padding: 20px;
+    box-sizing: border-box;
+    filter: drop-shadow(2px 2px 5px #131313);
+    position: relative;
+    /* Ensure it remains structured */
 
     /* Hide step2 initially */
     #step2 {
       display: none;
       opacity: 0;
       transition: opacity 0.5s ease-in-out;
-      width: 100%;  /* Match box width */
-      box-sizing: border-box; /* Ensure padding doesn’t affect size */
+      width: 100%;
+      /* Match box width */
+      box-sizing: border-box;
+      /* Ensure padding doesn’t affect size */
     }
 
     /* When step2 is active */
     #step2.active {
-      display: flex; /* Keep the layout intact */
+      display: flex;
+      /* Keep the layout intact */
       flex-direction: column;
       align-items: center;
       justify-content: center;
@@ -181,102 +284,12 @@ body {
 
     #button {
       margin-top: 20px;
-
-      .button-signin-pushable {
-        position: relative;
-        border: none;
-        background: transparent;
-        padding: 0;
-        cursor: pointer;
-        outline-offset: 4px;
-        transition: filter 250ms;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-
-        .button-signin-shadow {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          border-radius: 12px;
-          background: hsla(0, 0%, 0%, 0.399);
-          will-change: transform;
-          transform: translateY(2px);
-          transition:
-            transform 600ms cubic-bezier(.3, .7, .4, 1);
-        }
-
-        .button-signin-edge {
-          position: absolute;
-          border: 2px solid rgb(0, 0, 0);
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          border-radius: 12px;
-          background: linear-gradient(to left,
-              rgb(16, 16, 16) 0%,
-              rgb(29, 29, 29) 8%,
-              rgb(29, 29, 29) 92%,
-              rgb(16, 16, 16) 100%);
-        }
-
-        .button-signin-front {
-          display: block;
-          position: relative;
-          padding: 12px 37px;
-          border-radius: 12px;
-          font-size: 1.1rem;
-          color: white;
-          background: rgb(57, 57, 57);
-          will-change: transform;
-          transform: translateY(-4px);
-          transition:
-            transform 600ms cubic-bezier(.3, .7, .4, 1);
-        }
-
-        @media (min-width: 768px) {
-          .button-signin-front {
-            border: 2px solid rgb(0, 0, 0);
-            font-size: 1.25rem;
-            padding: 12px 153px;
-          }
-        }
-
-        &:hover {
-          filter: brightness(110%);
-          -webkit-filter: brightness(110%);
-        }
-
-        &:hover .button-signin-front {
-          transform: translateY(-6px);
-          transition:
-            transform 250ms cubic-bezier(.3, .7, .4, 1.5);
-        }
-
-        &:active .button-signin-front {
-          transform: translateY(-2px);
-          transition: transform 34ms;
-        }
-
-        &:hover .button-signin-shadow {
-          transform: translateY(4px);
-          transition:
-            transform 250ms cubic-bezier(.3, .7, .4, 1.5);
-        }
-
-        &:active .button-signin-shadow {
-          transform: translateY(1px);
-          transition: transform 34ms;
-        }
-
-        &:focus:not(:focus-visible) {
-          outline: none;
-        }
+    
+      .button-pushable {
+        @include button-styles;
       }
     }
+
 
     #forget_text_change_password {
       font-family: 'Inter', sans-serif;
@@ -291,40 +304,10 @@ body {
     #register_new_account_button {
       margin-top: 10px;
 
-      .button-register-new-pushable {
-        position: relative;
-        border: none;
-        background: transparent;
-        padding: 0;
-        cursor: pointer;
-        outline-offset: 4px;
-        transition: filter 250ms;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
+      .button-pushable {
+        @include button-styles;
 
-        .button-register-new-shadow {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          border-radius: 12px;
-          background: hsla(0, 0%, 0%, 0.399);
-          will-change: transform;
-          transform: translateY(2px);
-          transition:
-            transform 600ms cubic-bezier(.3, .7, .4, 1);
-        }
-
-        .button-register-new-edge {
-          position: absolute;
-          border: 2px solid black;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          border-radius: 12px;
+        .button-edge {
           background: linear-gradient(to left,
               rgb(126, 126, 126) 0%,
               rgb(170, 170, 170) 8%,
@@ -332,57 +315,15 @@ body {
               rgb(126, 126, 126) 100%);
         }
 
-        .button-register-new-front {
-          display: block;
-          border: 2px solid black;
-          position: relative;
-          padding: 12px 37px;
-          border-radius: 12px;
-          font-size: 1.1rem;
+        .button-front {
           color: black;
           background: rgb(219, 219, 219);
-          will-change: transform;
-          transform: translateY(-4px);
-          transition:
-            transform 600ms cubic-bezier(.3, .7, .4, 1);
         }
 
         @media (min-width: 768px) {
-          .button-register-new-front {
-            font-size: 1.25rem;
-            padding: 12px 75px;
+          .button-front {
+            padding: 12px 76px; // Adjusted padding
           }
-        }
-
-        &:hover {
-          filter: brightness(105%);
-          -webkit-filter: brightness(105%);
-        }
-
-        &:hover .button-register-new-front {
-          transform: translateY(-6px);
-          transition:
-            transform 250ms cubic-bezier(.3, .7, .4, 1.5);
-        }
-
-        &:active .button-register-new-front {
-          transform: translateY(-2px);
-          transition: transform 34ms;
-        }
-
-        &:hover .button-register-new-shadow {
-          transform: translateY(4px);
-          transition:
-            transform 250ms cubic-bezier(.3, .7, .4, 1.5);
-        }
-
-        &:active .button-register-new-shadow {
-          transform: translateY(1px);
-          transition: transform 34ms;
-        }
-
-        &:focus:not(:focus-visible) {
-          outline: none;
         }
       }
     }
@@ -575,6 +516,105 @@ body {
         }
 
         &:active .button-reset-shadow {
+          transform: translateY(1px);
+          transition: transform 34ms;
+        }
+
+        &:focus:not(:focus-visible) {
+          outline: none;
+        }
+      }
+    }
+
+    #next_button {
+      margin-top: 20px;
+
+      .button-next-pushable {
+        position: relative;
+        border: none;
+        background: transparent;
+        padding: 0;
+        cursor: pointer;
+        outline-offset: 4px;
+        transition: filter 250ms;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+
+        .button-next-shadow {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 12px;
+          background: hsla(0, 0%, 0%, 0.399);
+          will-change: transform;
+          transform: translateY(2px);
+          transition:
+            transform 600ms cubic-bezier(.3, .7, .4, 1);
+        }
+
+        .button-next-edge {
+          position: absolute;
+          border: 2px solid rgb(0, 0, 0);
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: 12px;
+          background: linear-gradient(to left,
+              rgb(16, 16, 16) 0%,
+              rgb(29, 29, 29) 8%,
+              rgb(29, 29, 29) 92%,
+              rgb(16, 16, 16) 100%);
+        }
+
+        .button-next-front {
+          display: block;
+          position: relative;
+          padding: 12px 37px;
+          border-radius: 12px;
+          font-size: 1.1rem;
+          color: white;
+          background: rgb(57, 57, 57);
+          will-change: transform;
+          transform: translateY(-4px);
+          transition:
+            transform 600ms cubic-bezier(.3, .7, .4, 1);
+        }
+
+        @media (min-width: 768px) {
+          .button-next-front {
+            border: 2px solid rgb(0, 0, 0);
+            font-size: 1.25rem;
+            padding: 12px 165px;
+          }
+        }
+
+        &:hover {
+          filter: brightness(110%);
+          -webkit-filter: brightness(110%);
+        }
+
+        &:hover .button-next-front {
+          transform: translateY(-6px);
+          transition:
+            transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+        }
+
+        &:active .button-next-front {
+          transform: translateY(-2px);
+          transition: transform 34ms;
+        }
+
+        &:hover .button-next-shadow {
+          transform: translateY(4px);
+          transition:
+            transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+        }
+
+        &:active .button-next-shadow {
           transform: translateY(1px);
           transition: transform 34ms;
         }

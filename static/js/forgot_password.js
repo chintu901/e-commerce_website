@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".button-signin-pushable").addEventListener("click", function () {
+    document.querySelector(".button-next-pushable").addEventListener("click", function () {
         let username = document.getElementById("username_input_box").value.trim();
         if (username === "") {
             alert("Please enter your username.");
