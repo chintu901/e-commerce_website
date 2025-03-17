@@ -1,3 +1,7 @@
+@font-face {
+  font-family: bolder_text;
+  src: url("../../font/RaelaGrotesque-Black.ttf");
+}
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +15,7 @@ body #main_top_navbar_div_space {
   display: flex;
   width: 100vw;
   height: 60px;
+  font-family: "Inter", sans-serif;
   background-color: white;
 }
 body #main_top_navbar_div_space .nav_top_links {
@@ -59,6 +64,23 @@ body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_spa
   width: 42px;
   height: 100%;
   border-left: 2px solid black;
+}
+body #hero_section {
+  display: flex;
+  width: 100vw;
+  height: 678px;
+  padding: 20px;
+  background-color: gray;
+}
+body #hero_section #main_hero_section_area_left {
+  width: 60%;
+  height: 100%;
+  background-color: aqua;
+}
+body #hero_section #main_hero_section_area_right {
+  width: 40%;
+  height: 100%;
+  background-color: violet;
 }
 
 /*# sourceMappingURL=main.css.map */

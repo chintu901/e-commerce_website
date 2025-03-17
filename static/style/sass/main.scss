@@ -1,3 +1,10 @@
+@font-face {
+    font-family: bolder_text;
+    src: url("../../font/RaelaGrotesque-Black.ttf");
+  }
+
+$font-primary: "Inter", sans-serif;
+
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +18,7 @@ body{
         display: flex;
         width: 100vw;
         height: 60px;
+        font-family: $font-primary;
         background-color: white;
         
         .nav_top_links {
@@ -98,6 +106,25 @@ body{
                     // background-color: blueviolet;
                 }
             }
+        }
+    }
+
+    #hero_section {
+        display: flex;
+        width: 100vw;
+        height: 678px;
+        padding: 20px;
+        background-color: gray;
+
+        #main_hero_section_area_left {
+            width: 60%;
+            height: 100%;
+            background-color: aqua;
+        }
+        #main_hero_section_area_right {
+            width: 40%;
+            height: 100%;
+            background-color: violet;
         }
     }
 }
