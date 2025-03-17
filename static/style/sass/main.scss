@@ -206,9 +206,31 @@ body{
             }
         }
         #main_hero_section_area_right {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            gap: 10px; /* Space between elements */
+            align-items: flex-end; /* Moves children to the bottom */
             width: 40%;
             height: 100%;
             background-color: violet;
-        }
+        
+            .img_right_area {
+                flex: 1; /* Each item takes equal width */
+                height: 120px;
+            }
+        
+            .img_1 {
+                background-color: blue;
+            }
+        
+            .img_2 {
+                background-color: blueviolet;
+            }
+        
+            .img_3 {
+                background-color: brown;
+            }
+        }        
     }
 }

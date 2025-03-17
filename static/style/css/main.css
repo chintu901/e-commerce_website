@@ -144,9 +144,27 @@ body #hero_section #main_hero_section_area_left #info_area_left {
   left: 0;
 }
 body #hero_section #main_hero_section_area_right {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 10px; /* Space between elements */
+  align-items: flex-end; /* Moves children to the bottom */
   width: 40%;
   height: 100%;
   background-color: violet;
+}
+body #hero_section #main_hero_section_area_right .img_right_area {
+  flex: 1; /* Each item takes equal width */
+  height: 120px;
+}
+body #hero_section #main_hero_section_area_right .img_1 {
+  background-color: blue;
+}
+body #hero_section #main_hero_section_area_right .img_2 {
+  background-color: blueviolet;
+}
+body #hero_section #main_hero_section_area_right .img_3 {
+  background-color: brown;
 }
 
 /*# sourceMappingURL=main.css.map */
