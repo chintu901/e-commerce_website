@@ -8,6 +8,26 @@
   box-sizing: border-box;
 }
 
+/* Reusable Button Styles */
+h1 {
+  font-family: bolder_text;
+  font-size: 4rem;
+}
+
+h2 {
+  font-family: bolder_text;
+  font-size: 2.875rem;
+}
+
+h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
 body {
   background-color: red;
 }
@@ -73,9 +93,55 @@ body #hero_section {
   background-color: gray;
 }
 body #hero_section #main_hero_section_area_left {
+  position: relative;
   width: 60%;
   height: 100%;
   background-color: aqua;
+}
+body #hero_section #main_hero_section_area_left .shop_now_top_hero_left {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 140px;
+  height: 50px;
+  border-radius: none;
+  overflow: hidden;
+  background-color: white;
+  color: black;
+  transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+body #hero_section #main_hero_section_area_left .shop_now_top_hero_left div {
+  transform: translateY(0px);
+  width: 100%;
+  transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+body #hero_section #main_hero_section_area_left .shop_now_top_hero_left div span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 0.75em 1.125em;
+}
+body #hero_section #main_hero_section_area_left .shop_now_top_hero_left:hover {
+  background-color: black;
+  color: white;
+}
+body #hero_section #main_hero_section_area_left .shop_now_top_hero_left:hover div {
+  transform: translateY(-50px);
+}
+body #hero_section #main_hero_section_area_left .shop_now_top_hero_left p {
+  font-size: 17px;
+  font-weight: bold;
+}
+body #hero_section #main_hero_section_area_left .shop_now_top_hero_left:active {
+  transform: scale(0.95);
+}
+body #hero_section #main_hero_section_area_left #info_area_left {
+  position: absolute;
+  background-color: yellow;
+  bottom: 0;
+  left: 0;
 }
 body #hero_section #main_hero_section_area_right {
   width: 40%;
