@@ -375,6 +375,8 @@ body{
             }
         
             .img_2 {
+                opacity: 0.7;
+                filter: brightness(70%);
                 background-image: url('../../img/background_img_hero_skyblue_sofa.jpg'); /* Replace with your image path */
                 background-size: cover; /* Ensures the image covers the entire div */
                 background-position: center; /* Centers the image */
@@ -382,6 +384,8 @@ body{
             }
         
             .img_3 {
+                opacity: 0.7;
+                filter: brightness(70%);
                 background-image: url('../../img/sofa-green-living-room-with-copy-space.jpg'); /* Replace with your image path */
                 background-size: cover; /* Ensures the image covers the entire div */
                 background-position: center; /* Centers the image */
