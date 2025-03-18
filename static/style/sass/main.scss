@@ -368,10 +368,15 @@ body{
             .img_1 {
                 opacity: 0.7;
                 filter: brightness(70%);
-                background-image: url('../../img/background_img_hero_blue_sofa.jpg'); /* Replace with your image path */
+                background-image: url('../../img/background_img_hero_blue_sofa.jpg'); 
                 background-size: cover; /* Ensures the image covers the entire div */
                 background-position: center; /* Centers the image */
                 background-repeat: no-repeat; /* Prevents image repetition */
+
+                &:hover {
+                    opacity: 1;
+                    filter: brightness(100%);
+                }
             }
         
             .img_2 {

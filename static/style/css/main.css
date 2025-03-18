@@ -265,10 +265,14 @@ body #hero_section #main_hero_section_area_right .img_right_area {
 body #hero_section #main_hero_section_area_right .img_1 {
   opacity: 0.7;
   filter: brightness(70%);
-  background-image: url("../../img/background_img_hero_blue_sofa.jpg"); /* Replace with your image path */
+  background-image: url("../../img/background_img_hero_blue_sofa.jpg");
   background-size: cover; /* Ensures the image covers the entire div */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents image repetition */
+}
+body #hero_section #main_hero_section_area_right .img_1:hover {
+  opacity: 1;
+  filter: brightness(100%);
 }
 body #hero_section #main_hero_section_area_right .img_2 {
   opacity: 0.7;
