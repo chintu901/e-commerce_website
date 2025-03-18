@@ -12,16 +12,11 @@ $font-primary: "Inter", sans-serif;
 }
 
 /* Common Color Style */
-$Neutral-color-white: #F1F1F1;
+$Neutral-color-white: #f1f1f1;
 $Neutral-color-black: #141414;
-$Primary-color: #06543C;
-$Secondary-color: #656565;
+$Secondary-color: #7b7a7a;
 
 /* Reusable Button Styles */
-$default-bg: white;
-$hover-bg: black;
-$default-text: black;
-$hover-text: white;
 $transition-speed: 0.6s;
 
 @mixin button-style {
@@ -59,7 +54,7 @@ $transition-speed: 0.6s;
     }
   
     &:hover {
-      color: $hover-text;
+      color: $Neutral-color-white;
   
       div {
         transform: translateY(-50px);
@@ -74,7 +69,118 @@ $transition-speed: 0.6s;
     &:active {
       transform: scale(0.95);
     }
-  }
+}
+
+@mixin sliding-hover-icon($text-color, $bg-color, $hover-text-color, $hover-bg-color, $height: 57px) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: $height;
+    overflow: hidden;
+    color: $text-color;
+  
+    div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: transform 0.3s cubic-bezier(.16,1,.3,1), opacity 0.3s cubic-bezier(.16,1,.3,1);
+    }
+
+    div:first-child {
+        background-color: $bg-color;
+        opacity: 1;
+    }
+
+    div:last-child {
+        background-color: #242424;
+        transform: translateY(100%);
+        opacity: 1;
+    }
+
+    &:hover {
+        color: $Neutral-color-white;
+
+        div:first-child {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        div:last-child {
+            transform: translateY(0);
+        }
+    }
+
+    p {
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+@mixin sliding-hover($text-color, $bg-color, $hover-text-color, $hover-bg-color, $height: 57px) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: $height;
+    overflow: hidden;
+    color: $text-color;
+  
+    div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: transform 0.3s cubic-bezier(.16,1,.3,1), opacity 0.3s cubic-bezier(.16,1,.3,1);
+    }
+
+    div:first-child {
+        background-color: $bg-color;
+        opacity: 1;
+    }
+
+    div:last-child {
+        background-color: #242424;
+        transform: translateY(100%);
+        opacity: 1;
+    }
+
+    &:hover {
+        color: $Neutral-color-white;
+
+        div:first-child {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        div:last-child {
+            transform: translateY(0);
+        }
+    }
+
+    p {
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
 
 h1 {
     font-family: bolder_text;
@@ -98,7 +204,6 @@ h1 {
   }  
 
 body{
-    background-color: red;
 
     #main_top_navbar_div_space {
         display: flex;
@@ -152,6 +257,7 @@ body{
                     width: 132px;
                     height: 100%;
                     border-left: 2px solid black; // Apply only left border
+                    @include sliding-hover($Neutral-color-black, $Neutral-color-white, $Neutral-color-black, $Neutral-color-black);
                 }
 
                 .shop {
@@ -177,6 +283,7 @@ body{
                     width: 42px;
                     height: 100%;
                     border-left: 2px solid black; // Apply only left border
+                    @include sliding-hover-icon($Neutral-color-black, $Neutral-color-white, $Neutral-color-black, $Neutral-color-black);
                 }
 
                 .search {
@@ -224,9 +331,21 @@ body{
 
                 #for_button_left {
                     margin-bottom: 10px;
+                }
 
-                    #text_area_left {
-                        margin-top: 10px;
+                #text_area_left {
+                    margin-top: 10px;
+                    
+                    #heading_text_area_left {
+                        h1 {
+                            color: $Neutral-color-white;
+                        }
+                    }
+
+                    #more_info_for_heading_left {
+                        h3 {
+                            color:$Secondary-color;
+                        }
                     }
                 }
             }
@@ -247,15 +366,26 @@ body{
             }
         
             .img_1 {
-                background-color: blue;
+                opacity: 0.7;
+                filter: brightness(70%);
+                background-image: url('../../img/background_img_hero_blue_sofa.jpg'); /* Replace with your image path */
+                background-size: cover; /* Ensures the image covers the entire div */
+                background-position: center; /* Centers the image */
+                background-repeat: no-repeat; /* Prevents image repetition */
             }
         
             .img_2 {
-                background-color: blueviolet;
+                background-image: url('../../img/background_img_hero_skyblue_sofa.jpg'); /* Replace with your image path */
+                background-size: cover; /* Ensures the image covers the entire div */
+                background-position: center; /* Centers the image */
+                background-repeat: no-repeat; /* Prevents image repetition */
             }
         
             .img_3 {
-                background-color: brown;
+                background-image: url('../../img/sofa-green-living-room-with-copy-space.jpg'); /* Replace with your image path */
+                background-size: cover; /* Ensures the image covers the entire div */
+                background-position: center; /* Centers the image */
+                background-repeat: no-repeat; /* Prevents image repetition */
             }
         }        
     }

@@ -31,9 +31,6 @@ p {
   font-weight: bold;
 }
 
-body {
-  background-color: red;
-}
 body #main_top_navbar_div_space {
   display: flex;
   width: 100vw;
@@ -78,6 +75,50 @@ body #main_top_navbar_div_space .nav_top_links #top_right_space .links_space_nav
   width: 132px;
   height: 100%;
   border-left: 2px solid black;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 57px;
+  overflow: hidden;
+  color: #141414;
+}
+body #main_top_navbar_div_space .nav_top_links #top_right_space .links_space_nav div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+body #main_top_navbar_div_space .nav_top_links #top_right_space .links_space_nav div:first-child {
+  background-color: #f1f1f1;
+  opacity: 1;
+}
+body #main_top_navbar_div_space .nav_top_links #top_right_space .links_space_nav div:last-child {
+  background-color: #242424;
+  transform: translateY(100%);
+  opacity: 1;
+}
+body #main_top_navbar_div_space .nav_top_links #top_right_space .links_space_nav:hover {
+  color: #f1f1f1;
+}
+body #main_top_navbar_div_space .nav_top_links #top_right_space .links_space_nav:hover div:first-child {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+body #main_top_navbar_div_space .nav_top_links #top_right_space .links_space_nav:hover div:last-child {
+  transform: translateY(0);
+}
+body #main_top_navbar_div_space .nav_top_links #top_right_space .links_space_nav p {
+  font-size: 17px;
+  font-weight: bold;
+}
+body #main_top_navbar_div_space .nav_top_links #top_right_space .links_space_nav:active {
+  transform: scale(0.95);
 }
 body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav {
   display: flex;
@@ -86,6 +127,50 @@ body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_spa
   width: 42px;
   height: 100%;
   border-left: 2px solid black;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 57px;
+  overflow: hidden;
+  color: #141414;
+}
+body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav div:first-child {
+  background-color: #f1f1f1;
+  opacity: 1;
+}
+body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav div:last-child {
+  background-color: #242424;
+  transform: translateY(100%);
+  opacity: 1;
+}
+body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav:hover {
+  color: #f1f1f1;
+}
+body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav:hover div:first-child {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav:hover div:last-child {
+  transform: translateY(0);
+}
+body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav p {
+  font-size: 17px;
+  font-weight: bold;
+}
+body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav:active {
+  transform: scale(0.95);
 }
 body #hero_section {
   display: flex;
@@ -104,7 +189,7 @@ body #hero_section #main_hero_section_area_left {
   height: 100%;
 }
 body #hero_section #main_hero_section_area_left .shop_now_top_hero_left {
-  border: 2px solid black;
+  border: 2px solid #141414;
   outline: 0;
   display: flex;
   flex-direction: column;
@@ -113,13 +198,13 @@ body #hero_section #main_hero_section_area_left .shop_now_top_hero_left {
   height: 50px;
   border-radius: none;
   overflow: hidden;
-  color: black;
+  color: #141414;
 }
 body #hero_section #main_hero_section_area_left .shop_now_top_hero_left div:nth-child(1) {
-  background-color: white;
+  background-color: #f1f1f1;
 }
 body #hero_section #main_hero_section_area_left .shop_now_top_hero_left div:nth-child(2) {
-  background-color: black;
+  background-color: #141414;
 }
 body #hero_section #main_hero_section_area_left .shop_now_top_hero_left div {
   transform: translateY(0px);
@@ -134,7 +219,7 @@ body #hero_section #main_hero_section_area_left .shop_now_top_hero_left div span
   padding: 0.75em 1.125em;
 }
 body #hero_section #main_hero_section_area_left .shop_now_top_hero_left:hover {
-  color: white;
+  color: #f1f1f1;
 }
 body #hero_section #main_hero_section_area_left .shop_now_top_hero_left:hover div {
   transform: translateY(-50px);
@@ -155,8 +240,14 @@ body #hero_section #main_hero_section_area_left #info_area_left {
 body #hero_section #main_hero_section_area_left #info_area_left #for_button_left {
   margin-bottom: 10px;
 }
-body #hero_section #main_hero_section_area_left #info_area_left #for_button_left #text_area_left {
+body #hero_section #main_hero_section_area_left #info_area_left #text_area_left {
   margin-top: 10px;
+}
+body #hero_section #main_hero_section_area_left #info_area_left #text_area_left #heading_text_area_left h1 {
+  color: #f1f1f1;
+}
+body #hero_section #main_hero_section_area_left #info_area_left #text_area_left #more_info_for_heading_left h3 {
+  color: #7b7a7a;
 }
 body #hero_section #main_hero_section_area_right {
   position: relative;
@@ -172,13 +263,24 @@ body #hero_section #main_hero_section_area_right .img_right_area {
   height: 120px;
 }
 body #hero_section #main_hero_section_area_right .img_1 {
-  background-color: blue;
+  opacity: 0.7;
+  filter: brightness(70%);
+  background-image: url("../../img/background_img_hero_blue_sofa.jpg"); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire div */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents image repetition */
 }
 body #hero_section #main_hero_section_area_right .img_2 {
-  background-color: blueviolet;
+  background-image: url("../../img/background_img_hero_skyblue_sofa.jpg"); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire div */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents image repetition */
 }
 body #hero_section #main_hero_section_area_right .img_3 {
-  background-color: brown;
+  background-image: url("../../img/sofa-green-living-room-with-copy-space.jpg"); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire div */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents image repetition */
 }
 
 /*# sourceMappingURL=main.css.map */
