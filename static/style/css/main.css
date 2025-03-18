@@ -127,50 +127,12 @@ body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_spa
   width: 42px;
   height: 100%;
   border-left: 2px solid black;
-  position: relative;
-  display: flex;
-  flex-direction: column;
   width: 200px;
-  height: 57px;
-  overflow: hidden;
-  color: #141414;
-}
-body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav div {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav div:first-child {
-  background-color: #f1f1f1;
-  opacity: 1;
-}
-body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav div:last-child {
-  background-color: #242424;
-  transform: translateY(100%);
-  opacity: 1;
+  cursor: pointer;
 }
 body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav:hover {
   color: #f1f1f1;
-}
-body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav:hover div:first-child {
-  transform: translateY(-100%);
-  opacity: 0;
-}
-body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav:hover div:last-child {
-  transform: translateY(0);
-}
-body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav p {
-  font-size: 17px;
-  font-weight: bold;
-}
-body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav:active {
-  transform: scale(0.95);
+  background-color: #242424;
 }
 body #hero_section {
   display: flex;
@@ -269,6 +231,7 @@ body #hero_section #main_hero_section_area_right .img_1 {
   background-size: cover; /* Ensures the image covers the entire div */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents image repetition */
+  box-shadow: inset 0px -50px 50px rgba(0, 0, 0, 0.2);
 }
 body #hero_section #main_hero_section_area_right .img_1:hover {
   opacity: 1;
@@ -281,6 +244,11 @@ body #hero_section #main_hero_section_area_right .img_2 {
   background-size: cover; /* Ensures the image covers the entire div */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents image repetition */
+  box-shadow: inset 0px -50px 50px rgba(0, 0, 0, 0.2);
+}
+body #hero_section #main_hero_section_area_right .img_2:hover {
+  opacity: 1;
+  filter: brightness(90%);
 }
 body #hero_section #main_hero_section_area_right .img_3 {
   opacity: 0.7;
@@ -289,6 +257,11 @@ body #hero_section #main_hero_section_area_right .img_3 {
   background-size: cover; /* Ensures the image covers the entire div */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents image repetition */
+  box-shadow: inset 0px -50px 50px rgba(0, 0, 0, 0.2);
+}
+body #hero_section #main_hero_section_area_right .img_3:hover {
+  opacity: 1;
+  filter: brightness(100%);
 }
 
 /*# sourceMappingURL=main.css.map */
