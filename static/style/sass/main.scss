@@ -137,36 +137,33 @@ h1 {
     font-size: 4rem; // ~36px (assuming 1rem = 16px)
   }
   
-  h2 {
+h2 {
     font-family: bolder_text;
     font-size: 2.875rem; // ~30px
   }
   
-  h3 {
+h3 {
     font-family: $font-primary;
     font-size: 24px;
   }
   
-  p {
+p {
     font-family: $font-primary;
     font-size: 17px;
     font-weight: bold;
-  }  
+ }  
 
 body{
     overflow-x: hidden;
-    width: 800px;
-
 
     #main_top_navbar_div_space {
         position: fixed;
-        width: 100vw;
+        width: 100%; // Avoids scrollbar causing overflow
         height: 60px;
         background-color: #F1F1F1;
         z-index: 1000; /* Ensures it stays above other elements */
         
         .nav_top_links {
-            margin-right: 10px;
             display: flex;
             align-items: center;
             width: 100%;
@@ -265,7 +262,7 @@ body{
 
     #hero_section {
         display: flex;
-        width: 100vw;
+        width: calc(100vw - 13px);
         height: 738px;
         padding: 20px;
         background-image: url('../../img/background_img_hero_blue_sofa.jpg'); /* Replace with your image path */
@@ -375,8 +372,8 @@ body{
     }
 
     #product_featuring_area {
-        width: 100vw;
-        min-height: 754px;
+        width: calc(100vw - 13px);
+        min-height: 822px;
         background-color: red;
     }
 }
