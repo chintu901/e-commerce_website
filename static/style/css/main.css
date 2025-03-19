@@ -374,5 +374,32 @@ body #form_journal_explain_area #explore_more_button a {
 body #form_journal_explain_area #explore_more_button a:hover {
   margin-right: 5px;
 }
+body #form_img_info {
+  display: flex;
+  width: 100%;
+  height: 550px;
+  background-color: rgb(133, 51, 153);
+}
+body #form_img_info #rigth_img_area_journal {
+  width: 50%;
+  background-color: khaki;
+}
+body #form_img_info #rigth_info_area_journal {
+  width: 50%;
+  background-color: darkgoldenrod;
+}
+body #last_befor_footer_nav_links {
+  display: flex;
+  width: 100%;
+  height: 350px;
+  background-color: cadetblue;
+  gap: 10px;
+  padding: 5px 5px;
+}
+body #last_befor_footer_nav_links .product_card_bottom {
+  flex: 1;
+  height: 100%;
+  background-color: darkkhaki;
+}
 
 /*# sourceMappingURL=main.css.map */
