@@ -31,14 +31,21 @@ p {
   font-weight: bold;
 }
 
+body {
+  overflow-x: hidden;
+  width: 800px;
+}
 body #main_top_navbar_div_space {
-  display: flex;
+  position: fixed;
   width: 100vw;
   height: 60px;
   background-color: #F1F1F1;
+  z-index: 1000; /* Ensures it stays above other elements */
 }
 body #main_top_navbar_div_space .nav_top_links {
+  margin-right: 10px;
   display: flex;
+  align-items: center;
   width: 100%;
   transform: none;
   transform-origin: 50% 50% 0px;
@@ -125,10 +132,11 @@ body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_spa
   justify-content: center;
   align-items: center;
   width: 42px;
-  height: 100%;
+  height: 57px;
   border-left: 2px solid black;
   width: 200px;
   cursor: pointer;
+  padding: 10px;
 }
 body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav:hover {
   color: #f1f1f1;
@@ -137,7 +145,7 @@ body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_spa
 body #hero_section {
   display: flex;
   width: 100vw;
-  height: 678px;
+  height: 738px;
   padding: 20px;
   background-image: url("../../img/background_img_hero_blue_sofa.jpg"); /* Replace with your image path */
   background-size: cover; /* Ensures the image covers the entire div */
@@ -262,6 +270,11 @@ body #hero_section #main_hero_section_area_right .img_3 {
 body #hero_section #main_hero_section_area_right .img_3:hover {
   opacity: 1;
   filter: brightness(100%);
+}
+body #product_featuring_area {
+  width: 100vw;
+  min-height: 754px;
+  background-color: red;
 }
 
 /*# sourceMappingURL=main.css.map */
