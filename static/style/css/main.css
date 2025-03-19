@@ -269,10 +269,47 @@ body #hero_section #main_hero_section_area_right .img_3:hover {
   opacity: 1;
   filter: brightness(100%);
 }
-body #product_featuring_area {
-  width: calc(100vw - 13px);
-  min-height: 822px;
+body #product_featuring_area_first {
+  display: flex;
+  width: 100%;
+  height: 822px;
   background-color: red;
+}
+body #product_featuring_area_first #product_left_featuring_area_New_Arrivals {
+  width: 40%;
+  height: 100%;
+  background-color: blue;
+}
+body #product_featuring_area_first #product_right_featuring_area {
+  display: grid;
+  width: 60%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;
+  padding: 20px;
+  background-color: goldenrod;
+}
+body #product_featuring_area_first #product_right_featuring_area .product_card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+body #product_featuring_area_first #product_right_featuring_area .product_card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+body #product_featuring_area_first #product_right_featuring_area .product_card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+body #product_featuring_area_first #product_right_featuring_area .product_card p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
 }
 
 /*# sourceMappingURL=main.css.map */
