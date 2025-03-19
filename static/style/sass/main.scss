@@ -516,13 +516,177 @@ body{
         width: 100%;
         height: 350px;
         background-color: cadetblue;
-        gap: 10px;
+        gap: 5px;
         padding: 5px 5px; // Adds 5px space on the left and right edges
     
         .product_card_bottom {
             flex: 1; // Ensures equal width for all cards
             height: 100%;
+            border: 2px solid $Neutral-color-black;
             background-color: darkkhaki;
+        }
+    }
+
+    footer {
+        padding: 20px 0;
+        line-height: 20px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        height: 500px;
+        max-width: calc(100% - 40px);
+        margin: 0 auto;
+    }
+    
+    .footer-content {
+        width: 95%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+    
+        .col-1 {
+            flex-basis: 50%;
+    
+            .logo {
+                width: 80%;
+                margin-bottom: 30px;
+            }
+        }
+    
+        .col-2 {
+            flex-basis: 50%;
+            margin-top: 30px;
+    
+            ul {
+                li {
+                    display: list-item;
+                    font-weight: bold;
+                    list-style-type: circle;
+                    padding-left: 10px;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    font-family: $font-primary;
+                    font-weight: 400;
+    
+                    &:hover {
+                        list-style-type: disc;
+                        padding-left: 20px;
+                        color: #333;
+                    }
+                }
+            }
+        }
+    
+        .col-3 {
+            width: 100%;
+            text-align: end;
+    
+            .sub-btn {
+                display: inline-flex;
+                align-items: center;
+                position: relative;
+                gap: 10px;
+                padding-bottom: 10px;
+    
+                h1 {
+                    cursor: default;
+                    margin: 0;
+                    font-size: 5rem;
+                }
+    
+                i {
+                    font-size: 4rem;
+                    color: #333;
+                    margin-left: 8px;
+                    cursor: pointer;
+                    transition: transform 0.3s ease;
+    
+                    &:hover {
+                        transform: rotate(45deg);
+                    }
+                }
+    
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -3px;
+                    left: 0;
+                    width: 100%;
+                    height: 4px;
+                    background-color: #333;
+                    border-radius: 5px;
+                }
+            }
+        }
+    
+        .col-4 {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+        }
+    }
+    
+    #Company-section {
+        margin: 0 auto;
+    }
+    
+    .footer-bottom {
+        text-align: center;
+    }
+    
+    .section-type {
+        h4 {
+            font-family: $font-primary;
+            cursor: default;
+            margin-bottom: 10px;
+        }
+    
+        ul {
+            li {
+                font-family: $font-primary;
+                font-weight: 400;
+                position: relative;
+                cursor: pointer;
+    
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: #333;
+                    transition: width 0.3s ease;
+                }
+    
+                &:hover::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    
+    #footer-img-div-id {
+        width: 100%;
+        height: 20vh;
+        background-image: url("/static/img/footer-img.jpg");
+        background-color: gray;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: brightness(50%);
+    }
+    
+    .footer-bottom {
+        margin-top: 10px;
+        
+        p {
+            font-weight: 100;
         }
     }
     
