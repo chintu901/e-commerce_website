@@ -402,6 +402,11 @@ body #last_befor_footer_nav_links .product_card_bottom {
   border: 2px solid #141414;
   background-color: darkkhaki;
 }
+body #footer_img_bottom {
+  width: 100%;
+  height: 350px;
+  background-color: violet;
+}
 body footer {
   padding: 20px 0;
   line-height: 20px;
