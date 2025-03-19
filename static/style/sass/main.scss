@@ -371,19 +371,19 @@ body{
         }        
     }
 
-    #product_featuring_area_first {
+    .product_featuring_area {
         display: flex;
         width: 100%;
         height: 822px;
         background-color: red;
     
-        #product_left_featuring_area_New_Arrivals {
+        .product_left_featuring_area_New_Arrivals {
             width: 40%;
             height: 100%;
             background-color: blue;
         }
     
-        #product_right_featuring_area {
+        .product_right_featuring_area {
             display: grid;
             width: 60%;
             grid-template-columns: repeat(2, 1fr); // ✅ 2 columns
