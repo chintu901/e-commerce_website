@@ -378,14 +378,14 @@ body{
         background-color: red;
     
         .product_left_featuring_area_New_Arrivals {
-            width: 40%;
+            width: 38%;
             height: 100%;
             background-color: blue;
         }
     
         .product_right_featuring_area {
             display: grid;
-            width: 60%;
+            width: 62%;
             grid-template-columns: repeat(2, 1fr); // ✅ 2 columns
             grid-template-rows: repeat(2, auto); // ✅ 2 rows
             gap: 20px;
@@ -418,5 +418,79 @@ body{
                 }
             }
         }
-    }    
+    }  
+    
+    #product_category_scroll {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 340px;
+        background-color: red;
+        overflow: hidden; // ✅ Ensures children stay inside
+        gap: 10px;
+
+        .product_category {
+            flex-grow: 0; // ✅ Prevents extra stretching
+            flex-shrink: 1; // ✅ Prevents overflow
+            margin: 0; // ✅ Avoid extra height
+            padding: 0; // ✅ Avoid extra height
+            width: 24.2%;
+            height: 98%;
+            border: 2px solid $Neutral-color-black;
+            background-color: skyblue;
+        }
+    }
+    
+    #form_journal_explain_area {
+        display: flex;
+        width: 100%;
+        height: 160px;
+        margin-top: 50px;
+        background-color: rebeccapurple;
+
+        #main_line {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            height: 100%;
+            background-color: lightcoral;
+
+            #main_line_h1 {
+                color: $Neutral-color-black;
+                background-color: darkcyan;
+            }
+
+            #more_info_for_main_line {
+                color: $Secondary-color;
+                margin-top: 15px;
+                background-color: aqua;
+            }
+        }
+
+        #explore_more_button {
+            position: relative;
+            width: 10%;
+            height: 100%;
+
+            #button_link {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background-color: lawngreen;
+                display: flex;  // Enables gap property
+                align-items: center; // Aligns elements properly
+                padding: 10px;
+            
+            }
+            
+            a {
+                cursor: default;
+
+                &:hover {
+                    margin-right: 5px;
+                }
+            }            
+        }
+    }
 }
