@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.getElementById("main_top_navbar_div_space");
-    const parentDiv = document.querySelector(".product_left_featuring_area_New_Arrivals");
-    const childDiv = document.querySelector(".product_left_featuring_area_New_Arrivals_box");
+    const parentDiv = document.querySelector(".product_right_featuring_area_New_Arrivals_second");
+    const childDiv = document.querySelector(".product_right_featuring_area_New_Arrivals_box_second");
 
     const navbarHeight = navbar.offsetHeight;
-    const gap = 3; // 5px gap between navbar and child box
+    const gap = 1; // 3px gap between navbar and child
 
     window.addEventListener("scroll", function () {
         const scrollY = window.scrollY;
@@ -15,21 +15,18 @@ document.addEventListener("DOMContentLoaded", function () {
         const maxTop = parentBottom - childHeight; // Max scroll limit for child
 
         if (scrollY + navbarHeight >= parentTop - gap) {
-            let newTop = scrollY - parentTop + navbarHeight + gap; // Add the 5px gap
+            let newTop = scrollY - parentTop + navbarHeight + gap; 
 
             if (newTop + childHeight >= parentDiv.offsetHeight) {
-                // Stop at the bottom of the parent
-                childDiv.style.position = "absolute";
-                childDiv.style.top = (parentDiv.offsetHeight - childHeight) + "px";
-            } else {
-                // Move the child box down with scrolling
-                childDiv.style.position = "absolute";
-                childDiv.style.top = newTop + "px";
+                // Stop at the bottom smoothly
+                newTop = parentDiv.offsetHeight - childHeight;
             }
+
+            // Apply smooth movement
+            childDiv.style.transform = `translateY(${newTop}px)`;
         } else {
-            // Reset when scrolling back up
-            childDiv.style.position = "absolute";
-            childDiv.style.top = "0px"; // Reset to initial position
+            // Reset to initial position
+            childDiv.style.transform = "translateY(0px)";
         }
     });
 });
