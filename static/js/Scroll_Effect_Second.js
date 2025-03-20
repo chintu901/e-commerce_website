@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const childDiv = document.querySelector(".product_right_featuring_area_New_Arrivals_box_second");
 
     const navbarHeight = navbar.offsetHeight;
-    const gap = 5; // 1px gap between navbar and child
+    const gap = .5; // 1px gap between navbar and child
 
     window.addEventListener("scroll", function () {
         const scrollY = window.scrollY;

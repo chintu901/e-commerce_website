@@ -43,7 +43,8 @@ body #main_top_navbar_div_space {
   width: 100%;
   height: 60px;
   background-color: #F1F1F1;
-  z-index: 1000; /* Ensures it stays above other elements */
+  z-index: 1000;
+  /* Ensures it stays above other elements */
 }
 body #main_top_navbar_div_space .nav_top_links {
   display: flex;
@@ -149,11 +150,16 @@ body #hero_section {
   width: calc(100vw - 13px);
   height: 738px;
   padding: 20px;
-  background-image: url("../../img/background_img_hero_blue_sofa.jpg"); /* Replace with your image path */
-  background-size: cover; /* Ensures the image covers the entire div */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents image repetition */
-  box-shadow: inset 0px -50px 50px rgba(0, 0, 0, 0.9); /* Dark shadow at the bottom */
+  background-image: url("../../img/background_img_hero_blue_sofa.jpg");
+  /* Replace with your image path */
+  background-size: cover;
+  /* Ensures the image covers the entire div */
+  background-position: center;
+  /* Centers the image */
+  background-repeat: no-repeat;
+  /* Prevents image repetition */
+  box-shadow: inset 0px -50px 50px rgba(0, 0, 0, 0.9);
+  /* Dark shadow at the bottom */
 }
 body #hero_section #main_hero_section_area_left {
   position: relative;
@@ -225,22 +231,28 @@ body #hero_section #main_hero_section_area_right {
   position: relative;
   display: flex;
   flex-direction: row;
-  gap: 10px; /* Space between elements */
-  align-items: flex-end; /* Moves children to the bottom */
+  gap: 10px;
+  /* Space between elements */
+  align-items: flex-end;
+  /* Moves children to the bottom */
   width: 40%;
   height: 100%;
 }
 body #hero_section #main_hero_section_area_right .img_right_area {
-  flex: 1; /* Each item takes equal width */
+  flex: 1;
+  /* Each item takes equal width */
   height: 120px;
 }
 body #hero_section #main_hero_section_area_right .img_1 {
   opacity: 0.7;
   filter: brightness(70%);
   background-image: url("../../img/background_img_hero_blue_sofa.jpg");
-  background-size: cover; /* Ensures the image covers the entire div */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents image repetition */
+  background-size: cover;
+  /* Ensures the image covers the entire div */
+  background-position: center;
+  /* Centers the image */
+  background-repeat: no-repeat;
+  /* Prevents image repetition */
   box-shadow: inset 0px -50px 50px rgba(0, 0, 0, 0.2);
 }
 body #hero_section #main_hero_section_area_right .img_1:hover {
@@ -250,10 +262,14 @@ body #hero_section #main_hero_section_area_right .img_1:hover {
 body #hero_section #main_hero_section_area_right .img_2 {
   opacity: 0.7;
   filter: brightness(70%);
-  background-image: url("../../img/background_img_hero_skyblue_sofa.jpg"); /* Replace with your image path */
-  background-size: cover; /* Ensures the image covers the entire div */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents image repetition */
+  background-image: url("../../img/background_img_hero_skyblue_sofa.jpg");
+  /* Replace with your image path */
+  background-size: cover;
+  /* Ensures the image covers the entire div */
+  background-position: center;
+  /* Centers the image */
+  background-repeat: no-repeat;
+  /* Prevents image repetition */
   box-shadow: inset 0px -50px 50px rgba(0, 0, 0, 0.2);
 }
 body #hero_section #main_hero_section_area_right .img_2:hover {
@@ -263,10 +279,14 @@ body #hero_section #main_hero_section_area_right .img_2:hover {
 body #hero_section #main_hero_section_area_right .img_3 {
   opacity: 0.7;
   filter: brightness(70%);
-  background-image: url("../../img/sofa-green-living-room-with-copy-space.jpg"); /* Replace with your image path */
-  background-size: cover; /* Ensures the image covers the entire div */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents image repetition */
+  background-image: url("../../img/sofa-green-living-room-with-copy-space.jpg");
+  /* Replace with your image path */
+  background-size: cover;
+  /* Ensures the image covers the entire div */
+  background-position: center;
+  /* Centers the image */
+  background-repeat: no-repeat;
+  /* Prevents image repetition */
   box-shadow: inset 0px -50px 50px rgba(0, 0, 0, 0.2);
 }
 body #hero_section #main_hero_section_area_right .img_3:hover {
@@ -278,36 +298,84 @@ body .product_featuring_area {
   justify-content: flex-end;
   width: 100%;
   height: 822px;
-  background-color: red;
 }
 body .product_featuring_area .product_left_featuring_area_New_Arrivals {
   width: 38%;
-  height: 100%; /* Full viewport height */
+  height: 100%;
+  /* Full viewport height */
   padding-top: 5px;
-  background-color: blue;
-  position: relative; /* Allows child to be positioned inside */
+  position: relative;
+  /* Allows child to be positioned inside */
 }
 body .product_featuring_area .product_left_featuring_area_New_Arrivals .product_left_featuring_area_New_Arrivals_box {
   width: 100%;
   height: 420px;
   border: 2px solid black;
-  background-color: rgb(30, 155, 208);
-  position: absolute; /* Enables controlled movement */
-  transition: transform 0.2s ease-out; /* Smooth movement */
+  padding: 20px;
+  background-image: url("../../img/view-room-interior-with-furniture-copy-space.jpg");
+  /* Replace with your image path */
+  background-size: cover;
+  /* Ensures the image covers the entire div */
+  background-position: center;
+  /* Centers the image */
+  background-repeat: no-repeat;
+  /* Prevents image repetition */
+  box-shadow: inset 0px -50px 50px rgba(0, 0, 0, 0.9);
+  /* Dark shadow at the bottom */
+  position: absolute;
+  /* Enables controlled movement */
+  transition: transform 0.2s ease-out;
+  /* Smooth movement */
+}
+body .product_featuring_area .product_left_featuring_area_New_Arrivals .product_left_featuring_area_New_Arrivals_box .button_product_left_featuring_area_New_Arrivals_box {
+  margin-top: 10px;
+}
+body .product_featuring_area .product_left_featuring_area_New_Arrivals .product_left_featuring_area_New_Arrivals_box .button_product_left_featuring_area_New_Arrivals_box .arrow_button_for_links {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  color: #141414;
+  font-family: "Inter", sans-serif;
+  user-select: none;
+}
+body .product_featuring_area .product_left_featuring_area_New_Arrivals .product_left_featuring_area_New_Arrivals_box .button_product_left_featuring_area_New_Arrivals_box .arrow_button_for_links::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: #141414;
+  transition: width 0.3s ease-in-out;
+}
+body .product_featuring_area .product_left_featuring_area_New_Arrivals .product_left_featuring_area_New_Arrivals_box .button_product_left_featuring_area_New_Arrivals_box .arrow_button_for_links:hover::after {
+  width: 100%;
+}
+body .product_featuring_area .product_left_featuring_area_New_Arrivals .product_left_featuring_area_New_Arrivals_box .button_product_left_featuring_area_New_Arrivals_box .arrow_button_for_links i {
+  color: #141414;
+  transition: transform 0.3s ease-in-out;
+}
+body .product_featuring_area .product_left_featuring_area_New_Arrivals .product_left_featuring_area_New_Arrivals_box .button_product_left_featuring_area_New_Arrivals_box .arrow_button_for_links:hover i {
+  transform: rotate(45deg);
+}
+body .product_featuring_area .product_left_featuring_area_New_Arrivals .product_left_featuring_area_New_Arrivals_box .text_product_left_featuring_area_New_Arrivals_box {
+  color: #141414;
 }
 body .product_featuring_area .product_right_featuring_area_New_Arrivals_second {
   width: 38%;
   height: 100%;
   padding-top: 5px;
-  background-color: rgb(0, 106, 162);
-  position: relative; /* Ensure it stays within parent */
+  position: relative;
+  /* Ensure it stays within parent */
 }
 body .product_featuring_area .product_right_featuring_area_New_Arrivals_second .product_right_featuring_area_New_Arrivals_box_second {
   width: 100%;
   height: 420px;
   border: 2px solid black;
-  background-color: rgb(5, 161, 117);
-  position: absolute; /* Allows movement inside parent */
+  position: absolute;
+  /* Allows movement inside parent */
   transition: top 0.2s ease-out;
 }
 body .product_featuring_area .product_right_featuring_area {
@@ -316,8 +384,8 @@ body .product_featuring_area .product_right_featuring_area {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
   gap: 5px;
-  padding: 5px 5px 0 5px; /* Top: 20px, Right: 0px, Bottom: 0px, Left: 20px */
-  background-color: goldenrod;
+  padding: 5px 5px 0 5px;
+  /* Top: 20px, Right: 0px, Bottom: 0px, Left: 20px */
 }
 body .product_featuring_area .product_right_featuring_area .product_card {
   display: flex;
@@ -331,20 +399,17 @@ body .product_featuring_area .product_right_featuring_area .product_card {
 body .product_featuring_area .product_right_featuring_area .product_card .img_area_product_card {
   width: 100%;
   height: 80%;
-  background-color: darkcyan;
 }
 body .product_featuring_area .product_right_featuring_area .product_card .text_area_product_card {
   width: 100%;
   height: 20%;
   border-top: 2px solid #141414;
-  background-color: salmon;
 }
 body .product_featuring_area_second {
   display: flex;
   justify-content: flex-end;
   width: 100%;
   height: 822px;
-  background-color: red;
 }
 body .product_featuring_area_second .product_left_featuring_area {
   display: grid;
@@ -352,8 +417,8 @@ body .product_featuring_area_second .product_left_featuring_area {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
   gap: 5px;
-  padding: 5px 5px 0 5px; /* Top: 20px, Right: 0px, Bottom: 0px, Left: 20px */
-  background-color: goldenrod;
+  padding: 5px 5px 0 5px;
+  /* Top: 20px, Right: 0px, Bottom: 0px, Left: 20px */
 }
 body .product_featuring_area_second .product_left_featuring_area .product_card {
   display: flex;
@@ -367,28 +432,69 @@ body .product_featuring_area_second .product_left_featuring_area .product_card {
 body .product_featuring_area_second .product_left_featuring_area .product_card .img_area_product_card {
   width: 100%;
   height: 80%;
-  background-color: darkcyan;
 }
 body .product_featuring_area_second .product_left_featuring_area .product_card .text_area_product_card {
   width: 100%;
   height: 20%;
   border-top: 2px solid #141414;
-  background-color: salmon;
 }
 body .product_featuring_area_second .product_right_featuring_area_New_Arrivals_second {
   width: 38%;
   height: 100%;
-  padding-top: 5px;
-  background-color: rgb(0, 106, 162);
-  position: relative; /* Ensure it stays within parent */
+  /* Full viewport height */
+  position: relative;
+  /* Allows child to be positioned inside */
 }
 body .product_featuring_area_second .product_right_featuring_area_New_Arrivals_second .product_right_featuring_area_New_Arrivals_box_second {
   width: 100%;
   height: 420px;
+  margin-top: 5px;
+  background-image: url("../../img/minimal-living-room-interior-design-with-leaf-shadow-wall.jpg");
+  /* Replace with your image path */
+  background-size: cover;
+  /* Ensures the image covers the entire div */
+  background-position: center;
+  /* Centers the image */
+  background-repeat: no-repeat;
+  /* Prevents image repetition */
+  padding: 20px;
+  box-shadow: inset 0px -50px 50px rgba(0, 0, 0, 0.9);
+  /* Dark shadow at the bottom */
   border: 2px solid black;
-  background-color: rgb(5, 161, 117);
-  position: absolute; /* Allows movement inside parent */
-  transition: top 0.2s ease-out;
+  position: absolute;
+  /* Enables controlled movement */
+  transition: transform 0.2s ease-out;
+  /* Smooth movement */
+}
+body .product_featuring_area_second .product_right_featuring_area_New_Arrivals_second .product_right_featuring_area_New_Arrivals_box_second .button_product_left_featuring_area_New_Arrivals_box .arrow_button_for_links {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  color: #141414;
+  font-family: "Inter", sans-serif;
+  user-select: none;
+}
+body .product_featuring_area_second .product_right_featuring_area_New_Arrivals_second .product_right_featuring_area_New_Arrivals_box_second .button_product_left_featuring_area_New_Arrivals_box .arrow_button_for_links::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: #141414;
+  transition: width 0.3s ease-in-out;
+}
+body .product_featuring_area_second .product_right_featuring_area_New_Arrivals_second .product_right_featuring_area_New_Arrivals_box_second .button_product_left_featuring_area_New_Arrivals_box .arrow_button_for_links:hover::after {
+  width: 100%;
+}
+body .product_featuring_area_second .product_right_featuring_area_New_Arrivals_second .product_right_featuring_area_New_Arrivals_box_second .button_product_left_featuring_area_New_Arrivals_box .arrow_button_for_links i {
+  color: #141414;
+  transition: transform 0.3s ease-in-out;
+}
+body .product_featuring_area_second .product_right_featuring_area_New_Arrivals_second .product_right_featuring_area_New_Arrivals_box_second .button_product_left_featuring_area_New_Arrivals_box .arrow_button_for_links:hover i {
+  transform: rotate(45deg);
 }
 body #product_category_scroll {
   display: flex;
@@ -396,12 +502,14 @@ body #product_category_scroll {
   align-items: center;
   width: 100%;
   height: 340px;
-  background-color: red;
   overflow: hidden;
   gap: 5px;
-  padding: 0 5px 0 5px; /* Top: 20px, Right: 0px, Bottom: 0px, Left: 20px */
+  padding: 0 5px;
 }
 body #product_category_scroll .product_category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-grow: 0;
   flex-shrink: 1;
   margin: 0;
@@ -409,7 +517,57 @@ body #product_category_scroll .product_category {
   width: 25%;
   height: 98%;
   border: 2px solid #141414;
-  background-color: skyblue;
+  position: relative;
+  overflow: hidden;
+}
+body #product_category_scroll .product_category::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.4s ease-in-out;
+}
+body #product_category_scroll .product_category:hover::before {
+  transform: scale(1.1);
+}
+body #product_category_scroll .product_category .product_category_text {
+  position: relative;
+  z-index: 1;
+  color: #141414;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  transition: opacity 0.3s ease-in-out;
+}
+body #product_category_scroll .product_category .product_category_text:hover {
+  opacity: 1;
+}
+body #product_category_scroll .img1::before {
+  background-image: url("../../img/product_category_scroll/3d-rendering-modern-dining-set-modern-luxury-dining-room.jpg");
+  /* Replace with your image path */
+}
+body #product_category_scroll .img2::before {
+  background-image: url("../../img/product_category_scroll/bed-arrangement-with-fresh-sheets.jpg");
+  /* Replace with your image path */
+}
+body #product_category_scroll .img3::before {
+  background-image: url("../../img/product_category_scroll/modern-styled-entryway.jpg");
+  /* Replace with your image path */
+}
+body #product_category_scroll .img4::before {
+  background-image: url("../../img/product_category_scroll/view-room-interior-with-furniture-copy-space.jpg");
+  /* Replace with your image path */
 }
 body #form_journal_explain_area {
   display: flex;
@@ -478,7 +636,26 @@ body #form_img_info {
 }
 body #form_img_info #rigth_img_area_journal {
   width: 50%;
+  position: relative;
+  overflow: hidden;
   border: 2px solid #141414;
+}
+body #form_img_info #rigth_img_area_journal:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../img/living-room-with-modern-beautiful-decoration.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0px -50px 50px rgba(0, 0, 0, 0.9);
+  transition: transform 0.5s ease-in-out;
+}
+body #form_img_info #rigth_img_area_journal:hover:before {
+  transform: scale(1.2);
 }
 body #form_img_info #rigth_info_area_journal {
   display: flex;
@@ -528,20 +705,51 @@ body #last_befor_footer_nav_links {
   display: flex;
   width: 100%;
   height: 350px;
-  background-color: cadetblue;
   gap: 5px;
   padding: 5px 5px;
 }
 body #last_befor_footer_nav_links .product_card_bottom {
+  display: flex;
+  flex-direction: column;
   flex: 1;
   height: 100%;
   border: 2px solid #141414;
-  background-color: darkkhaki;
+  overflow: hidden;
 }
-body #footer_img_bottom {
+body #last_befor_footer_nav_links .product_card_bottom .product_card_bottom_img {
   width: 100%;
-  height: 350px;
-  background-color: violet;
+  height: 70%;
+  position: relative;
+  overflow: hidden;
+}
+body #last_befor_footer_nav_links .product_card_bottom .product_card_bottom_img:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.5s ease-in-out;
+}
+body #last_befor_footer_nav_links .product_card_bottom .product_card_bottom_img:hover:before {
+  transform: scale(1.2);
+}
+body #last_befor_footer_nav_links .product_card_bottom .img1:before {
+  background-image: url("../../img/3d-rendering-loft-luxury-living-room-with-shelf-near-dining-table.jpg");
+}
+body #last_befor_footer_nav_links .product_card_bottom .img2:before {
+  background-image: url("../../img/close-up-elegant-decoration-house.jpg");
+}
+body #last_befor_footer_nav_links .product_card_bottom .img3:before {
+  background-image: url("../../img/interior-design-with-photoframes-couch.jpg");
+}
+body #last_befor_footer_nav_links .product_card_bottom .product_card_bottom_info {
+  width: 100%;
+  height: 30%;
+  border-top: 2px solid #141414;
 }
 body footer {
   padding: 20px 0;
