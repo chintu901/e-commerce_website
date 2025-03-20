@@ -416,23 +416,19 @@ body #form_journal_explain_area {
   width: 100%;
   height: 160px;
   margin-top: 50px;
-  background-color: rebeccapurple;
 }
 body #form_journal_explain_area #main_line {
   display: flex;
   flex-direction: column;
   width: 90%;
   height: 100%;
-  background-color: lightcoral;
 }
 body #form_journal_explain_area #main_line #main_line_h1 {
   color: #141414;
-  background-color: darkcyan;
 }
 body #form_journal_explain_area #main_line #more_info_for_main_line {
   color: #7b7a7a;
   margin-top: 15px;
-  background-color: aqua;
 }
 body #form_journal_explain_area #explore_more_button {
   position: relative;
@@ -443,16 +439,36 @@ body #form_journal_explain_area #explore_more_button #button_link {
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: lawngreen;
   display: flex;
   align-items: center;
   padding: 10px;
 }
-body #form_journal_explain_area #explore_more_button a {
-  cursor: default;
+body #form_journal_explain_area #explore_more_button .arrow_button_for_links {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
 }
-body #form_journal_explain_area #explore_more_button a:hover {
-  margin-right: 5px;
+body #form_journal_explain_area #explore_more_button .arrow_button_for_links::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease-in-out;
+}
+body #form_journal_explain_area #explore_more_button .arrow_button_for_links:hover::after {
+  width: 100%;
+}
+body #form_journal_explain_area #explore_more_button .arrow_button_for_links i {
+  transition: transform 0.3s ease-in-out;
+}
+body #form_journal_explain_area #explore_more_button .arrow_button_for_links:hover i {
+  transform: rotate(45deg);
 }
 body #form_img_info {
   display: flex;
@@ -462,11 +478,26 @@ body #form_img_info {
 }
 body #form_img_info #rigth_img_area_journal {
   width: 50%;
+  border: 2px solid #141414;
   background-color: khaki;
 }
 body #form_img_info #rigth_info_area_journal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50%;
+  border: 2px solid #141414;
+  border-left: none;
   background-color: darkgoldenrod;
+}
+body #form_img_info #rigth_info_area_journal #box_info_area {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  height: 70%;
+  background-color: salmon;
+  gap: 20px;
 }
 body #last_befor_footer_nav_links {
   display: flex;

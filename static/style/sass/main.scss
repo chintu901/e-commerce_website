@@ -537,24 +537,20 @@ body{
         width: 100%;
         height: 160px;
         margin-top: 50px;
-        background-color: rebeccapurple;
 
         #main_line {
             display: flex;
             flex-direction: column;
             width: 90%;
             height: 100%;
-            background-color: lightcoral;
 
             #main_line_h1 {
                 color: $Neutral-color-black;
-                background-color: darkcyan;
             }
 
             #more_info_for_main_line {
                 color: $Secondary-color;
                 margin-top: 15px;
-                background-color: aqua;
             }
         }
 
@@ -562,26 +558,50 @@ body{
             position: relative;
             width: 10%;
             height: 100%;
-
+        
             #button_link {
                 position: absolute;
                 bottom: 0;
                 left: 0;
-                background-color: lawngreen;
-                display: flex;  // Enables gap property
-                align-items: center; // Aligns elements properly
+                display: flex;
+                align-items: center;
                 padding: 10px;
-            
             }
-            
-            a {
-                cursor: default;
-
-                &:hover {
-                    margin-right: 5px;
+        
+            .arrow_button_for_links {
+                position: relative;
+                text-decoration: none;
+                display: inline-block;
+                cursor: pointer;
+                font-weight: bold;
+                user-select: none;
+        
+                // Hidden underline (initially 0% width)
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: -2px;
+                    width: 0%;
+                    height: 2px;
+                    background-color: black;
+                    transition: width 0.3s ease-in-out;
                 }
-            }            
-        }
+        
+                &:hover::after {
+                    width: 100%;
+                }
+        
+                // Rotate the icon smoothly
+                i {
+                    transition: transform 0.3s ease-in-out; // Ensure transition applies both ways
+                }
+        
+                &:hover i {
+                    transform: rotate(45deg);
+                }
+            }
+        }               
     }
 
     #form_img_info {
@@ -592,12 +612,33 @@ body{
 
         #rigth_img_area_journal {
             width: 50%;
+            border: 2px solid $Neutral-color-black;
             background-color: khaki;
         }
 
         #rigth_info_area_journal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 50%;
+            border: 2px solid $Neutral-color-black;
+            border-left: none;
             background-color: darkgoldenrod;
+
+            #box_info_area {
+                display: flex;
+                justify-content: center;
+                
+                flex-direction: column;
+                width: 80%;
+                height: 70%;
+                background-color: salmon;
+                gap: 20px;
+
+                #box_info_area_heading {
+                    
+                }
+            }
         }
     }
 
