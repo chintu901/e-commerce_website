@@ -380,7 +380,15 @@ body{
         .product_left_featuring_area_New_Arrivals {
             width: 38%;
             height: 100%;
+            padding-top: 5px;
             background-color: blue;
+
+            .product_left_featuring_area_New_Arrivals_box {
+                width: 100%;
+                height: 420px;
+                border: 2px solid $Neutral-color-black;
+                background-color: cadetblue;
+            }
         }
     
         .product_right_featuring_area {
@@ -388,33 +396,30 @@ body{
             width: 62%;
             grid-template-columns: repeat(2, 1fr); // ✅ 2 columns
             grid-template-rows: repeat(2, auto); // ✅ 2 rows
-            gap: 20px;
-            padding: 20px;
+            gap: 5px;
+            padding: 5px 5px 0 5px; /* Top: 20px, Right: 0px, Bottom: 0px, Left: 20px */
             background-color: goldenrod;
     
             .product_card {
+                display: flex;
+                flex-direction: column;
                 background: white;
-                border-radius: 10px;
-                padding: 15px;
+                border: 2px solid $Neutral-color-black;
+                border-radius: none;
                 text-align: center;
-                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
                 width: 100%;
-    
-                img {
+
+                .img_area_product_card {
                     width: 100%;
-                    height: auto;
-                    border-radius: 8px;
+                    height: 80%;
+                    background-color: darkcyan;
                 }
-    
-                h3 {
-                    font-size: 1.2rem;
-                    margin: 10px 0;
-                }
-    
-                p {
-                    font-size: 1rem;
-                    font-weight: bold;
-                    color: #333;
+
+                .text_area_product_card {
+                    width: 100%;
+                    height: 20%;
+                    border-top: 2px solid $Neutral-color-black;
+                    background-color: salmon;
                 }
             }
         }
@@ -428,14 +433,15 @@ body{
         height: 340px;
         background-color: red;
         overflow: hidden; // ✅ Ensures children stay inside
-        gap: 10px;
+        gap: 5px;
+        padding: 0 5px 0 5px; /* Top: 20px, Right: 0px, Bottom: 0px, Left: 20px */
 
         .product_category {
             flex-grow: 0; // ✅ Prevents extra stretching
             flex-shrink: 1; // ✅ Prevents overflow
             margin: 0; // ✅ Avoid extra height
             padding: 0; // ✅ Avoid extra height
-            width: 24.2%;
+            width: 25%;
             height: 98%;
             border: 2px solid $Neutral-color-black;
             background-color: skyblue;
