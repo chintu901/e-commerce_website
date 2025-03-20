@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const childDiv = document.querySelector(".product_right_featuring_area_New_Arrivals_box_second");
 
     const navbarHeight = navbar.offsetHeight;
-    const gap = 1; // 3px gap between navbar and child
+    const gap = 5; // 1px gap between navbar and child
 
     window.addEventListener("scroll", function () {
         const scrollY = window.scrollY;
@@ -12,21 +12,18 @@ document.addEventListener("DOMContentLoaded", function () {
         const parentBottom = parentTop + parentDiv.offsetHeight;
         const childHeight = childDiv.offsetHeight;
 
-        const maxTop = parentBottom - childHeight; // Max scroll limit for child
+        let newTop = scrollY - parentTop + navbarHeight + gap; 
 
-        if (scrollY + navbarHeight >= parentTop - gap) {
-            let newTop = scrollY - parentTop + navbarHeight + gap; 
-
-            if (newTop + childHeight >= parentDiv.offsetHeight) {
-                // Stop at the bottom smoothly
-                newTop = parentDiv.offsetHeight - childHeight;
-            }
-
-            // Apply smooth movement
-            childDiv.style.transform = `translateY(${newTop}px)`;
-        } else {
-            // Reset to initial position
-            childDiv.style.transform = "translateY(0px)";
+        if (newTop <= 0) {
+            // Keep child at the top
+            newTop = 0;
+        } else if (newTop + childHeight >= parentDiv.offsetHeight) {
+            // Keep child inside parent
+            newTop = parentDiv.offsetHeight - childHeight;
         }
+
+        // Apply smooth movement
+        childDiv.style.position = "absolute";
+        childDiv.style.top = newTop + "px";
     });
 });

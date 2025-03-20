@@ -474,12 +474,11 @@ body #form_img_info {
   display: flex;
   width: 100%;
   height: 550px;
-  background-color: rgb(133, 51, 153);
+  margin-top: 5px;
 }
 body #form_img_info #rigth_img_area_journal {
   width: 50%;
   border: 2px solid #141414;
-  background-color: khaki;
 }
 body #form_img_info #rigth_info_area_journal {
   display: flex;
@@ -488,7 +487,6 @@ body #form_img_info #rigth_info_area_journal {
   width: 50%;
   border: 2px solid #141414;
   border-left: none;
-  background-color: darkgoldenrod;
 }
 body #form_img_info #rigth_info_area_journal #box_info_area {
   display: flex;
@@ -496,8 +494,35 @@ body #form_img_info #rigth_info_area_journal #box_info_area {
   flex-direction: column;
   width: 80%;
   height: 70%;
-  background-color: salmon;
   gap: 20px;
+}
+body #form_img_info #rigth_info_area_journal #box_info_area #box_info_area_button .arrow_button_for_links {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  user-select: none;
+}
+body #form_img_info #rigth_info_area_journal #box_info_area #box_info_area_button .arrow_button_for_links::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease-in-out;
+}
+body #form_img_info #rigth_info_area_journal #box_info_area #box_info_area_button .arrow_button_for_links:hover::after {
+  width: 100%;
+}
+body #form_img_info #rigth_info_area_journal #box_info_area #box_info_area_button .arrow_button_for_links i {
+  transition: transform 0.3s ease-in-out;
+}
+body #form_img_info #rigth_info_area_journal #box_info_area #box_info_area_button .arrow_button_for_links:hover i {
+  transform: rotate(45deg);
 }
 body #last_befor_footer_nav_links {
   display: flex;

@@ -608,12 +608,11 @@ body{
         display: flex;
         width: 100%;
         height: 550px;
-        background-color: rgb(133, 51, 153);
+        margin-top: 5px;
 
         #rigth_img_area_journal {
             width: 50%;
             border: 2px solid $Neutral-color-black;
-            background-color: khaki;
         }
 
         #rigth_info_area_journal {
@@ -623,20 +622,52 @@ body{
             width: 50%;
             border: 2px solid $Neutral-color-black;
             border-left: none;
-            background-color: darkgoldenrod;
 
             #box_info_area {
                 display: flex;
                 justify-content: center;
-                
+
                 flex-direction: column;
                 width: 80%;
                 height: 70%;
-                background-color: salmon;
                 gap: 20px;
 
-                #box_info_area_heading {
+                #box_info_area_button {
                     
+                    .arrow_button_for_links {
+                        position: relative;
+                        text-decoration: none;
+                        display: inline-block;
+                        cursor: pointer;
+                        font-weight: bold;
+                        font-family: $font-primary;
+                        user-select: none;
+                
+                        // Hidden underline (initially 0% width)
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            bottom: -2px;
+                            width: 0%;
+                            height: 2px;
+                            background-color: black;
+                            transition: width 0.3s ease-in-out;
+                        }
+                
+                        &:hover::after {
+                            width: 100%;
+                        }
+                
+                        // Rotate the icon smoothly
+                        i {
+                            transition: transform 0.3s ease-in-out; // Ensure transition applies both ways
+                        }
+                
+                        &:hover i {
+                            transform: rotate(45deg);
+                        }
+                    }
                 }
             }
         }
