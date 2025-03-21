@@ -1,52 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>e-commerce/index_page</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <link rel="stylesheet" href="{{ url_for('static', filename='style/css/main.css') }}" media="print" onload="this.media='all'">
-    </head>
-    <body>
-        <div id="main_top_navbar_div_space">
-            <nav class="nav_top_links">
-                <div id="top_left_space">
-                    <div id="top_left_logo_space">
-                        <p>E-Com</p>
-                    </div>
-                    <div id="top_left_offer_space">
-                        <P>20% off with purchases of $200 or more</P>
-                    </div>
-                </div>
-                <div id="top_right_space">
-                    <div class="links_space_nav">
-                        <div><p>SHOP</p></div>
-                        <div><p>SHOP</p></div>
-                    </div>
-                    <div class="links_space_nav">
-                        <div><p>ABOUT</p></div>
-                        <div><p>ABOUT</p></div>
-                    </div>
-                    <div class="links_space_nav">
-                        <div><p>JOURNAL</p></div>
-                        <div><p>JOURNAL</p></div>
-                    </div>
-                    <div class="links_space_nav">
-                        <div><p>CONTACT</p></div>
-                        <div><p>CONTACT</p></div>
-                    </div>
-                    <div class="small_links_space_nav">
-                        <div><p><i class="fa-solid fa-magnifying-glass"></i></p></div>
-                    </div>
-                    <div class="small_links_space_nav">
-                        <div><p><i class="fa-regular fa-user"></i></p></div>
-                    </div>
-                    <div class="small_links_space_nav">
-                        <div><p><i class="fa-solid fa-cart-shopping"></i></p></div>
-                    </div>
-                </div>                
-            </nav>
-        </div>
+{% extends 'layout.html' %}
 
+{% block title %}Furniture_Shop/home_page{% endblock %}
+        
+{% block extra_css %}<link rel="stylesheet" href="{{ url_for('static', filename='style/css/main.css') }}" media="print" onload="this.media='all'">{% endblock %}
+
+
+    {% block content %}
         <div id="hero_section">
             <div id="main_hero_section_area_left">
                 <div id="info_area_left">
@@ -356,65 +315,11 @@
             </div>
         </div>
 
-        <footer>
-            <div class="footer-content">
-                <div class="col-1">
-                    <h1 class="logo">Shoe_Shark</h1>
-                    <p>Stay In The Loop And Never Miss An Update From
-                    Us! Subscribe To Our Newsletter And Be the First
-                    To Receive The Latest News, Exclusive Offers,
-                    Insightful Articles, And Much More.</P>
-                </div>
-                <div class="col-2">
-                    <ul>
-                        <li>Facebook</li>
-                        <li>Google</li>
-                        <li>Instagram</li>
-                        <li>Github</li>
-                    </ul>
-                </div>
-                <div class="col-3">
-                    <div class="sub-btn">
-                        <h1>Subscribe Us</h1>
-                        <i class="fa-solid fa-circle-arrow-up"></i>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="section-type">
-                        <h4>Shop</h4>
-                        <ul>
-                            <li>Men</li>
-                            <li>Women</li>
-                            <li>Kids</li>
-                            <li>Sale</li>
-                        </ul>
-                    </div>
-                    <div class="section-type">
-                        <h4>Company</h4>
-                        <ul>
-                            <li>About</li>
-                            <li>FAQ</li>
-                            <li>Colaboration</li>
-                            <li>Contact</li>
-                        </ul>
-                    </div>
-                    <div class="section-type">
-                        <h4>Legal</h4>
-                        <ul>
-                            <li>Shipping Policy</li>
-                            <li>Returns & Exchanges</li>
-                            <li>Term of Use</li>
-                            <li>Support</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Shoe_Shark. All rights reserved.</p>
-            </div>
-        </footer>
+        {% endblock %}
 
-        <script src="{{ url_for('static', filename='js/Scroll_Effect.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/Scroll_Effect_Second.js') }}"></script>
-    </body>
-</html>
+        {% block extra_js %}
+            <script src="{{ url_for('static', filename='js/Scroll_Effect.js') }}"></script>
+            <script src="{{ url_for('static', filename='js/Scroll_Effect_Second.js') }}"></script>
+        {% endblock %}
+        
+        
