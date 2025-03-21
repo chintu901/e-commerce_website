@@ -3,27 +3,39 @@ document.addEventListener("DOMContentLoaded", function () {
     const parentDiv = document.querySelector(".product_left_featuring_area_New_Arrivals");
     const childDiv = document.querySelector(".product_left_featuring_area_New_Arrivals_box");
 
-    const navbarHeight = navbar.offsetHeight;
-    const gap = 0; // 1px gap between navbar and child
+    if (!navbar || !parentDiv || !childDiv) return; // Prevent errors if elements are missing
 
-    window.addEventListener("scroll", function () {
+    const navbarHeight = navbar.offsetHeight;
+    const gap = 5; // Space between navbar and child
+    let ticking = false; // For requestAnimationFrame optimization
+
+    parentDiv.style.position = "relative"; // Ensure parent is relative for absolute positioning
+
+    function updateChildPosition() {
         const scrollY = window.scrollY;
         const parentTop = parentDiv.offsetTop;
         const parentBottom = parentTop + parentDiv.offsetHeight;
         const childHeight = childDiv.offsetHeight;
 
-        let newTop = scrollY - parentTop + navbarHeight + gap; 
+        let newTop = scrollY - parentTop + navbarHeight + gap;
 
-        if (newTop <= 0) {
-            // Keep child at the top
+        // Prevent child from moving outside parent
+        if (newTop < 0) {
             newTop = 0;
-        } else if (newTop + childHeight >= parentDiv.offsetHeight) {
-            // Keep child inside parent
+        } else if (newTop + childHeight > parentDiv.offsetHeight) {
             newTop = parentDiv.offsetHeight - childHeight;
         }
 
-        // Apply smooth movement
         childDiv.style.position = "absolute";
         childDiv.style.top = newTop + "px";
+
+        ticking = false; // Reset flag after execution
+    }
+
+    window.addEventListener("scroll", function () {
+        if (!ticking) {
+            requestAnimationFrame(updateChildPosition);
+            ticking = true;
+        }
     });
 });
