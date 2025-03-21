@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>e-commerce/index_page</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <link rel="stylesheet" href="{{ url_for('static', filename='style/css/main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style/css/main.css') }}" media="print" onload="this.media='all'">
     </head>
     <body>
         <div id="main_top_navbar_div_space">
@@ -91,7 +91,7 @@
             <div class="product_right_featuring_area">
                 <div class="product_card">
                     <div class="img_area_product_card">
-
+                        <img src="{{ url_for('static', filename='img/sofas/Helios_California/front.jpg') }}" alt="My Image">
                     </div>
                     <div class="text_area_product_card">
 
@@ -99,7 +99,7 @@
                 </div>
                 <div class="product_card">
                     <div class="img_area_product_card">
-                        
+                        <img src="{{ url_for('static', filename='img/sofas/Helios_Hummingbird/front.jpg') }}" alt="My Image">
                     </div>
                     <div class="text_area_product_card">
                         
@@ -107,7 +107,7 @@
                 </div>
                 <div class="product_card">
                     <div class="img_area_product_card">
-                        
+                        <img src="{{ url_for('static', filename='img/sofas/Mojo_NXT/front.jpg') }}" alt="My Image">
                     </div>
                     <div class="text_area_product_card">
                         
@@ -115,7 +115,7 @@
                 </div>
                 <div class="product_card">
                     <div class="img_area_product_card">
-                        
+                        <img src="{{ url_for('static', filename='img/sofas/Winchester_NXT/front.jpg') }}" alt="My Image">
                     </div>
                     <div class="text_area_product_card">
                         
@@ -128,7 +128,7 @@
             <div class="product_left_featuring_area">
                 <div class="product_card">
                     <div class="img_area_product_card">
-                        
+                        <img src="{{ url_for('static', filename='img/Bedroom/Beds/Helios_Reynan/front.jpg') }}" alt="My Image">
                     </div>
                     <div class="text_area_product_card">
                         
@@ -136,7 +136,7 @@
                 </div>
                 <div class="product_card">
                     <div class="img_area_product_card">
-                        
+                        <img src="{{ url_for('static', filename='img/Bedroom/furniture/Wardrobe/Helios_Reynan/front.jpg') }}" alt="My Image">
                     </div>
                     <div class="text_area_product_card">
                         
@@ -144,7 +144,7 @@
                 </div>
                 <div class="product_card">
                     <div class="img_area_product_card">
-                        
+                        <img src="{{ url_for('static', filename='img/Dining Set/Dale_Ceramic/front.jpg') }}" alt="My Image">
                     </div>
                     <div class="text_area_product_card">
                         
@@ -152,7 +152,7 @@
                 </div>
                 <div class="product_card">
                     <div class="img_area_product_card">
-                        
+                        <img src="{{ url_for('static', filename='img/Dining Set/Fern_Living/front.jpg') }}" alt="My Image">
                     </div>
                     <div class="text_area_product_card">
                         
@@ -319,7 +319,7 @@
             </div>
         </footer>
 
-        <script src="{{ url_for('static', filename='js/Scroll_Effect.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/Scroll_Effect_Second.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/Scroll_Effect.js') }}" media="print" onload="this.media='all'"></script>
+        <script src="{{ url_for('static', filename='js/Scroll_Effect_Second.js') }}" media="print" onload="this.media='all'"></script>
     </body>
 </html>
