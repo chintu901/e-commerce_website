@@ -52,4 +52,133 @@ body {
             background-color: salmon;
         }
     }
+
+    #main_contact_matrial_box {
+        display: flex;
+        width: 100%;
+        height: 600px;
+        border: 2px solid $Neutral-color-black;
+        border-top: none;
+
+
+        #left_main_contact_matrial_box {
+            width: 50%;
+            height: 100%;
+            border-right: 2px solid $Neutral-color-black;
+
+
+            #get_in_touch_links {
+                display: flex;
+                width: 100%;
+                height: 50%;
+
+                #section_1 {
+                    display: flex;
+                    flex-direction: column;
+
+                    width: 50%;
+                    height: 100%;
+                    padding: 20px;
+
+                    .set {
+                        margin-top: 20px;
+                    }
+                }
+                #section_2 {
+                    width: 50%;
+                    height: 100%;
+                    padding: 20px;
+                    padding-top: 40px;
+
+                    a {
+                        margin-top: 20px;
+                    }
+
+                    .arrow_button_for_links {
+                        position: relative;
+                        text-decoration: none;
+                        display: inline-block;
+                        cursor: pointer;
+                        font-weight: bold;
+                        font-family: $font-primary;
+                        user-select: none;
+    
+                        // Hidden underline (initially 0% width)
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            left: 0;
+                            bottom: -2px;
+                            width: 0%;
+                            height: 2px;
+                            background-color: $Neutral-color-black;
+                            transition: width 0.3s ease-in-out;
+                        }
+    
+                        &:hover::after {
+                            width: 100%;
+                        }
+    
+                        // Rotate the icon smoothly
+                        i {
+                            transition: transform 0.3s ease-in-out; // Ensure transition applies both ways
+                        }
+    
+                        &:hover i {
+                            transform: rotate(45deg);
+                        }
+                    }
+                }
+            }
+
+            #faq_area_links {
+                width: 100%;
+                height: 50%;
+                padding: 20px;
+
+                #box_for_faq {
+                    width: 100%;
+                    height: 80%;
+                    margin-top: 3px;
+                    border: 2px solid $Neutral-color-black;
+                    border-top: none;
+
+                    .question_area {
+                        display: flex;
+                        width: 100%;
+                        height: 25%;
+                        cursor: pointer;
+                        border-top: 2px solid $Neutral-color-black;
+                        transition: color 0.2s ease-in-out;;
+
+                        &:hover {
+                            color: $Secondary-color;
+                        }
+
+                        .text_area {
+                            display: flex;
+                            align-items: center;
+                            width: 80%;
+                            height: 100%;
+                        }
+
+                        .plus_icon {
+                            display: flex;
+                            align-items: center;
+                            justify-content: end;
+                            padding: 20px;
+                            width: 20%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+        #right_main_contact_matrial_box {
+            width: 50%;
+            height: 100%;
+            background-color: salmon;
+        }
+    }
 }
