@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+
+{% block title %}Furniture_Shop/Journal{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/css/journal.css') }}"> 
+{% endblock %}
+
+{% block content %}
+    <div id="form_img_info">
+        <div id="rigth_img_area_journal">
+
+        </div>
+        <div id="rigth_info_area_journal">
+            <div id="box_info_area">
+                <div id="box_info_area_heading">
+                    <h1 style="font-size: 50px;">The Evolution of Furniture Design</h1>
+                </div>
+                <div id="box_info_area_more_detail">
+                    <p>The world of furniture has transformed over centuries.
+                        What was once purely functional has now become a seamless blend of aesthetics and innovation.
+                        From handcrafted wooden pieces to smart, ergonomic designs, this evolution reflects our desire for both comfort and style.</p>
+                </div>
+                <div id="box_info_area_button">
+                    <a class="arrow_button_for_links">READ MORE <i class="fa-solid fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="redirect_area_journal_nav">
+        <div class="box_redirect_area_journal_nav">
+            <div class="img_box_redirect_area_journal_nav img1">
+
+            </div>
+            <div class="text_box_redirect_area_journal_nav">
+                <div class="heading_text_box_redirect_area_journal_nav">
+                    <h5>Transform Your Space with Elegance</h5>
+                </div>
+                <div class="button_text_box_redirect_area_journal_nav">
+                    <a class="arrow_button_for_links">READ MORE <i class="fa-solid fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box_redirect_area_journal_nav">
+            <div class="img_box_redirect_area_journal_nav img2">
+
+            </div>
+            <div class="text_box_redirect_area_journal_nav">
+                <div class="heading_text_box_redirect_area_journal_nav">
+                    <h5>Furniture That Defines You</h5>
+                </div>
+                <div class="button_text_box_redirect_area_journal_nav">
+                    <a class="arrow_button_for_links">READ MORE <i class="fa-solid fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box_redirect_area_journal_nav">
+            <div class="img_box_redirect_area_journal_nav img3">
+
+            </div>
+            <div class="text_box_redirect_area_journal_nav">
+                <div class="heading_text_box_redirect_area_journal_nav">
+                    <h5>Real Stories, Real Comfort</h5>
+                </div>
+                <div class="button_text_box_redirect_area_journal_nav">
+                    <a class="arrow_button_for_links">READ MORE <i class="fa-solid fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="box_redirect_area_journal_nav">
+            <div class="img_box_redirect_area_journal_nav img4">
+
+            </div>
+            <div class="text_box_redirect_area_journal_nav">
+                <div class="heading_text_box_redirect_area_journal_nav">
+                    <h5>A Greener Home Starts Here</h5>
+                </div>
+                <div class="button_text_box_redirect_area_journal_nav">
+                    <a class="arrow_button_for_links">READ MORE <i class="fa-solid fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

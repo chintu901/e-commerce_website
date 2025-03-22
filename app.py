@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('about_page.html')  
+    return render_template('journal.html')  
 
 @app.route('/registration_page')
 def registration_page():
