@@ -71,7 +71,8 @@ body #main_top_navbar_div_space {
   height: 60px;
   background-color: #F1F1F1;
   z-index: 1000;
-  /* Ensures it stays above other elements */
+  top: 0;
+  left: 0;
 }
 body #main_top_navbar_div_space .nav_top_links {
   display: flex;

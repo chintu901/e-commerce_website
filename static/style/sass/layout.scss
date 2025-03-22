@@ -222,11 +222,12 @@ body {
     
     #main_top_navbar_div_space {
         position: fixed;
-        width: 100%; // Avoids scrollbar causing overflow
+        width: 100%;
         height: 60px;
         background-color: #F1F1F1;
-        z-index: 1000;
-        /* Ensures it stays above other elements */
+        z-index: 1000; // Ensures it stays above other elements
+        top: 0; // Make sure it's always at the top
+        left: 0; // Align to the left edge
 
         .nav_top_links {
             display: flex;
