@@ -68,4 +68,124 @@ body {
             }
         }
     }
+
+    .box_for_about_topics_second {
+        display: flex;
+        width: calc(100vw - 14px);
+        height: 750px;
+        margin-top: 5px;
+        padding: 5px;
+
+        .img_box_for_about_topics {
+            width: 50%;
+            height: 100%;
+            position: relative;
+            overflow: hidden; // Ensures the image stays inside the div
+        
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('../../img/built.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                box-shadow: inset 0px -50px 50px rgba(0, 0, 0, 0.9);
+                transition: transform 0.5s ease-in-out; // Smooth zoom transition
+            }
+        
+            &:hover:before {
+                transform: scale(1.2); // Zoom in effect
+            }
+        }
+        
+        
+
+        .info_box_for_about_topics {
+            width: 50%;
+            height: 100%;
+            background-color: $Second-netural-color-black;
+        }
+
+        .text_area_for_about_topics {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            padding: 100px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            color: $Secondary-color;
+
+            .head_text_area {
+                text-align: left;
+                width: 100%;
+                margin-bottom: 5px;
+                color: $Neutral-color-white;
+            }
+        }
+    }
+
+    .box_for_about_topics_third {
+        display: flex;
+        width: calc(100vw - 14px);
+        height: 750px;
+        margin-top: 5px;
+        padding: 5px;
+
+        .img_box_for_about_topics {
+            width: 50%;
+            height: 100%;
+            position: relative;
+            overflow: hidden; // Ensures the image stays inside the div
+        
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url('../../img/happy_living.jpg');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                box-shadow: inset 0px -50px 50px rgba(0, 0, 0, 0.9);
+                transition: transform 0.5s ease-in-out; // Smooth zoom transition
+            }
+        
+            &:hover:before {
+                transform: scale(1.2); // Zoom in effect
+            }
+        }
+        
+        
+
+        .info_box_for_about_topics {
+            width: 50%;
+            height: 100%;
+            background-color: $Second-netural-color-black;
+        }
+
+        .text_area_for_about_topics {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            padding: 100px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            color: $Secondary-color;
+
+            .head_text_area {
+                text-align: left;
+                width: 100%;
+                margin-bottom: 5px;
+                color: $Neutral-color-white;
+            }
+        }
+    }
 }
