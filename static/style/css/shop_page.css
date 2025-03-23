@@ -29,6 +29,10 @@ body .second_top_category_small_heading .heading_category {
   padding-right: 30px;
   cursor: default;
 }
+body .second_top_category_small_heading .heading_category a {
+  text-decoration: none;
+  color: inherit;
+}
 body .second_top_category_small_heading h5 {
   transition: transform 0.3s ease-in-out;
   transform-origin: center;

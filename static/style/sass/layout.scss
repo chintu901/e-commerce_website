@@ -251,6 +251,11 @@ body {
                     height: 100%;
                     // background-color: greenyellow;
 
+                    a {
+                        text-decoration: none;
+                        color: inherit;
+                    }
+
                 }
 
                 #top_left_offer_space {
@@ -263,21 +268,30 @@ body {
                 }
             }
 
-            #top_right_space {
+            #top_right_space { 
                 display: flex;
                 width: 40%;
                 height: 100%;
                 // background-color: gray;
-
-                .links_space_nav {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 132px;
+            
+                a {
+                    display: flex; // 🔥 Makes <a> behave like a flex container
+                    text-decoration: none;
+                    width: 1050px;
                     height: 100%;
-                    border-left: 2px solid black; // Apply only left border
-                    @include sliding-hover($Neutral-color-black, $Neutral-color-white, $Neutral-color-black, $Neutral-color-black);
+            
+                    .links_space_nav {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100%; // Ensures it fills the <a> completely
+                        height: 100%;
+                        border-left: 2px solid black;
+                        @include sliding-hover($Neutral-color-black, $Neutral-color-white, $Neutral-color-black, $Neutral-color-black);
+                    }
                 }
+
+                
 
                 .shop {
                     // background-color: brown;

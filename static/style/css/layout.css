@@ -94,6 +94,10 @@ body #main_top_navbar_div_space .nav_top_links #top_left_space #top_left_logo_sp
   width: 20%;
   height: 100%;
 }
+body #main_top_navbar_div_space .nav_top_links #top_left_space #top_left_logo_space a {
+  text-decoration: none;
+  color: inherit;
+}
 body #main_top_navbar_div_space .nav_top_links #top_left_space #top_left_offer_space {
   display: flex;
   justify-content: center;
@@ -106,11 +110,17 @@ body #main_top_navbar_div_space .nav_top_links #top_right_space {
   width: 40%;
   height: 100%;
 }
-body #main_top_navbar_div_space .nav_top_links #top_right_space .links_space_nav {
+body #main_top_navbar_div_space .nav_top_links #top_right_space a {
+  display: flex;
+  text-decoration: none;
+  width: 1050px;
+  height: 100%;
+}
+body #main_top_navbar_div_space .nav_top_links #top_right_space a .links_space_nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 132px;
+  width: 100%;
   height: 100%;
   border-left: 2px solid black;
   position: relative;
@@ -121,7 +131,7 @@ body #main_top_navbar_div_space .nav_top_links #top_right_space .links_space_nav
   overflow: hidden;
   color: #141414;
 }
-body #main_top_navbar_div_space .nav_top_links #top_right_space .links_space_nav div {
+body #main_top_navbar_div_space .nav_top_links #top_right_space a .links_space_nav div {
   width: 100%;
   height: 100%;
   display: flex;
@@ -132,30 +142,30 @@ body #main_top_navbar_div_space .nav_top_links #top_right_space .links_space_nav
   left: 0;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-body #main_top_navbar_div_space .nav_top_links #top_right_space .links_space_nav div:first-child {
+body #main_top_navbar_div_space .nav_top_links #top_right_space a .links_space_nav div:first-child {
   background-color: #f1f1f1;
   opacity: 1;
 }
-body #main_top_navbar_div_space .nav_top_links #top_right_space .links_space_nav div:last-child {
+body #main_top_navbar_div_space .nav_top_links #top_right_space a .links_space_nav div:last-child {
   background-color: #242424;
   transform: translateY(100%);
   opacity: 1;
 }
-body #main_top_navbar_div_space .nav_top_links #top_right_space .links_space_nav:hover {
+body #main_top_navbar_div_space .nav_top_links #top_right_space a .links_space_nav:hover {
   color: #f1f1f1;
 }
-body #main_top_navbar_div_space .nav_top_links #top_right_space .links_space_nav:hover div:first-child {
+body #main_top_navbar_div_space .nav_top_links #top_right_space a .links_space_nav:hover div:first-child {
   transform: translateY(-100%);
   opacity: 0;
 }
-body #main_top_navbar_div_space .nav_top_links #top_right_space .links_space_nav:hover div:last-child {
+body #main_top_navbar_div_space .nav_top_links #top_right_space a .links_space_nav:hover div:last-child {
   transform: translateY(0);
 }
-body #main_top_navbar_div_space .nav_top_links #top_right_space .links_space_nav p {
+body #main_top_navbar_div_space .nav_top_links #top_right_space a .links_space_nav p {
   font-size: 17px;
   font-weight: bold;
 }
-body #main_top_navbar_div_space .nav_top_links #top_right_space .links_space_nav:active {
+body #main_top_navbar_div_space .nav_top_links #top_right_space a .links_space_nav:active {
   transform: scale(0.95);
 }
 body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav {

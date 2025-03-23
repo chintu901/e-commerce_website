@@ -12,23 +12,33 @@
     <div class="second_top_category_small_heading">
 
         <div class="heading_category">
-            <h5>ALL</h5>
+            <a class="{% if request.endpoint == 'all' %}active{% endif %}" href="/all">
+                <h5>ALL</h5>
+            </a>
         </div>
 
         <div class="heading_category">
-            <h5 style="color: #141414;">BEDS</h5>
+            <a class="{% if request.endpoint == 'beds' %}active{% endif %}" href="/beds">
+                <h5 style="color: #141414;">BEDS</h5>
+            </a>
         </div>
 
         <div class="heading_category">
-            <h5>HOME-DECOR</h5>
+            <a class="{% if request.endpoint == 'home_decor' %}active{% endif %}" href="/home_decor">
+                <h5>HOME-DECOR</h5>
+            </a>
         </div>
 
         <div class="heading_category">
-            <h5>DINING-SET</h5>
+            <a class="{% if request.endpoint == 'dining_set' %}active{% endif %}" href="/dining_set">
+                <h5>DINING-SET</h5>
+            </a>
         </div>
 
         <div class="heading_category">
-            <h5>SOFAS</h5>
+            <a class="{% if request.endpoint == 'sofas' %}active{% endif %}" href="/sofas">
+                <h5>SOFAS</h5>
+            </a>
         </div>
     </div>
 
