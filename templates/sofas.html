@@ -1,0 +1,113 @@
+{% extends 'layout.html' %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/css/shop_page.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="top_category_heading">
+        <h1>SOFAS</h1>
+    </div>
+
+    <div class="second_top_category_small_heading">
+
+        <div class="heading_category">
+            <h5>ALL</h5>
+        </div>
+
+        <div class="heading_category">
+            <h5>BEDS</h5>
+        </div>
+
+        <div class="heading_category">
+            <h5>HOME-DECOR</h5>
+        </div>
+
+        <div class="heading_category">
+            <h5>DINING-SET</h5>
+        </div>
+
+        <div class="heading_category">
+            <h5 style="color: #141414;">SOFAS</h5>
+        </div>
+    </div>
+
+    <div class="product_selection_box">
+        <div class="product_card_box">
+            <div class="img_product_card_box">
+                <img src="{{ url_for('static', filename='img/sofas/Helios_California/front.jpg') }}" alt="My Image">
+            </div>
+
+            <div class="text_product_card_box">
+                <div class="text_area">
+                    <h4>sofa</h4>
+                    <p>Helios California Fabric 2-Seater</p>
+                    <P class="price">$ 1,109</P>
+                </div>
+                <div class="button_area">
+                    <button class="shop_now_top_hero_left">
+                        <div><span><p>SHOP NOW</p></span></div>
+                        <div><span><p>SHOP NOW</p></span></div>
+                    </button> 
+                </div>
+            </div>
+        </div>
+
+        <div class="product_card_box">
+            <div class="img_product_card_box">
+                <img src="{{ url_for('static', filename='img/sofas/Helios_Hummingbird/front.jpg') }}" alt="My Image">
+            </div>
+            <div class="text_product_card_box">
+                <div class="text_area">
+                    <h4>Sofa</h4>
+                    <p>Helios Hummingbird Velvet</p>
+                    <P class="price">$ 1,209</P>
+                </div>
+                <div class="button_area">
+                    <button class="shop_now_top_hero_left">
+                        <div><span><p>SHOP NOW</p></span></div>
+                        <div><span><p>SHOP NOW</p></span></div>
+                    </button> 
+                </div>
+            </div>
+        </div>
+
+        <div class="product_card_box">
+            <div class="img_product_card_box">
+                <img src="{{ url_for('static', filename='img/sofas/Mojo_NXT/front.jpg') }}" alt="My Image">
+            </div>
+            <div class="text_product_card_box">
+                <div class="text_area">
+                    <h4>Sofa</h4>
+                    <p>Mojo NXT Fabric 3+2 Seater</p>
+                    <P class="price">$ 1,350</P>
+                </div>
+                <div class="button_area">
+                    <button class="shop_now_top_hero_left">
+                        <div><span><p>SHOP NOW</p></span></div>
+                        <div><span><p>SHOP NOW</p></span></div>
+                    </button> 
+                </div>
+            </div>
+        </div>
+
+        <div class="product_card_box">
+            <div class="img_product_card_box">
+                <img src="{{ url_for('static', filename='img/sofas/Winchester_NXT/front.jpg') }}" alt="My Image">
+            </div>
+            <div class="text_product_card_box">
+                <div class="text_area">
+                    <h4>Sofa</h4>
+                    <p>Winchester NXT Half Leather</p>
+                    <P class="price">$ 2,209</P>
+                </div>
+                <div class="button_area">
+                    <button class="shop_now_top_hero_left">
+                        <div><span><p>SHOP NOW</p></span></div>
+                        <div><span><p>SHOP NOW</p></span></div>
+                    </button> 
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
