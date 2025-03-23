@@ -1,0 +1,187 @@
+{% extends 'layout.html' %}
+
+{% block extra_css %}
+
+{% endblock %}
+
+{% block content %}
+    <section id="top-shop-banner">
+        <img src="{{ url_for('static', filename='img/shop-banner.jpg') }}" alt="Shop Banner">
+        <h1 class="headline">#TreatYourFeet</h1>
+    </section>
+
+
+    <section id="product2" class="section-padding">
+        <div class="single-pro-image">
+            <img src="{{ url_for('static', filename=images[0]) }}" width="100%" id="MainImg"  alt="{{ product['name'] }}">
+
+            <div class="small-image-group">
+                <div class="small-img-col">
+                    <img src="{{ url_for('static', filename=images[0]) }}" width="100%" class="small-img"  alt="{{ product['name'] }}">
+                </div>
+                <div class="small-img-col">
+                    <img src="{{ url_for('static', filename=images[1]) }}" width="100%" class="small-img"  alt="{{ product['name'] }}">
+                </div>
+                <div class="small-img-col">
+                    <img src="{{ url_for('static', filename=images[2]) }}" width="100%" class="small-img"  alt="{{ product['name'] }}">
+                </div>
+                <div class="small-img-col">
+                    <img src="{{ url_for('static', filename=images[3]) }}" width="100%" class="small-img"  alt="{{ product['name'] }}">
+                </div>
+            </div>
+        </div>
+        <div class="single-pro-details">
+            <h2>{{ product['name'] }}</h2>
+            <h2>Price: ${{ product['price'] }}</h2>
+            <p>Inclusive of all taxes<br>
+            (Also includes all applicable duties)</p>
+            <select>
+                <option>Select Size</option>
+                <option>UK6</option>
+                <option>UK9</option>
+                <option>UK10</option>
+                <option>UK12</option>
+            </select>
+            <form action="{{ url_for('add_to_cart') }}" method="post">
+                <!-- Hidden input to send the product_id with the form -->
+                <input type="hidden" name="product_id" value="{{ product['id'] }}">
+                
+                <!-- Quantity input to capture user-defined quantity -->
+                <input type="number" name="quantity" value="1" min="1" max="10">
+                
+                <!-- Submit button to add to cart -->
+                <button type="submit">Add To Cart</button>
+            </form>
+            
+            <h4>Product Details</h4>
+            <p id="text">{{ product['description'] }}</p>
+            
+        </div>
+    </section>
+
+    <section id="product1">
+            <h1 id="new-pro-line">YOU MIGHT ALSO LIKE</h1>
+            <div class="pro-container">
+                <!-- Product 1 -->
+                <div class="pro">
+                    <div class="img-container">
+                        <a href="{{ url_for('product_page', product_id=2) }}">
+                            <img src="{{ url_for('static', filename='img/men/air+uptempo/AIR+MORE+UPTEMPO.jpg') }}" alt="Nike Air More Uptempo'96">
+                        </a>
+                        <form action="/add_to_cart" method="post">
+                            <!-- Hidden input to send product_id with the form -->
+                            <input type="hidden" name="product_id" value="2">
+                            <button class="add-to-cart-btn" type="submit">Add to Cart</button>
+                        </form>
+                    </div>
+                    <div class="des">
+                        <a href="{{ url_for('product_page', product_id=2) }}">
+                            <h5>Nike Air More Uptempo'96</h5>
+                            <span>Nike</span>
+                            <h4 class="price">$190.24</h4>
+                        </a>
+                    </div>
+                </div>
+        
+                <!-- Product 2 -->
+                <div class="pro">
+                    <div class="img-container">
+                        <a href="{{ url_for('product_page', product_id=5) }}">
+                            <img src="{{ url_for('static', filename='img/women/jordan+sandal/WMNS+JORDAN+DEJA+SANDAL-7.jpg') }}" alt="Jordan Deja">
+                        </a>
+                        <form action="/add_to_cart" method="post">
+                            <!-- Hidden input to send product_id with the form -->
+                            <input type="hidden" name="product_id" value="5">
+                            <button class="add-to-cart-btn" type="submit">Add to Cart</button>
+                        </form>
+                    </div>
+                    <div class="des">
+                        <a href="{{ url_for('product_page', product_id=5) }}">
+                            <h5>Jordan Deja</h5>
+                            <span>Jordan</span>
+                            <h4 class="price">$100.67</h4>
+                        </a>
+                    </div>
+                </div>
+        
+                <!-- Product 3 -->
+                <div class="pro">
+                    <div class="img-container">
+                        <a href="{{ url_for('product_page', product_id=6) }}">
+                            <img src="{{ url_for('static', filename='img/kids/jordan-4-rm/JORDAN+4+RM+_28TD_29-54.jpg') }}" alt="Jordan 4 RM">
+                        </a>
+                        <form action="/add_to_cart" method="post">
+                            <!-- Hidden input to send product_id with the form -->
+                            <input type="hidden" name="product_id" value="6">
+                            <button class="add-to-cart-btn" type="submit">Add to Cart</button>
+                        </form>
+                    </div>
+                    <div class="des">
+                        <a href="{{ url_for('product_page', product_id=6) }}">
+                            <h5>Jordan 4 RM</h5>
+                            <span>Jordan</span>
+                            <h4 class="price">$52.08</h4>
+                        </a>
+                    </div>
+                </div>
+        
+                <!-- Product 4 -->
+                <div class="pro">
+                    <div class="img-container">
+                        <a href="{{ url_for('product_page', product_id=3) }}">
+                            <img src="{{ url_for('static', filename='img/men/nike+axis/NIKE+ISPA+LINK+AXIS-669.jpg') }}" alt="Nike ISPA Link Axis">
+                        </a>
+                        <form action="/add_to_cart" method="post">
+                            <!-- Hidden input to send product_id with the form -->
+                            <input type="hidden" name="product_id" value="3">
+                            <button class="add-to-cart-btn" type="submit">Add to Cart</button>
+                        </form>
+                    </div>
+                    <div class="des">
+                        <a href="{{ url_for('product_page', product_id=3) }}">
+                            <h5>Nike ISPA Link Axis</h5>
+                            <span>Nike</span>
+                            <h4 class="price">$302.68</h4>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <script>
+        // Get the main image element
+        const mainImg = document.getElementById("MainImg");
+
+        // Get all small images
+        const smallImgs = document.querySelectorAll(".small-img");
+
+        // Variable to store the previously selected main image source
+        let defaultMainImgSrc = mainImg.src;
+
+        // Function to change the main image on hover
+        function changeMainImage(event) {
+            mainImg.src = event.target.src;
+        }
+
+        // Function to revert to the previously selected image on mouse leave
+        function revertMainImage() {
+            mainImg.src = defaultMainImgSrc;
+        }
+
+        // Add event listeners for each small image
+        smallImgs.forEach(smallImg => {
+            // Change the main image when hovering over a small image
+            smallImg.addEventListener("mouseover", changeMainImage);
+
+            // Revert to the previous main image on mouse leave
+            smallImg.addEventListener("mouseleave", revertMainImage);
+
+            // Update the default main image when a small image is clicked
+            smallImg.addEventListener("click", (event) => {
+                defaultMainImgSrc = event.target.src;
+                mainImg.src = defaultMainImgSrc; // Also update the main image on click
+            });
+        });
+
+    </script>
+{% endblock %}

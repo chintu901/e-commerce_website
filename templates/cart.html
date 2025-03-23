@@ -1,0 +1,101 @@
+{% extends 'layout.html' %}
+
+{% block extra_css %}
+
+{% endblock %}
+    <section id="top-shop-banner">
+        <img src="{{ url_for('static', filename='img/shop-banner.jpg') }}" alt="Shop Banner">
+        <h1 class="headline">#WalkWithConfidence</h1>
+    </section>
+
+    <section id="cart">
+        <h3>Your Cart</h3>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>REMOVE</th>
+                    <th>IMAGE</th>
+                    <th>PRODUCT</th>
+                    <th>PRICE</th>
+                    <th>QUANTITY</th>
+                    <th>SUBTOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if cart_items %}
+                {% for item in cart_items %}
+                <tr>
+                    <td>
+                        <form action="{{ url_for('remove_item') }}" method="POST">
+                            <input type="hidden" name="product_id" value="{{ item.product_id }}">
+                            <button type="submit" style="background: none; border: none;">
+                                <i class="fas fa-trash-alt"></i></button>
+                        </form>
+                    </td>
+                    <td><img src="{{ url_for('static', filename=item.product_image) }}" alt="{{ item.product_name }}" width="50"></td>
+                    <td>{{ item.product_name }}</td>
+                    <td>${{ item.product_price }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>${{ item.subtotal }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            {% else %}
+                <p>Your cart is empty.</p>
+            {% endif %}
+        </table>
+    </section>
+
+    <section id="cart-add">
+        <div id="coupon">
+            <h3>Apply Coupon</h3>
+            <div>
+                <input type="text" placeholder="Enter Your Coupon">
+                <button class="coupon-btn-apply">Apply</button>
+            </div>
+        </div>
+        <div id="total">
+            <h3>Cart Totals</h3>
+            <table>
+                <tr>
+                    <td>Cart Subtotal</td>
+                    <td>$<span id="total-price"></span></td>
+                </tr>
+                <tr>
+                    <td>Shipping</td>
+                    <td>Free</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td>$<strong id="total-price-2"></strong></td>
+                </tr>
+            </table>
+            <button class="coupon-btn-apply">Proceed to checkout</button>
+        </div>
+    </section>
+{% block content %}
+
+{% block extra_js %}
+    <script>
+        // Fetch total price using the new route
+        fetch("/total_price")
+            .then(response => response.text())
+            .then(data => {
+                // Convert data to a float and format to two decimal places
+                const formattedData = parseFloat(data).toFixed(2);
+                document.getElementById("total-price").innerText = formattedData;
+            })
+            .catch(error => console.error("Error fetching total price:", error));
+
+
+        // Fetch total price using the new route
+        fetch("/total_price")
+            .then(response => response.text())
+            .then(data => {
+                // Convert data to a float and format to two decimal places
+                const formattedData = parseFloat(data).toFixed(2);
+                document.getElementById("total-price-2").innerText = formattedData;
+            })
+            .catch(error => console.error("Error fetching total price:", error));
+    </script>
+{% endblock %}
