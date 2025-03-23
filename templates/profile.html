@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+
+{% block extra_css %}
+
+{% endblock %}
+
+{% block content %}
+    <section id="profile-box-section">
+        <!-- first box -->
+        <div class="main-box">
+            <h1>Hello, there!</h1>
+            <div id="profile-photo">
+                <img id="main-image" src="{{ url_for('static', filename='img/profile_pic/monkey_3.png') }}">
+            </div>
+            <div id="user-info">
+                <p>Username : <span class="output-box">{{ username }}</span></p>
+            </div>
+            <div id="user-btn">
+                <a href="/change_password">
+                    <button class="bottom-btn" id="change-password">
+                    Change Password
+                    </button>
+                </a>
+                <a href="/logout">
+                    <button class="bottom-btn">
+                        logout
+                    </button>
+                </a>
+            </div>
+        </div>
+        <!-- Change password -->
+        <form action="{{ url_for('change_password') }}" method="post">
+            <div class="change-password-box">
+                <div class="icon-wrapper">
+                    <i class="fa-solid fa-arrow-left" id="go-back"></i>
+                </div>
+                <div class="form-title">
+                    <span>Change Password</span>
+                </div>
+                <div class="form-inputs">
+                    <div class="input-box">
+                        <input type="password" class="input-field" name="current_password" placeholder="Current Password" autocomplete="off">
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" name="new_password" placeholder="New Password" autocomplete="off">
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" name="confirm_password" placeholder="Confirm Password" autocomplete="off">
+                    </div>
+                    <div class="button-box">
+                        <button class="input-submit" type="submit">
+                            <span>Continue</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+{% endblock %}
