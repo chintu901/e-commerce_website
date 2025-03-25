@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+$Neutral-color-white: #f1f1f1;
+$Neutral-color-black: #141414;
+$Second-netural-color-black: #242424;
+$Secondary-color: #7b7a7a;
+$primary-color: #333;
+$secondary-color: #222;
+$border-color: #dcdedd;
+$transition-speed: 0.3s ease;
+
+$font-primary: "Inter", sans-serif;
+
+$transition-speed: 0.6s;
+
+@mixin button-style {
+    border: 2px solid $Neutral-color-black;
+    outline: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 140px;
+    height: 50px;
+    border-radius: none;
+    overflow: hidden;
+    color: $Neutral-color-black;
+
+    div:nth-child(1) {
+        background-color: $Neutral-color-white;
+    }
+
+    div:nth-child(2) {
+        background-color: $Neutral-color-black;
+    }
+
+    div {
+        transform: translateY(0px);
+        width: 100%;
+        transition: $transition-speed cubic-bezier(.16, 1, .3, 1);
+    }
+
+    div span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        padding: 0.75em 1.125em;
+    }
+
+    &:hover {
+        color: $Neutral-color-white;
+
+        div {
+            transform: translateY(-50px);
+        }
+    }
+
+    p {
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+body {
+    overflow-x: hidden;
+
+    #top-banner {
+        width: 100%;
+        height: 300px;
+        
+        img {
+            width: 100%;
+            height: auto;
+            filter: brightness(70%);
+        }
+    }
+    
+    #image-banner-shoe-headline {
+        position: relative;
+        display: inline-block;
+        
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    
+    .text-headline {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 3em;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    #product1 {
+        text-align: left;
+        margin: 0 20px;
+    
+        .pro-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    
+        .pro {
+            width: 24.5%;
+            min-width: 250px;
+            padding: 10px 12px;
+            margin-bottom: 20px;
+            border: 1px solid $border-color;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: $transition-speed;
+            cursor: pointer;
+    
+            &:hover {
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+                width: 24.7%;
+            }
+    
+            img {
+                width: 100%;
+                border-radius: 10px;
+            }
+    
+            .des {
+                position: relative;
+                padding: 5px;
+    
+                h5 {
+                    font-size: 15px;
+                }
+    
+                .price {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    padding: 5px;
+                    font-size: 16px;
+                }
+            }
+    
+            .img-container {
+                position: relative;
+                width: 100%;
+                overflow: hidden;
+    
+                img {
+                    width: 100%;
+                    transition: transform $transition-speed;
+                }
+    
+                &:hover img {
+                    transform: scale(1.1);
+                }
+    
+                .add-to-cart-btn {
+                    position: absolute;
+                    font-weight: bold;
+                    width: 80%;
+                    bottom: 10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    padding: 8px 16px;
+                    color: $secondary-color;
+                    border: 1px solid black;
+                    border-radius: 50px;
+                    cursor: pointer;
+                    opacity: 0;
+                    transition: opacity $transition-speed;
+    
+                    &:hover {
+                        background-color: rgba(0, 0, 0, 0.1);
+                    }
+                }
+            }
+        }
+    }
+    
+}

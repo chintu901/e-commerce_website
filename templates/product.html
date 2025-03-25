@@ -1,13 +1,13 @@
 {% extends 'layout.html' %}
 
 {% block extra_css %}
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/css/product.css') }}">
 {% endblock %}
 
 {% block content %}
     <section id="top-shop-banner">
-        <img src="{{ url_for('static', filename='img/shop-banner.jpg') }}" alt="Shop Banner">
-        <h1 class="headline">#TreatYourFeet</h1>
+        <img src="{{ url_for('static', filename='img/pixel-room-digital-art-hd-wallpaper-1920x1080-uhdpaper.com-634.0_b.jpg') }}" alt="Shop Banner">
+        <h1 class="headline"> #LuxuryInEveryDetail</h1>
     </section>
 
 
@@ -42,7 +42,7 @@
                 <option>UK10</option>
                 <option>UK12</option>
             </select>
-            <form action="{{ url_for('add_to_cart') }}" method="post">
+            <form action="{{ url_for('cart_page') }}" method="post">
                 <!-- Hidden input to send the product_id with the form -->
                 <input type="hidden" name="product_id" value="{{ product['id'] }}">
                 
@@ -57,96 +57,9 @@
             <p id="text">{{ product['description'] }}</p>
             
         </div>
-    </section>
+    </section> 
 
-    <section id="product1">
-            <h1 id="new-pro-line">YOU MIGHT ALSO LIKE</h1>
-            <div class="pro-container">
-                <!-- Product 1 -->
-                <div class="pro">
-                    <div class="img-container">
-                        <a href="{{ url_for('product_page', product_id=2) }}">
-                            <img src="{{ url_for('static', filename='img/men/air+uptempo/AIR+MORE+UPTEMPO.jpg') }}" alt="Nike Air More Uptempo'96">
-                        </a>
-                        <form action="/add_to_cart" method="post">
-                            <!-- Hidden input to send product_id with the form -->
-                            <input type="hidden" name="product_id" value="2">
-                            <button class="add-to-cart-btn" type="submit">Add to Cart</button>
-                        </form>
-                    </div>
-                    <div class="des">
-                        <a href="{{ url_for('product_page', product_id=2) }}">
-                            <h5>Nike Air More Uptempo'96</h5>
-                            <span>Nike</span>
-                            <h4 class="price">$190.24</h4>
-                        </a>
-                    </div>
-                </div>
-        
-                <!-- Product 2 -->
-                <div class="pro">
-                    <div class="img-container">
-                        <a href="{{ url_for('product_page', product_id=5) }}">
-                            <img src="{{ url_for('static', filename='img/women/jordan+sandal/WMNS+JORDAN+DEJA+SANDAL-7.jpg') }}" alt="Jordan Deja">
-                        </a>
-                        <form action="/add_to_cart" method="post">
-                            <!-- Hidden input to send product_id with the form -->
-                            <input type="hidden" name="product_id" value="5">
-                            <button class="add-to-cart-btn" type="submit">Add to Cart</button>
-                        </form>
-                    </div>
-                    <div class="des">
-                        <a href="{{ url_for('product_page', product_id=5) }}">
-                            <h5>Jordan Deja</h5>
-                            <span>Jordan</span>
-                            <h4 class="price">$100.67</h4>
-                        </a>
-                    </div>
-                </div>
-        
-                <!-- Product 3 -->
-                <div class="pro">
-                    <div class="img-container">
-                        <a href="{{ url_for('product_page', product_id=6) }}">
-                            <img src="{{ url_for('static', filename='img/kids/jordan-4-rm/JORDAN+4+RM+_28TD_29-54.jpg') }}" alt="Jordan 4 RM">
-                        </a>
-                        <form action="/add_to_cart" method="post">
-                            <!-- Hidden input to send product_id with the form -->
-                            <input type="hidden" name="product_id" value="6">
-                            <button class="add-to-cart-btn" type="submit">Add to Cart</button>
-                        </form>
-                    </div>
-                    <div class="des">
-                        <a href="{{ url_for('product_page', product_id=6) }}">
-                            <h5>Jordan 4 RM</h5>
-                            <span>Jordan</span>
-                            <h4 class="price">$52.08</h4>
-                        </a>
-                    </div>
-                </div>
-        
-                <!-- Product 4 -->
-                <div class="pro">
-                    <div class="img-container">
-                        <a href="{{ url_for('product_page', product_id=3) }}">
-                            <img src="{{ url_for('static', filename='img/men/nike+axis/NIKE+ISPA+LINK+AXIS-669.jpg') }}" alt="Nike ISPA Link Axis">
-                        </a>
-                        <form action="/add_to_cart" method="post">
-                            <!-- Hidden input to send product_id with the form -->
-                            <input type="hidden" name="product_id" value="3">
-                            <button class="add-to-cart-btn" type="submit">Add to Cart</button>
-                        </form>
-                    </div>
-                    <div class="des">
-                        <a href="{{ url_for('product_page', product_id=3) }}">
-                            <h5>Nike ISPA Link Axis</h5>
-                            <span>Nike</span>
-                            <h4 class="price">$302.68</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-    </section>
+    
 
     <script>
         // Get the main image element
