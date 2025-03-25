@@ -6,7 +6,6 @@
 
 {% block content %}
     <section id="top-shop-banner">
-        <img src="{{ url_for('static', filename='img/pixel-room-digital-art-hd-wallpaper-1920x1080-uhdpaper.com-634.0_b.jpg') }}" alt="Shop Banner">
         <h1 class="headline"> #LuxuryInEveryDetail</h1>
     </section>
 
@@ -35,13 +34,6 @@
             <h2>Price: ${{ product['price'] }}</h2>
             <p>Inclusive of all taxes<br>
             (Also includes all applicable duties)</p>
-            <select>
-                <option>Select Size</option>
-                <option>UK6</option>
-                <option>UK9</option>
-                <option>UK10</option>
-                <option>UK12</option>
-            </select>
             <form action="{{ url_for('cart_page') }}" method="post">
                 <!-- Hidden input to send the product_id with the form -->
                 <input type="hidden" name="product_id" value="{{ product['id'] }}">
@@ -59,7 +51,74 @@
         </div>
     </section> 
 
-    
+    <div class="text_new_products">
+        <h5 id="new-pro-line">YOU MIGHT ALSO LIKE</h5>
+    </div>
+
+    <div class="product_selection_box">
+        <a href="{{ url_for('product_page', product_id=2) }}">
+            <div class="product_card_box">
+                <div class="img_product_card_box">
+                    <img src="{{ url_for('static', filename='img/sofas/Helios_Hummingbird/front.jpg') }}" alt="My Image">
+                </div>
+
+                <div class="text_product_card_box">
+                    <div class="text_area">
+                        <h4>sofa</h4>
+                        <p>Helios Hummingbird Velvet</p>
+                        <P class="price">$ 784.3</P>
+                    </div>
+                    <div class="button_area">
+                        <button class="shop_now_top_hero_left">
+                            <div><span><p>SHOP NOW</p></span></div>
+                            <div><span><p>SHOP NOW</p></span></div>
+                        </button> 
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="{{ url_for('product_page', product_id=6) }}">
+            <div class="product_card_box">
+                <div class="img_product_card_box">
+                    <img src="{{ url_for('static', filename='img/Dining Set/Vegas_Faux/front.jpg') }}" alt="My Image">
+                </div>
+                <div class="text_product_card_box">
+                    <div class="text_area">
+                        <h4>Dining Set</h4>
+                        <p>Vegas Faux 6-Seater</p>
+                        <P class="price">$ 992.65</P>
+                    </div>
+                    <div class="button_area">
+                        <button class="shop_now_top_hero_left">
+                            <div><span><p>SHOP NOW</p></span></div>
+                            <div><span><p>SHOP NOW</p></span></div>
+                        </button> 
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="{{ url_for('product_page', product_id=7) }}">
+            <div class="product_card_box">
+                <div class="img_product_card_box">
+                    <img src="{{ url_for('static', filename='img/Bedroom/Beds/Tiffany_Caramel_King_Bed/front.jpg') }}" alt="My Image">
+                </div>
+                <div class="text_product_card_box">
+                    <div class="text_area">
+                        <h4>Bed</h4>
+                        <p>Tiffany Caramel King Bed</p>
+                        <P class="price">$ 690.0</P>
+                    </div>
+                    <div class="button_area">
+                        <button class="shop_now_top_hero_left">
+                            <div><span><p>SHOP NOW</p></span></div>
+                            <div><span><p>SHOP NOW</p></span></div>
+                        </button> 
+                    </div>
+                </div>
+            </div> 
+        </a>   
 
     <script>
         // Get the main image element

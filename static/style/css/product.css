@@ -7,103 +7,196 @@
 body {
   overflow-x: hidden;
 }
-body #top-banner {
-  width: 100%;
-  height: 300px;
+body #top-shop-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100vw - 15px);
+  height: 350px;
+  background-image: url("/static/img/pixel-room-digital-art-hd-wallpaper-1920x1080-uhdpaper.com-634.0_b.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-body #top-banner img {
-  width: 100%;
-  height: auto;
-  filter: brightness(70%);
+body #top-shop-banner h1 {
+  color: #f1f1f1;
 }
-body #image-banner-shoe-headline {
-  position: relative;
-  display: inline-block;
+body #product2 {
+  display: flex;
+  margin-top: 20px;
 }
-body #image-banner-shoe-headline img {
-  width: 100%;
-  height: auto;
+body #product2 .single-pro-image {
+  width: 30%;
+  margin: 0 70px;
 }
-body .text-headline {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 3em;
-  text-align: center;
-  padding: 10px;
-}
-body #product1 {
-  text-align: left;
-  margin: 0 20px;
-}
-body #product1 .pro-container {
+body #product2 .single-pro-image .small-image-group {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
-body #product1 .pro {
-  width: 24.5%;
-  min-width: 250px;
-  padding: 10px 12px;
-  margin-bottom: 20px;
-  border: 1px solid #dcdedd;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  transition: 0.6s;
+body #product2 .single-pro-image .small-image-group .small-img-col {
+  flex-basis: 24%;
   cursor: pointer;
 }
-body #product1 .pro:hover {
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
-  width: 24.7%;
+body #product2 .single-pro-image .small-image-group .small-img-col img:hover {
+  border: 1px solid #222;
 }
-body #product1 .pro img {
-  width: 100%;
-  border-radius: 10px;
+body #product2 .single-pro-image .small-image-group .small-img-col img:active {
+  border: 2px solid #222;
 }
-body #product1 .pro .des {
-  position: relative;
-  padding: 5px;
+body #product2 .single-pro-details {
+  width: 40%;
 }
-body #product1 .pro .des h5 {
-  font-size: 15px;
+body #product2 .single-pro-details h2 {
+  padding: 20px 0;
 }
-body #product1 .pro .des .price {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 5px;
+body #product2 .single-pro-details select {
+  display: block;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+body #product2 .single-pro-details input {
+  width: 50px;
+  height: 47px;
+  padding-left: 10px;
   font-size: 16px;
+  margin-right: 10px;
+  border-radius: 5px;
 }
-body #product1 .pro .img-container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
+body #product2 .single-pro-details input:focus {
+  outline: none;
 }
-body #product1 .pro .img-container img {
-  width: 100%;
-  transition: transform 0.6s;
-}
-body #product1 .pro .img-container:hover img {
-  transform: scale(1.1);
-}
-body #product1 .pro .img-container .add-to-cart-btn {
-  position: absolute;
-  font-weight: bold;
-  width: 80%;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 8px 16px;
-  color: #222;
-  border: 1px solid black;
-  border-radius: 50px;
+body #product2 .single-pro-details button {
+  width: auto;
+  height: 47px;
+  font-size: 20px;
+  color: #fff;
+  background-color: #333;
+  padding: 0 20px;
+  margin-top: 10px;
+  border-radius: 5px;
   cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.6s;
 }
-body #product1 .pro .img-container .add-to-cart-btn:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+body #product2 .single-pro-details button:hover {
+  background-color: #222;
+}
+body #product2 .single-pro-details span {
+  width: 20em;
+  line-height: 25px;
+}
+body #product2 .single-pro-details h4 {
+  margin: 20px 0;
+}
+body .text_new_products {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  padding-left: 20px;
+}
+body .product_selection_box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  margin-top: 3px;
+}
+body .product_selection_box .product_card_box {
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  border: 2px solid #141414;
+}
+body .product_selection_box .product_card_box .img_product_card_box {
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
+body .product_selection_box .product_card_box .img_product_card_box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+body .product_selection_box .product_card_box .text_product_card_box {
+  display: flex;
+  width: 100%;
+  height: 20%;
+  border-top: 2px solid #141414;
+}
+body .product_selection_box .product_card_box .text_product_card_box .text_area {
+  width: 75%;
+  height: 100%;
+  text-align: left;
+  padding: 10px;
+}
+body .product_selection_box .product_card_box .text_product_card_box .text_area h4 {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  color: #7b7a7a;
+}
+body .product_selection_box .product_card_box .text_product_card_box .text_area .price {
+  margin-top: 5px;
+}
+body .product_selection_box .product_card_box .text_product_card_box .button_area {
+  display: flex;
+  width: 25%;
+  height: 100%;
+  align-items: end;
+  padding-bottom: 10px;
+}
+body .product_selection_box .product_card_box .text_product_card_box .button_area button {
+  border: 2px solid #141414;
+  outline: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 140px;
+  height: 50px;
+  border-radius: none;
+  overflow: hidden;
+  color: #141414;
+  max-width: 120px;
+}
+body .product_selection_box .product_card_box .text_product_card_box .button_area button div:nth-child(1) {
+  background-color: #f1f1f1;
+}
+body .product_selection_box .product_card_box .text_product_card_box .button_area button div:nth-child(2) {
+  background-color: #141414;
+}
+body .product_selection_box .product_card_box .text_product_card_box .button_area button div {
+  transform: translateY(0px);
+  width: 100%;
+  transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+body .product_selection_box .product_card_box .text_product_card_box .button_area button div span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 0.75em 1.125em;
+}
+body .product_selection_box .product_card_box .text_product_card_box .button_area button:hover {
+  color: #f1f1f1;
+}
+body .product_selection_box .product_card_box .text_product_card_box .button_area button:hover div {
+  transform: translateY(-50px);
+}
+body .product_selection_box .product_card_box .text_product_card_box .button_area button p {
+  font-size: 17px;
+  font-weight: bold;
+}
+body .product_selection_box .product_card_box .text_product_card_box .button_area button:active {
+  transform: scale(0.95);
+}
+body .product_selection_box .product_card_box .text_product_card_box .button_area button p {
+  font-size: 14px;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=product.css.map */
