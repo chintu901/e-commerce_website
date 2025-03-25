@@ -43,6 +43,7 @@
     </div>
 
     <div class="product_selection_box">
+        <a href="{{ url_for('product_page', product_id=3) }}">
         <div class="product_card_box">
             <div class="img_product_card_box">
                 <img src="{{ url_for('static', filename='img/home_decor/Buddha_Figurine_with_T-Light_Holder/front.jpg') }}" alt="My Image">
@@ -62,6 +63,7 @@
                 </div>
             </div>
         </div>
+        </a>
 
         <div class="product_card_box">
             <div class="img_product_card_box">
@@ -82,24 +84,26 @@
             </div>
         </div>
 
-        <div class="product_card_box">
-            <div class="img_product_card_box">
-                <img src="{{ url_for('static', filename='img/home_decor/Reading_Ganesha_Figurine/front.jpg') }}" alt="My Image">
-            </div>
-            <div class="text_product_card_box">
-                <div class="text_area">
-                    <h4>Figurine</h4>
-                    <p>Reading ganesha Figurine</p>
-                    <P class="price">$ 60</P>
+        <a href="{{ url_for('product_page', product_id=4) }}">
+            <div class="product_card_box">
+                <div class="img_product_card_box">
+                    <img src="{{ url_for('static', filename='img/home_decor/Reading_Ganesha_Figurine/front.jpg') }}" alt="My Image">
                 </div>
-                <div class="button_area">
-                    <button class="shop_now_top_hero_left">
-                        <div><span><p>SHOP NOW</p></span></div>
-                        <div><span><p>SHOP NOW</p></span></div>
-                    </button> 
+                <div class="text_product_card_box">
+                    <div class="text_area">
+                        <h4>Figurine</h4>
+                        <p>Reading ganesha Figurine</p>
+                        <P class="price">$ 60</P>
+                    </div>
+                    <div class="button_area">
+                        <button class="shop_now_top_hero_left">
+                            <div><span><p>SHOP NOW</p></span></div>
+                            <div><span><p>SHOP NOW</p></span></div>
+                        </button> 
+                    </div>
                 </div>
             </div>
-        </div>
+        </a>
 
         <div class="product_card_box">
             <div class="img_product_card_box">
