@@ -324,15 +324,20 @@ body {
                         color: $Neutral-color-white;
                         background-color: #242424;
                     }
+
+                    .user {
+                        // background-color: aquamarine;
+                        width: 20px;
+                        height: 100%;
+                        background-color: rebeccapurple;
+                    }
                 }
 
                 .search {
                     // background-color: brown;
                 }
 
-                .user {
-                    // background-color: aquamarine;
-                }
+                
 
                 .cart {
                     // background-color: blueviolet;

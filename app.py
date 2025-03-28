@@ -34,8 +34,9 @@ def after_request(response):
     return response
 
 @app.route('/')
+@login_required
 def home():
-    return render_template('sofas.html') 
+    return render_template('index.html') 
 
 @app.route("/cart_page")
 @login_required
@@ -62,7 +63,7 @@ def journal_page():
     return render_template("journal.html")
 
 @app.route("/contact")
-
+@login_required
 def contact_page():
     """Render the contact page"""
     return render_template("contact.html")
@@ -130,7 +131,7 @@ def login():
         session["username"] = user["username"]
         return redirect("/")
 
-    return render_template("login.html")
+    return render_template("login_page.html")
 
 # Logout
 @app.route("/logout")
@@ -168,32 +169,35 @@ def register():
         session["username"] = username
         return redirect("/")
 
-    return render_template("register.html")
+    return render_template("registration_page.html")
 
-# Change password
-@app.route("/change_password", methods=["GET", "POST"])
-@login_required
-def change_password():
-    """Change user password"""
+# Forgot password
+@app.route("/forgot_password", methods=["GET", "POST"])
+def forgot_password():
+    """Handle password reset process"""
     if request.method == "POST":
-        current_password = request.form.get("current_password")
+        username = request.form.get("username")
         new_password = request.form.get("new_password")
         confirm_password = request.form.get("confirm_password")
 
         db = get_db()
-        user = db.execute("SELECT hash FROM users WHERE id = ?", (session["user_id"],)).fetchone()
+        user = db.execute("SELECT id FROM users WHERE username = ?", (username,)).fetchone()
 
-        if not user or not check_password_hash(user["hash"], current_password):
-            return apology("Invalid current password", 400)
-        if new_password != confirm_password:
-            return apology("Passwords do not match", 400)
+        if not user:
+            return apology("Username not found", 400)
 
-        db.execute("UPDATE users SET hash = ? WHERE id = ?", (generate_password_hash(new_password), session["user_id"]))
-        db.commit()
-        flash("Password successfully changed", "success")
-        return redirect("/")
+        if new_password and confirm_password:
+            if new_password != confirm_password:
+                return apology("Passwords do not match", 400)
+            
+            db.execute("UPDATE users SET hash = ? WHERE id = ?", 
+                       (generate_password_hash(new_password), user["id"]))
+            db.commit()
+            flash("Password successfully reset", "success")
+            return redirect("/login")
+        
+    return render_template("forgot_password.html")
 
-    return render_template("change_password.html")
 
 # Product page
 @app.route("/product/<int:product_id>")
@@ -208,7 +212,138 @@ def product_page(product_id):
 
     return render_template('product.html', product=product, images=[image['image'] for image in images])
 
+@app.route("/profile")
+@login_required
+def profile():
+    """Render the profile page"""
+    username = session.get('username')
+    return render_template('profile.html', username=username)
 
+@app.route("/cart")
+@login_required
+def cart():
+    """Render the cart page with items for the logged-in user"""
+    user_id = session.get("user_id")
+    if not user_id:
+        return "Please log in to view your cart", 401
+
+    # Get a database connection and retrieve cart items
+    db = get_db()
+    cart_items = db.execute(
+        "SELECT * FROM cart_items WHERE user_id = ?", (user_id,)
+    ).fetchall()
+
+    # Debugging print statement (can be removed later)
+    print("Cart items:", cart_items)
+
+    return render_template("cart.html", cart_items=cart_items)
+# Cart count
+@app.before_request
+def load_cart_count():
+    if "user_id" in session:
+        db = get_db()
+        user_id = session["user_id"]
+        cart_count = db.execute(
+            "SELECT COUNT(*) FROM cart_items WHERE user_id = ?", (user_id,)
+        ).fetchone()[0]
+        g.cart_count = cart_count  # Store in `g` for global access
+    else:
+        g.cart_count = 0  # No items if not logged in
+
+@app.route("/add_to_cart", methods=["POST"])
+@login_required
+def add_to_cart():
+    """Add a product to the user's cart in the database"""
+    product_id = request.form.get("product_id")
+    quantity = int(request.form.get("quantity", 1))
+    user_id = session["user_id"]
+
+    # Ensure product_id is provided
+    if not product_id:
+        return apology("Product ID is required", 400)
+
+    # Connect to the database
+    db = get_db()
+    
+    # Check if the product already exists in the user's cart
+    existing_cart_item = db.execute(
+        "SELECT * FROM cart WHERE user_id = ? AND product_id = ?",
+        (user_id, product_id)
+    ).fetchone()
+
+    if existing_cart_item:
+        # Update the quantity of the existing cart item
+        db.execute(
+            "UPDATE cart SET quantity = quantity + ? WHERE user_id = ? AND product_id = ?",
+            (quantity, user_id, product_id)
+        )
+    else:
+        # Insert a new item into the cart
+        db.execute(
+            "INSERT INTO cart (user_id, product_id, quantity) VALUES (?, ?, ?)",
+            (user_id, product_id, quantity)
+        )
+    
+    db.commit()
+    flash("Item added to cart", "success")
+    return redirect("/cart_page")
+
+@app.route("/remove_item", methods=["POST"])
+@login_required
+def remove_item():
+    """Remove an item from the cart"""
+    # Get the product ID from the form submission
+    product_id = request.form.get("product_id")
+    user_id = session.get("user_id")
+
+    if not product_id or not user_id:
+        return "Invalid request", 400
+
+    # Connect to the database and delete the item
+    db = get_db()
+    db.execute("DELETE FROM cart WHERE user_id = ? AND product_id = ?", (user_id, product_id))
+    db.commit()
+    
+    # Redirect back to the cart page with a success message
+    flash("Item removed from cart", "success")
+    return redirect("/cart")
+
+@app.route("/total_price")
+@login_required
+def total_price():
+    """Calculate and return the total price of items in the cart"""
+    user_id = session.get("user_id")
+    if not user_id:
+        return "Please log in to view your cart", 401
+
+    # Get a database connection and retrieve cart items
+    db = get_db()
+    cart_items = db.execute(
+        "SELECT p.price, c.quantity FROM cart c JOIN products p ON c.product_id = p.id WHERE c.user_id = ?",
+        (user_id,)
+    ).fetchall()
+
+    # Calculate total price
+    total_price = sum(item["price"] * item["quantity"] for item in cart_items)
+
+    return str(total_price)  # Return total price as string
+
+@app.route("/cart_count")
+@login_required
+def cart_count():
+    """Return the count of items in the cart for the logged-in user"""
+    user_id = session.get("user_id")
+    if not user_id:
+        return jsonify(count=0)  # Return zero if no user is logged in
+
+    db = get_db()
+    # Fetch the cart count from the database
+    cart_count = db.execute(
+        "SELECT COUNT(*) FROM cart_items WHERE user_id = ?", (user_id,)
+    ).fetchone()[0]
+
+    # Return the count as JSON
+    return jsonify(count=cart_count)
 
 if __name__ == '__main__':
     app.run(debug=True)

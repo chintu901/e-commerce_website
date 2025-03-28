@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+$Neutral-color-white: #f1f1f1;
+$Neutral-color-black: #141414;
+$Second-netural-color-black: #242424;
+$Secondary-color: #7b7a7a;
+$primary-color: #333;
+$secondary-color: #222;
+$border-color: #dcdedd;
+$transition-speed: 0.3s ease;
+
+$font-primary: "Inter", sans-serif;
+
+$transition-speed: 0.6s;
+
+@mixin button-style {
+    border: 2px solid $Neutral-color-black;
+    outline: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 140px;
+    height: 50px;
+    border-radius: none;
+    overflow: hidden;
+    color: $Neutral-color-black;
+
+    div:nth-child(1) {
+        background-color: $Neutral-color-white;
+    }
+
+    div:nth-child(2) {
+        background-color: $Neutral-color-black;
+    }
+
+    div {
+        transform: translateY(0px);
+        width: 100%;
+        transition: $transition-speed cubic-bezier(.16, 1, .3, 1);
+    }
+
+    div span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        padding: 0.75em 1.125em;
+    }
+
+    &:hover {
+        color: $Neutral-color-white;
+
+        div {
+            transform: translateY(-50px);
+        }
+    }
+
+    p {
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+body {
+    overflow-x: hidden;
+
+    #top-shop-banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(100vw - 15px);
+        height: 350px;
+        background-image: url("/static/img/pixel-room-digital-art-hd-wallpaper-1920x1080-uhdpaper.com-634.0_b.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        h1{
+            color: $Neutral-color-white;
+        }
+    }
+
+    #cart {
+        width: 90%;
+        margin: 0 auto;
+    
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            white-space: nowrap;
+            margin-top: 20px;
+            font-family: $font-primary;
+    
+            img {
+                width: 78px;
+            }
+    
+            td:nth-child(1) {
+                width: 100px;
+                text-align: center;
+            }
+    
+            td:nth-child(2) {
+                width: 150px;
+                text-align: center;
+            }
+    
+            td:nth-child(3) {
+                width: 250px;
+                text-align: center;
+            }
+    
+            td:nth-child(4),
+            td:nth-child(5),
+            td:nth-child(6) {
+                width: 150px;
+                text-align: center;
+            }
+    
+            td:nth-child(5) input {
+                width: 70px;
+                padding: 10px 5px 10px 15px;
+            }
+    
+            thead {
+                border: 1px solid #e2e9e1;
+                border-left: none;
+                border-right: none;
+            }
+    
+            thead th {
+                font-weight: 700;
+                font-size: 16px;
+                padding: 18px 0;
+            }
+    
+            tbody {
+                tr td {
+                    padding-top: 15px;
+                }
+    
+                td {
+                    font-size: 16px;
+                }
+    
+                tr td button i {
+                    cursor: pointer;
+                    color: #4A4A4A;
+                    transition: .2s ease-in;
+                    font-size: 15px;
+    
+                    &:hover {
+                        color: #d9534f;
+                    }
+                }
+            }
+        }
+    }
+    
+    #cart-add {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 80px 70px;
+        font-family: $font-primary;
+    
+        #coupon {
+            width: 50%;
+    
+            h3 {
+                margin-bottom: 30px;
+            }
+    
+            input {
+                padding: 10px 20px;
+                outline: none;
+                width: 60%;
+                margin-right: 10px;
+                border: 1px solid #cfd5ce;
+                background-color: #eaefe9;
+                border-radius: 5px;
+            }
+    
+            button {
+                padding: 10px 20px;
+                outline: none;
+                width: auto;
+                margin-right: 10px;
+                color: #fff;
+                background-color: #333;
+                border-radius: 5px;
+                cursor: pointer;
+    
+                &:hover {
+                    background-color: #222;
+                }
+            }
+        }
+    
+        #total {
+            width: 50%;
+            margin-bottom: 30px;
+            border: 1px solid #cfd5ce;
+            padding: 30px;
+    
+            h3 {
+                margin-bottom: 30px;
+            }
+    
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                margin-bottom: 20px;
+    
+                td {
+                    width: 50%;
+                    border: 1px solid #cfd5ce;
+                    padding: 10px;
+                    font-size: 17px;
+                }
+            }
+        }
+    
+        button {
+            padding: 10px 20px;
+            outline: none;
+            width: auto;
+            margin-right: 10px;
+            color: #fff;
+            background-color: #333;
+            border-radius: 5px;
+            cursor: pointer;
+    
+            &:hover {
+                background-color: #222;
+            }
+        }
+    }
+    
+}

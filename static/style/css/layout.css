@@ -183,6 +183,11 @@ body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_spa
   color: #f1f1f1;
   background-color: #242424;
 }
+body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav .user {
+  width: 20px;
+  height: 100%;
+  background-color: rebeccapurple;
+}
 body footer {
   padding: 20px 0;
   line-height: 20px;

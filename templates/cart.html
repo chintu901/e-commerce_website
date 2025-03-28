@@ -1,11 +1,12 @@
 {% extends 'layout.html' %}
 
 {% block extra_css %}
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/css/cart.css') }}">
 {% endblock %}
+    
+{% block content %}
     <section id="top-shop-banner">
-        <img src="{{ url_for('static', filename='img/shop-banner.jpg') }}" alt="Shop Banner">
-        <h1 class="headline">#WalkWithConfidence</h1>
+        <h1 class="headline"> #LuxuryInEveryDetail</h1>
     </section>
 
     <section id="cart">
@@ -73,8 +74,8 @@
             <button class="coupon-btn-apply">Proceed to checkout</button>
         </div>
     </section>
-{% block content %}
 
+{% endblock %}
 {% block extra_js %}
     <script>
         // Fetch total price using the new route

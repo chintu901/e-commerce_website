@@ -12,27 +12,27 @@
         <img src="{{ url_for('static', filename='img/plant_for_bottom_left.png')}}" alt="plant_img" class="side_ontop_image bottom-left">
         <img src="{{ url_for('static', filename='img/plant_for_top_right.png')}}" alt="plant_img" class="side_ontop_image top-right">
         <div id="background">
-            <form action="">
+            <form action="{{ url_for('register') }}" method="post">
                 <div id="box">
                     <div id="signin_signup_text">
                         <h1>Create New Account</h1>
                     </div>
                     <div class="signin_signup_input_box">
                         <div id="username">
-                            <input type="text" id="username_input_box" autocomplete="off" placeholder=" " class="form_input">
+                            <input type="text" id="username_input_box" autocomplete="off" placeholder=" " class="form_input" name="username">
                             <label for="username_input_box">Username</label>
                         </div>
                         <div id="password">
-                            <input type="password" id="password_input_box" autocomplete="off" placeholder=" " class="form_input">
+                            <input type="password" id="password_input_box" autocomplete="off" placeholder=" " class="form_input" name="password">
                             <label for="password_input_box">Password</label>
                         </div>
                         <div id="confirm_password">
-                            <input type="password" id="confirm_password_input_box" autocomplete="off" placeholder=" " class="form_input">
+                            <input type="password" id="confirm_password_input_box" autocomplete="off" placeholder=" " class="form_input" name="confirmation">
                             <label for="confirm_password_input_box">Confirm Password</label>
                         </div>
                     </div>
                     <div id="register_button">
-                        <button class="button-pushable" role="button">
+                        <button class="button-pushable" role="button" type="submit">
                             <span class="button-shadow"></span>
                             <span class="button-edge"></span>
                             <span class="button-front text">
