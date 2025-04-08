@@ -1,0 +1,54 @@
+{% extends 'admin_layout.html' %}
+
+{% block title %}Admin_Deshboard{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/css/admin_dashboard.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section id="main_body">
+        <div id="content_area">
+            <div id="heading">
+                <h5>ADMIN DASHBOARD</h5>
+            </div>
+            <div id="content_count_area">
+                <div class="dashboard_items" id="total_product">
+                    <div class="icon">
+                        <i class="fa-solid fa-parachute-box"></i>
+                    </div>
+                    <div class="count">
+                        <p style="font-size: 30px;">27</p>
+                    </div>
+                    <div class="name">
+                        <p style="font-size: 27px;">Total Product</p>
+                    </div>
+                </div>
+    
+                <div class="dashboard_items" id="total_user">
+                    <div class="icon">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                    <div class="count">
+                        <p style="font-size: 30px;">{{ user_count }}</p>
+                    </div>
+                    <div class="name">
+                        <p style="font-size: 27px;">Total Coustomer</p>
+                    </div>
+                </div>
+    
+                <div class="dashboard_items" id="total_order">
+                    <div class="icon">
+                        <i class="fa-solid fa-cart-flatbed"></i>
+                    </div>
+                    <div class="count">
+                        
+                    </div>
+                    <div class="name">
+                        <p style="font-size: 27px;">Total Order</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

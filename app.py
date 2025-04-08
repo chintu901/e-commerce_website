@@ -36,7 +36,7 @@ def after_request(response):
 @app.route('/')
 @login_required
 def home():
-    return render_template("admin_layout.html")
+    return render_template("admin_dashboard.html")
 
 @app.route("/cart_page")
 @login_required
@@ -366,6 +366,13 @@ def cart_count():
 
     # Return the count as JSON
     return jsonify(count=cart_count)
+
+@app.context_processor
+def inject_user_count():
+    db = get_db()
+    user_count = db.execute("SELECT COUNT(*) FROM users").fetchone()[0]
+    return dict(user_count=user_count)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
