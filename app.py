@@ -36,7 +36,7 @@ def after_request(response):
 @app.route('/')
 @login_required
 def home():
-    return redirect("/checkout")
+    return render_template("admin_layout.html")
 
 @app.route("/cart_page")
 @login_required

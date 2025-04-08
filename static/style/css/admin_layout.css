@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: bolder_text;
+  font-size: 4rem;
+}
+
+h2 {
+  font-family: bolder_text;
+  font-size: 2.875rem;
+}
+
+h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+}
+
+h5 {
+  font-family: bolder_text;
+  font-size: 27px;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+h1 {
+  font-family: bolder_text;
+  font-size: 4rem;
+}
+
+h2 {
+  font-family: bolder_text;
+  font-size: 2.875rem;
+}
+
+h3 {
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+}
+
+h5 {
+  font-family: bolder_text;
+  font-size: 27px;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+/* Common Color Style */
+/* Reusable Button Styles */
+@font-face {
+  font-family: bolder_text;
+  src: url("../../font/RaelaGrotesque-Black.ttf");
+}
+body #nav_bar_admin {
+  display: flex;
+  width: 100%;
+  height: 70px;
+  border: 2px solid #141414;
+  border-right: none;
+}
+body #nav_bar_admin .contact-area {
+  width: 17%;
+  height: 100%;
+  border-right: 2px solid #141414;
+}
+body #nav_bar_admin .contact-area div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body #nav_bar_admin .contact-area .links_space_nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 67px;
+  overflow: hidden;
+  color: #141414;
+}
+body #nav_bar_admin .contact-area .links_space_nav div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+body #nav_bar_admin .contact-area .links_space_nav div:first-child {
+  background-color: #f1f1f1;
+  opacity: 1;
+}
+body #nav_bar_admin .contact-area .links_space_nav div:last-child {
+  background-color: #242424;
+  transform: translateY(100%);
+  opacity: 1;
+}
+body #nav_bar_admin .contact-area .links_space_nav:hover {
+  color: #f1f1f1;
+}
+body #nav_bar_admin .contact-area .links_space_nav:hover div:first-child {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+body #nav_bar_admin .contact-area .links_space_nav:hover div:last-child {
+  transform: translateY(0);
+}
+body #nav_bar_admin .contact-area .links_space_nav p {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=admin_layout.css.map */

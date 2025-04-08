@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$font-primary: "Inter", sans-serif;
+
+h1 {
+    font-family: bolder_text;
+    font-size: 4rem; // ~36px (assuming 1rem = 16px)
+}
+
+h2 {
+    font-family: bolder_text;
+    font-size: 2.875rem; // ~30px
+}
+
+h3 {
+    font-family: $font-primary;
+    font-size: 24px;
+}
+
+h5 {
+    font-family: bolder_text;
+    font-size: 27px;
+}
+
+p {
+    font-family: $font-primary;
+    font-size: 17px;
+    font-weight: bold;
+}h1 {
+    font-family: bolder_text;
+    font-size: 4rem; // ~36px (assuming 1rem = 16px)
+}
+
+h2 {
+    font-family: bolder_text;
+    font-size: 2.875rem; // ~30px
+}
+
+h3 {
+    font-family: $font-primary;
+    font-size: 24px;
+}
+
+h5 {
+    font-family: bolder_text;
+    font-size: 27px;
+}
+
+p {
+    font-family: $font-primary;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* Common Color Style */
+$Neutral-color-white: #f1f1f1;
+$Neutral-color-black: #141414;
+$Second-netural-color-black: #242424;
+$Secondary-color: #7b7a7a;
+
+/* Reusable Button Styles */
+$transition-speed: 0.6s;
+
+@font-face {
+    font-family: bolder_text;
+    src: url("../../font/RaelaGrotesque-Black.ttf");
+}
+
+$font-primary: "Inter", sans-serif;
+
+@mixin button-style {
+    border: 1px solid $Neutral-color-black;
+    border-bottom: 2px solid $Neutral-color-black;
+    outline: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 69px;
+    border-radius: none;
+    overflow: hidden;
+    color: $Neutral-color-black;
+
+    div:nth-child(1) {
+        background-color: $Neutral-color-white;
+    }
+
+    div:nth-child(2) {
+        background-color: $Neutral-color-black;
+        height: 69px;
+    }
+
+    div {
+        transform: translateY(0px);
+        width: 100%;
+        transition: $transition-speed cubic-bezier(.16, 1, .3, 1);
+    }
+
+    div span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 69px;
+        padding: 0.75em 1.125em;
+    }
+
+    &:hover {
+        color: $Neutral-color-white;
+
+        div {
+            transform: translateY(-70px);
+        }
+    }
+
+    p {
+        font-size: 17px;
+        font-weight: bold;
+    }
+}
+
+@mixin sliding-hover($text-color, $bg-color, $hover-text-color, $hover-bg-color, $height: 67px) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: $height;
+    overflow: hidden;
+    color: $text-color;
+
+    div {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: transform 0.3s cubic-bezier(.16, 1, .3, 1), opacity 0.3s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    div:first-child {
+        background-color: $bg-color;
+        opacity: 1;
+    }
+
+    div:last-child {
+        background-color: #242424;
+        transform: translateY(100%);
+        opacity: 1;
+    }
+
+    &:hover {
+        color: $Neutral-color-white;
+
+        div:first-child {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        div:last-child {
+            transform: translateY(0);
+        }
+    }
+
+    p {
+        font-size: 17px;
+        font-weight: bold;
+    }
+}
+
+@mixin arrow_button_for_links {
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none;
+
+    // Hidden underline (initially 0% width)
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0%;
+        height: 2px;
+        background-color: black;
+        transition: width 0.3s ease-in-out;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+
+    // Rotate the icon smoothly
+    i {
+        transition: transform 0.3s ease-in-out; // Ensure transition applies both ways
+    }
+
+    &:hover i {
+        transform: rotate(45deg);
+    }
+}
+
+body {
+    #nav_bar_admin {
+        display: flex;       
+        width: 100%;
+        height: 70px;
+        border: 2px solid $Neutral-color-black;
+        border-right: none;
+
+        .contact-area {
+            width: 17%;
+            height: 100%;
+            border-right: 2px solid $Neutral-color-black;
+
+            div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .links_space_nav {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%; // Ensures it fills the <a> completely
+                height: 100%;
+                cursor: pointer;
+                
+                @include sliding-hover($Neutral-color-black, $Neutral-color-white, $Neutral-color-black, $Neutral-color-black);
+            }
+        }
+    }
+}
