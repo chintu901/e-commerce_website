@@ -367,12 +367,20 @@ def cart_count():
     # Return the count as JSON
     return jsonify(count=cart_count)
 
+
+
+@app.context_processor
+def inject_total_cart_count():
+    db = get_db()
+    total_cart = db.execute("SELECT COUNT(*) FROM cart").fetchone()[0]
+    return dict(total_cart=total_cart)
+
+
 @app.context_processor
 def inject_user_count():
     db = get_db()
     user_count = db.execute("SELECT COUNT(*) FROM users").fetchone()[0]
     return dict(user_count=user_count)
-
 
 if __name__ == '__main__':
     app.run(debug=True)

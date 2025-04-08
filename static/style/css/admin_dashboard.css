@@ -66,5 +66,13 @@ body #main_body #content_area #content_count_area #total_product {
   background-color: rgb(134, 211, 228);
   color: rgb(12, 107, 208);
 }
+body #main_body #content_area #content_count_area #total_user {
+  background-color: rgb(112, 234, 112);
+  color: rgb(6, 120, 6);
+}
+body #main_body #content_area #content_count_area #total_order {
+  background-color: rgb(241, 241, 119);
+  color: rgb(153, 153, 0);
+}
 
 /*# sourceMappingURL=admin_dashboard.css.map */
