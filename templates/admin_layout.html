@@ -53,5 +53,15 @@
                 </div>
             </div>
         </nav>
+
+        <!--Main code for the website-->
+        <main>
+            {% block content %}
+                <!-- Child templates will override this -->
+            {% endblock %}
+        </main>
+        
+        <!-- Allow additional JavaScript files from child templates -->
+        {% block extra_js %}{% endblock %}
     </body>
 </html>
