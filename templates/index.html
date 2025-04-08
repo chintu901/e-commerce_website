@@ -5,7 +5,7 @@
 {% block extra_css %}<link rel="stylesheet" href="{{ url_for('static', filename='style/css/main.css') }}" media="print" onload="this.media='all'">{% endblock %}
 
 
-    {% block content %}
+{% block content %}
         <div id="hero_section">
             <div id="main_hero_section_area_left">
                 <div id="info_area_left">
@@ -315,11 +315,11 @@
             </div>
         </div>
 
-        {% endblock %}
+{% endblock %}
 
-        {% block extra_js %}
-            <script src="{{ url_for('static', filename='js/Scroll_Effect.js') }}"></script>
-            <script src="{{ url_for('static', filename='js/Scroll_Effect_Second.js') }}"></script>
-        {% endblock %}
+{% block extra_js %}
+    <script src="{{ url_for('static', filename='js/Scroll_Effect.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/Scroll_Effect_Second.js') }}"></script>
+{% endblock %}
         
         

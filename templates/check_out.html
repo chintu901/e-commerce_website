@@ -1,0 +1,158 @@
+{% extends 'layout.html' %}
+
+{% block title %}Furniture_Shop/checkout{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/css/check_out.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section id="main_body_payment_content">
+        <div id="left_importent_info_area">
+            <div id="left_heading_area">
+                <h2>Billing Address</h2>
+            </div>
+
+            <div class="user_info_area_main">
+                <input type="text" placeholder="Username*" name="username">
+            </div>
+
+            <div id="user_name_info">
+                <div id="first_name_user_info">
+                    <input type="text" placeholder="First Name*" name="first_name">
+                </div>
+                <div id="last_name_user_info">
+                    <input type="text" placeholder="Last Name*" name="last_name">
+                </div>
+            </div>
+
+            <div class="user_info_area_main">
+                <div id="email">
+                    <input type="text" placeholder="Email*" name="email">
+                </div>
+                <div id="phone_number">
+                    <input type="text" placeholder="Phone Number*" name="phone_number">
+                </div>
+            </div>
+
+            <div class="address">
+                <textarea placeholder="Address*"></textarea>>
+            </div>
+            <div class="address">
+                <textarea placeholder="Address 2 (Optional)"></textarea>>
+            </div>
+
+            <div id="address_more_info">
+                <div class="select-wrapper" id="country_select">
+                    <select id="country" name="country" required>
+                      <option value="" disabled selected>Select a Country*</option>
+                      <option value="india">India</option>
+                      <option value="america">America</option>
+                      <option value="china">China</option>
+                      <option value="russia">Russia</option>
+                      <option value="other">other</option>
+                    </select>
+                </div>
+
+                <div class="select-wrapper" id="state_slect">
+                    <select id="state" name="state" required>
+                        <option value="" disabled selected>Select a State*</option>
+                        <option value="delhi">Delhi</option>
+                        <option value="panjab">Panjab</option>
+                        <option value="tamil">Tamil</option>
+                        <option value="manipur">Manipur</option>
+                        <option value="other">other</option>
+                    </select>
+                </div>
+                <div id="zip_code">
+                    <input type="text" placeholder="Zip*" name="subjcet">
+                </div>
+            </div>
+
+            <div class="select-wrapper" id="address-type">
+                <select id="address_type" name="address-type" required>
+                    <option value="" disabled selected>Address Type*</option>
+                    <option value="home">home</option>
+                    <option value="office">office</option>
+                    <option value="other">other</option>
+                </select>
+            </div>
+            <div class="select-wrapper" id="payment_type">
+                <select id="payment_type" name="payment-type" required>
+                    <option value="" disabled selected>Payment Type*</option>
+                    <option value="COD">COD</option>
+                    <option value="UPI">UPI</option>
+                    <option value="bank">Bank</option>
+                </select>
+            </div>
+
+            <div id="button_area">
+                <button class="shop_now_top_hero_left">
+                    <div><span><p>SUBMIT</p></span></div>
+                    <div><span><p>SUBMIT</p></span></div>
+                </button>  
+            </div>
+        </div>
+        <div id="right_cart_items_info-area">
+            <div id="right_heading_area">
+                <h2>Your Cart</h2>
+            </div>
+            {% if cart_items|length > 0 %}
+            <table class="cart_table">
+                {% for item in cart_items %}
+                <tr>
+                    <td>
+                        <form action="{{ url_for('remove_item') }}" method="POST">
+                            <input type="hidden" name="product_id" value="{{ item.product_id }}">
+                            <button type="submit" style="background: none; border: none;">
+                                <i class="fas fa-trash-alt"></i></button>
+                        </form>
+                    </td>
+                    <td><img src="{{ url_for('static', filename=item.product_image) }}" alt="{{ item.product_name }}" width="50"></td>
+                    <td>{{ item.product_name }}</td>
+                    <td>${{ item.product_price }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+            <div id="error_handling_cart_empty">
+                <h5>Your cart is empty.</h5>
+            </div>
+            {% endif %}
+
+            <div id="promo">
+                <div id="left_code_area">
+                    <input type="text" placeholder="Promo Code:" name="username">
+                </div>
+                <div id="add_code_button">
+                    <button class="shop_now_top_hero_left">
+                        <div><span><p>ADD</p></span></div>
+                        <div><span><p>ADD</p></span></div>
+                    </button> 
+                </div>
+            </div>
+
+            <div id="total">
+                <table>
+                    <tr>
+                        <td>Total(USD)</td>
+                        <td id="cash"><p>$<strong id="total-price"></strong></p></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block extra_js %}
+    <script>
+        // Fetch total price using the new route
+        fetch("/total_price")
+            .then(response => response.text())
+            .then(data => {
+                // Convert data to a float and format to two decimal places
+                const formattedData = parseFloat(data).toFixed(2);
+                document.getElementById("total-price").innerText = formattedData;
+            })
+            .catch(error => console.error("Error fetching total price:", error));
+    </script>
+{% endblock %}

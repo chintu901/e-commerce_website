@@ -36,7 +36,7 @@ def after_request(response):
 @app.route('/')
 @login_required
 def home():
-    return render_template('index.html') 
+    return redirect("/checkout")
 
 @app.route("/cart_page")
 @login_required
@@ -237,6 +237,29 @@ def cart():
     print("Cart items:", cart_items)
 
     return render_template("cart.html", cart_items=cart_items)
+
+@app.route("/checkout")
+@login_required
+def checkout():
+    user_id = session.get("user_id")
+    print("User ID from session:", user_id)
+
+    if not user_id:
+        return "Please log in to view the checkout page", 401
+
+    db = get_db()
+    cart_items = db.execute(
+        "SELECT * FROM cart_items WHERE user_id = ?", (user_id,)
+    ).fetchall()
+
+    print("Checkout items:", cart_items)
+
+    # Convert to dicts
+    cart_items = [dict(row) for row in cart_items]
+
+    return render_template("check_out.html", cart_items=cart_items)
+
+
 # Cart count
 @app.before_request
 def load_cart_count():
@@ -292,21 +315,20 @@ def add_to_cart():
 @login_required
 def remove_item():
     """Remove an item from the cart"""
-    # Get the product ID from the form submission
     product_id = request.form.get("product_id")
     user_id = session.get("user_id")
 
     if not product_id or not user_id:
         return "Invalid request", 400
 
-    # Connect to the database and delete the item
     db = get_db()
     db.execute("DELETE FROM cart WHERE user_id = ? AND product_id = ?", (user_id, product_id))
     db.commit()
-    
-    # Redirect back to the cart page with a success message
+
     flash("Item removed from cart", "success")
-    return redirect("/cart")
+
+    # Redirect to the referring page (check_out or cart)
+    return redirect(request.referrer or "/cart")
 
 @app.route("/total_price")
 @login_required
