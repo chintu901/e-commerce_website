@@ -1,0 +1,159 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body #main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 580px;
+}
+body #main #content_area {
+  width: 70%;
+  height: 90%;
+  border: 2px solid #141414;
+}
+body #main #content_area #heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 70px;
+  background-color: #f1f1f1;
+  border-bottom: 2px solid #141414;
+}
+body #main #content_area #main_content {
+  width: 100%;
+  height: 500px;
+}
+body #main #content_area #main_content .input_field {
+  display: flex;
+  width: 100%;
+  height: 70px;
+  border-bottom: 2px solid #141414;
+}
+body #main #content_area #main_content .input_field_des {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  border-bottom: 2px solid #141414;
+}
+body #main #content_area #main_content .field_name {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  width: 20%;
+  height: 100%;
+  border-right: 2px solid #141414;
+}
+body #main #content_area #main_content .input_area {
+  width: 81%;
+  height: 100%;
+}
+body #main #content_area #main_content .input_area input {
+  border: none;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+}
+body #main #content_area #main_content .input_area textarea {
+  border: none;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  resize: none; /* Prevent manual resizing */
+  overflow-y: hidden; /* Hide vertical scrollbar */
+}
+body #main #content_area #main_content .input_area .select-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+body #main #content_area #main_content .input_area .select-wrapper select {
+  border: none;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding: 10px;
+  padding-right: 30px;
+  font-family: "Inter", sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  background-color: white;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: #141414;
+  cursor: pointer;
+}
+body #main #content_area #main_content .input_area .select-wrapper select option[disabled][selected] {
+  color: #888;
+}
+body #main #content_area #main_content .input_area .select-wrapper::after {
+  content: "▼";
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 14px;
+  color: #000000;
+  z-index: 2;
+}
+body #main #content_area #main_content button {
+  border: 1px solid #141414;
+  border-bottom: 2px solid #141414;
+  outline: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 69px;
+  border-radius: none;
+  overflow: hidden;
+  color: #141414;
+  width: 100%;
+  height: 100%;
+}
+body #main #content_area #main_content button div:nth-child(1) {
+  background-color: #f1f1f1;
+}
+body #main #content_area #main_content button div:nth-child(2) {
+  background-color: #141414;
+  height: 69px;
+}
+body #main #content_area #main_content button div {
+  transform: translateY(0px);
+  width: 100%;
+  transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+body #main #content_area #main_content button div span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 69px;
+  padding: 0.75em 1.125em;
+}
+body #main #content_area #main_content button:hover {
+  color: #f1f1f1;
+}
+body #main #content_area #main_content button:hover div {
+  transform: translateY(-70px);
+}
+body #main #content_area #main_content button p {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=add_product.css.map */

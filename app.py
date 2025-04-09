@@ -36,7 +36,7 @@ def after_request(response):
 @app.route('/')
 @login_required
 def home():
-    return render_template("admin_dashboard.html")
+    return render_template("remove_product.html")
 
 @app.route("/cart_page")
 @login_required

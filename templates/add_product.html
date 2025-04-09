@@ -3,9 +3,81 @@
 {% block title %}Add_product{% endblock %}
 
 {% block extra_css %}
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/css/add_product.css') }}">
 {% endblock %}
 
 {% block content %}
+    <section id="main">
+        <div id="content_area">
+            <div id="heading">
+                <h5>Add Product</h5>
+            </div>
+            <div id="main_content">
+                <!-- Start single full form -->
+            <form method="POST" action="/add_product" enctype="multipart/form-data">
+                <div class="input_field">
+                    <div class="field_name">
+                        <h5>Product Name</h5>
+                    </div>
+                    <div class="input_area">
+                        <input type="text" placeholder="Name*" name="name" required>
+                    </div>
+                </div>
 
+                <div class="input_field">
+                    <div class="field_name">
+                        <h5>Price</h5>
+                    </div>
+                    <div class="input_area">
+                        <input type="number" placeholder="Price*" name="price" step="0.01" required>
+                    </div>
+                </div>
+
+                <div class="input_field_des">
+                    <div class="field_name">
+                        <h5>Description</h5>
+                    </div>
+                    <div class="input_area">
+                        <textarea name="description" placeholder="Description*" required></textarea>
+                    </div>
+                </div>
+
+                <div class="input_field">
+                    <div class="field_name">
+                        <h5>Category</h5>
+                    </div>
+                    <div class="input_area">
+                        <div class="select-wrapper">
+                            <select id="Category" name="category" required>
+                              <option value="" disabled selected>Select a Category*</option>
+                              <option value="beds">Beds</option>
+                              <option value="sofas">Sofas</option>
+                              <option value="home_decor">Home Decor</option>
+                              <option value="dining_set">Dining Set</option>
+                              <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input_field">
+                    <div class="field_name">
+                        <h5>Product Image</h5>
+                    </div>
+                    <div class="input_area">
+                        <input type="file" name="image" accept="image/*" required>
+                    </div>
+                </div>
+
+                <div class="input_field">
+                    <button class="add_product_button">
+                        <div><span><p>Add Product</p></span></div>
+                        <div><span><p>Add Product</p></span></div>
+                    </button> 
+                </div>
+            </form>
+            <!-- End full form -->
+            </div>
+        </div>
+    </section>
 {% endblock %}
