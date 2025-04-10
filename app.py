@@ -36,7 +36,7 @@ def after_request(response):
 @app.route('/')
 @login_required
 def home():
-    return render_template("remove_product.html")
+    return render_template("index.html")
 
 @app.route("/cart_page")
 @login_required
@@ -107,6 +107,42 @@ def shop_sofas_page():
     """Render the journal page"""
     return render_template("sofas.html")
 
+# admin routes
+@app.route("/admin_home")
+@login_required
+def admin_home():  # request.endpoint == "home"
+    return render_template("admin_dashboard.html")
+
+@app.route("/add_product_page")
+@login_required
+def add_product_page():  # request.endpoint == "add_product_page"
+    return render_template("add_product.html")
+
+@app.route("/remove_product_page")
+@login_required
+def remove_product_page():  # request.endpoint == "remove_product_page"
+    user_id = session.get("user_id")
+    db = get_db()
+    cart_items = db.execute(
+        "SELECT * FROM cart_items WHERE user_id = ?", (user_id,)
+    ).fetchall()
+    cart_items = [dict(row) for row in cart_items]
+
+    return render_template("remove_product.html", cart_items=cart_items)
+
+@app.route("/all_order")
+@login_required
+def all_order():  # request.endpoint == "all_order"
+    user_id = session.get("user_id")
+    db = get_db()
+    cart_items = db.execute(
+        "SELECT * FROM cart_items WHERE user_id = ?", (user_id,)
+    ).fetchall()
+    cart_items = [dict(row) for row in cart_items]
+
+    return render_template("all_order.html", cart_items=cart_items)
+
+
 # Login page
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -129,9 +165,15 @@ def login():
 
         session["user_id"] = user["id"]
         session["username"] = user["username"]
-        return redirect("/")
+
+        # Redirect based on admin status
+        if user["is_admin"] == 1:
+            return redirect("/admin_home")
+        else:
+            return redirect("/")
 
     return render_template("login_page.html")
+
 
 # Logout
 @app.route("/logout")
@@ -258,6 +300,30 @@ def checkout():
     cart_items = [dict(row) for row in cart_items]
 
     return render_template("check_out.html", cart_items=cart_items)
+
+@app.route("/products")
+@login_required
+def AllProducts():
+    user_id = session.get("user_id")
+    print("User ID from session:", user_id)
+
+    if not user_id:
+        return "Please log in to view the products page", 401
+
+    db = get_db()
+
+    # JOIN to get product and its image
+    products = db.execute("""
+        SELECT p.id, p.name, p.price, p.description, pi.image
+        FROM products p
+        LEFT JOIN product_images pi ON p.id = pi.product_id
+    """).fetchall()
+
+    products = [dict(row) for row in products]
+    print("All products:", products)
+
+    return render_template("remove_product.html", products=products)
+
 
 
 # Cart count

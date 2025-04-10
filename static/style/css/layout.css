@@ -168,6 +168,10 @@ body #main_top_navbar_div_space .nav_top_links #top_right_space a .links_space_n
 body #main_top_navbar_div_space .nav_top_links #top_right_space a .links_space_nav:active {
   transform: scale(0.95);
 }
+body #main_top_navbar_div_space .nav_top_links #top_right_space #ex-a {
+  width: 42px;
+  color: inherit;
+}
 body #main_top_navbar_div_space .nav_top_links #top_right_space .small_links_space_nav {
   display: flex;
   justify-content: center;

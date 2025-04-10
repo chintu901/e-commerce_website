@@ -12,45 +12,57 @@
     <body>
         <nav id="nav_bar_admin">
             <div class="contact-area">
-                <div class="links_space_nav">
-                    <div><h5>Home</h5></div>
-                    <div><h5>Home</h5></div>
-                </div> 
+                <a class="{% if request.endpoint == 'admin_home' %}active{% endif %}" href="/admin_home">
+                    <div class="links_space_nav">
+                        <div><h5>Home</h5></div>
+                        <div><h5>Home</h5></div>
+                    </div> 
+                </a>
             </div>
 
             <div class="contact-area">
-                <div class="links_space_nav">
-                    <div><h5>Add Product</h5></div>
-                    <div><h5>Add Product</h5></div>
-                </div>
+                <a class="{% if request.endpoint == 'add_product_page' %}active{% endif %}" href="/add_product_page">
+                    <div class="links_space_nav">
+                        <div><h5>Add Product</h5></div>
+                        <div><h5>Add Product</h5></div>
+                    </div>
+                </a>
             </div>
 
             <div class="contact-area">
-                <div class="links_space_nav">
-                    <div><h5>Remove Product</h5></div>
-                    <div><h5>Remove Product</h5></div>
-                </div>
+                <a class="{% if request.endpoint == 'remove_product_page' %}active{% endif %}" href="/remove_product_page">
+                    <div class="links_space_nav">
+                        <div><h5>Remove Product</h5></div>
+                        <div><h5>Remove Product</h5></div>
+                    </div>
+                </a>
             </div>
 
             <div class="contact-area">
-                <div class="links_space_nav">
-                    <div><h5>View Product</h5></div>
-                    <div><h5>View Product</h5></div>
-                </div>
+                <a class="{% if request.endpoint == 'shop' %}active{% endif %}" href="/shop">
+                    <div class="links_space_nav">
+                        <div><h5>View Product</h5></div>
+                        <div><h5>View Product</h5></div>
+                    </div>
+                </a>
             </div>
 
             <div class="contact-area">
-                <div class="links_space_nav">
-                    <div><h5>View All Order</h5></div>
-                    <div><h5>View All Order</h5></div>
-                </div>
+                <a class="{% if request.endpoint == 'all_order' %}active{% endif %}" href="/all_order">
+                    <div class="links_space_nav">
+                        <div><h5>View All Order</h5></div>
+                        <div><h5>View All Order</h5></div>
+                    </div>
+                </a>
             </div>
 
             <div class="contact-area">
-                <div class="links_space_nav">
-                    <div><h5>Logout</h5></div>
-                    <div><h5>Logout</h5></div>
-                </div>
+                <a class="{% if request.endpoint == 'logout' %}active{% endif %}" href="/logout">
+                    <div class="links_space_nav">
+                        <div><h5>Logout</h5></div>
+                        <div><h5>Logout</h5></div>
+                    </div>
+                </a>
             </div>
         </nav>
 

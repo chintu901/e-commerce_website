@@ -1,0 +1,70 @@
+{% extends 'admin_layout.html' %}
+
+{% block title %}admin/all_order{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/css/all_order.css') }}">
+{% endblock %}
+
+{% block content %}
+<section id="main_contect">
+    <div id="contect_area">
+        <div id="heading">
+            <h5>Remove Product</h5>
+        </div>
+        <div id="main_content">
+            <div class="table_list">
+                <table width="100%">
+                    <thead>
+                        <tr>
+                            <th class="img">IMAGE</th>
+                            <th class="name">NAME</th>
+                            <th class="quantity">QUANTITY</th>
+                            <th class="price">PRICE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if cart_items %}
+                        {% for item in cart_items %}
+                        <tr>
+                            <td><img src="{{ url_for('static', filename=item.product_image) }}" alt="{{ item.product_name }}" width="50"></td>
+                            <td>{{ item.product_name }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>${{ item.product_price }}</td>
+                        </tr>
+                        {% endfor %}
+                        {% else %}
+                        <tr>
+                            <td colspan="4" style="color: #d9534f; font-size: large; font-weight: 400; font-family: 'Inter', sans-serif;" id="error_message">No Order.</td>
+                        </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+                <div id="total">
+                    <div id="first">
+                        <h5>Total Amount:</h5>
+                    </div>
+                    <div id="second">
+                        <h5>$<span id="total-price"></span></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+     // Fetch total price using the new route
+     fetch("/total_price")
+            .then(response => response.text())
+            .then(data => {
+                // Convert data to a float and format to two decimal places
+                const formattedData = parseFloat(data).toFixed(2);
+                document.getElementById("total-price").innerText = formattedData;
+            })
+            .catch(error => console.error("Error fetching total price:", error));
+
+</script>
+{% endblock %}

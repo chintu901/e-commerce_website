@@ -53,9 +53,11 @@
                     <div class="small_links_space_nav">
                         <div><p><i class="fa-regular fa-user"></i></p></div>
                     </div>
-                    <div class="small_links_space_nav">
-                        <div><p><i class="fa-solid fa-cart-shopping"></i></p></div>
-                    </div>
+                    <a class="{% if request.endpoint == 'cart' %}active{% endif %}" id="ex-a" href="/cart">
+                        <div class="small_links_space_nav">
+                            <div><p><i class="fa-solid fa-cart-shopping"></i></p></div>
+                        </div>
+                    </a>
                 </div>                
             </nav>
         </div>

@@ -8,8 +8,46 @@
 
 {% block content %}
     <section id="main_contect">
-        <div id="contect_box">
-            
+        <div id="contect_area">
+            <div id="heading">
+                <h5>Remove Product</h5>
+            </div>
+            <div id="main_content">
+                <div class="table_list">
+                    <table width="100%">
+                        <thead>
+                            <tr>
+                                <th class="remove">REMOVE</th>
+                                <th class="img">IMAGE</th>
+                                <th class="name">NAME</th>
+                                <th class="price">PRICE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% if cart_items %}
+                            {% for item in cart_items %}
+                            <tr>
+                                <td>
+                                    <form action="{{ url_for('remove_item') }}" method="POST">
+                                        <input type="hidden" name="product_id" value="{{ item.product_id }}">
+                                        <button type="submit" style="background: none; border: none;">
+                                            <i class="fas fa-trash-alt"></i></button>
+                                    </form>
+                                </td>
+                                <td><img src="{{ url_for('static', filename=item.product_image) }}" alt="{{ item.product_name }}" width="50"></td>
+                                <td>{{ item.product_name }}</td>
+                                <td>${{ item.product_price }}</td>
+                            </tr>
+                            {% endfor %}
+                            {% else %}
+                            <tr>
+                                <td colspan="4" style="color: #d9534f; font-size: large; font-weight: 400; font-family: 'Inter', sans-serif;" id="error_message">No products available.</td>
+                            </tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </section>
 {% endblock %}

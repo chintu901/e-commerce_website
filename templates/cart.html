@@ -71,7 +71,9 @@
                     <td>$<strong id="total-price-2"></strong></td>
                 </tr>
             </table>
-            <button class="coupon-btn-apply">Proceed to checkout</button>
+            <a class="{% if request.endpoint == 'checkout' %}active{% endif %}" href="/checkout">
+                <button class="coupon-btn-apply">Proceed to checkout</button>
+            </a>
         </div>
     </section>
 
