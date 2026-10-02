@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+div
+
 body .box_for_about_topics {
   display: flex;
   width: calc(100vw - 14px);
